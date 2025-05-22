@@ -3,11 +3,15 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
 package Database;
+import java.sql.*;
 
 /**
  *
  * @author uttu
  */
-public class database {
-    
+public interface Database {
+    Connection openConnection();
+    void closeConnection(Connection conn);
+    ResultSet runQuery(Connection conn,String query);
+    int executeUpdate(Connection conn, String query);
 }

@@ -3,13 +3,14 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/Users/uttu/NetBeansProjects/RestaurantManagementSystem/src/Database/Database.java</file>
-            <file>file:/Users/uttu/NetBeansProjects/RestaurantManagementSystem/src/Database/MySqlConnection.java</file>
-            <file>file:/Users/uttu/NetBeansProjects/RestaurantManagementSystem/src/RestaurantManagementSystem/RestaurantManagementSystem.java</file>
-            <file>file:/Users/uttu/NetBeansProjects/RestaurantManagementSystem/src/Dao/UserDao.java</file>
-            <file>file:/Users/uttu/NetBeansProjects/RestaurantManagementSystem/src/Model/User.java</file>
-            <file>file:/Users/uttu/NetBeansProjects/RestaurantManagementSystem/src/View/SignIn.java</file>
-            <file>file:/Users/uttu/NetBeansProjects/RestaurantManagementSystem/src/View/Login.java</file>
+            <file>file:/C:/Users/Nitro/RestaurantManagementSystem_Group6_C37C/src/View/SignIn.java</file>
+            <file>file:/C:/Users/Nitro/RestaurantManagementSystem_Group6_C37C/src/Dao/UserDao.java</file>
+            <file>file:/C:/Users/Nitro/RestaurantManagementSystem_Group6_C37C/src/Database/MySqlConnection.java</file>
+            <file>file:/C:/Users/Nitro/RestaurantManagementSystem_Group6_C37C/src/RestaurantManagementSystem/RestaurantManagementSystem.java</file>
+            <file>file:/C:/Users/Nitro/RestaurantManagementSystem_Group6_C37C/src/View/AdminDashboard.java</file>
+            <file>file:/C:/Users/Nitro/RestaurantManagementSystem_Group6_C37C/src/Database/Database.java</file>
+            <file>file:/C:/Users/Nitro/RestaurantManagementSystem_Group6_C37C/src/Controller/New.java</file>
+            <file>file:/C:/Users/Nitro/RestaurantManagementSystem_Group6_C37C/src/Database/DBConnection.java</file>
         </group>
     </open-files>
 </project-private>

@@ -17,7 +17,7 @@ public class MySqlConnection implements Database {
     public Connection openConnection() {
          try{
             String username="root";
-            String password="12345678";
+            String password="qwerty1234";
             String database="Restaurant";
             Connection connection;
             connection= DriverManager.getConnection(
@@ -29,7 +29,7 @@ public class MySqlConnection implements Database {
                 System.out.println("Database connection success");
             }
             return connection;
-        }catch(Exception e){
+        }catch(SQLException e){
             System.out.println(e);
             return null;
         }
@@ -42,7 +42,7 @@ public class MySqlConnection implements Database {
                 conn.close();
                 System.out.println("Connection close");
             }
-        }catch(Exception e){
+        }catch(SQLException e){
             System.out.println(e);
         }
     }
@@ -53,7 +53,7 @@ public class MySqlConnection implements Database {
           Statement stmp=conn.createStatement();
           ResultSet result=stmp.executeQuery(query);
           return result;
-      } catch(Exception e){
+      } catch(SQLException e){
           System.out.println(e);
           return null;
       }
@@ -65,7 +65,7 @@ public class MySqlConnection implements Database {
           Statement stmp=conn.createStatement();
           int result=stmp.executeUpdate(query);
           return result;
-      } catch(Exception e){
+      } catch(SQLException e){
           System.out.println(e);
           return -1;
       }

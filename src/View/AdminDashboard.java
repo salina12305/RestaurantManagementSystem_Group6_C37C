@@ -129,7 +129,7 @@ addHoverEffect(Review3, normalColor, hoverColor);
         SidePanel.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         SidePanel.setLayout(null);
 
-        Logo1.setIcon(new javax.swing.ImageIcon("C:\\Users\\Nitro\\Downloads\\Screenshot_2025-05-22_222007-removebg-preview (1).png")); // NOI18N
+        Logo1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/Screenshot_2025-05-22_222007-removebg-preview (1).png"))); // NOI18N
         Logo1.setText("jLabel1");
         SidePanel.add(Logo1);
         Logo1.setBounds(30, 20, 136, 120);

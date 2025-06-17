@@ -1,7 +1,4 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
- */
+
 package View;
 import java.awt.Color;
 import java.awt.Graphics;
@@ -19,10 +16,7 @@ import org.jfree.data.category.DefaultCategoryDataset;
 import java.awt.BorderLayout;
 import javax.swing.JLabel;
 
-/**
- *
- * @author Nitro
- */
+
 public class AdminDashboard extends javax.swing.JFrame {
 
     /**
@@ -84,6 +78,7 @@ addHoverEffect(Review3, normalColor, hoverColor);
         EmployeeButton = new javax.swing.JButton();
         LogoutButton = new javax.swing.JButton();
         Slogan = new javax.swing.JLabel();
+        jSeparator1 = new javax.swing.JSeparator();
         TopBarPanel = new javax.swing.JPanel();
         Logo2 = new javax.swing.JLabel();
         RevenueText = new javax.swing.JLabel();
@@ -129,10 +124,10 @@ addHoverEffect(Review3, normalColor, hoverColor);
         SidePanel.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         SidePanel.setLayout(null);
 
-        Logo1.setIcon(new javax.swing.ImageIcon("C:\\Users\\Nitro\\Downloads\\Screenshot_2025-05-22_222007-removebg-preview (1).png")); // NOI18N
+        Logo1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/Screenshot_2025-05-22_222007-removebg-preview (1).png"))); // NOI18N
         Logo1.setText("jLabel1");
         SidePanel.add(Logo1);
-        Logo1.setBounds(30, 20, 136, 120);
+        Logo1.setBounds(30, 10, 136, 110);
 
         DashboardButton.setBackground(new java.awt.Color(255, 243, 224));
         DashboardButton.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
@@ -184,7 +179,12 @@ addHoverEffect(Review3, normalColor, hoverColor);
         Slogan.setText("7 people serving since 11 AM");
         Slogan.setToolTipText("");
         SidePanel.add(Slogan);
-        Slogan.setBounds(20, 140, 180, 20);
+        Slogan.setBounds(10, 110, 180, 20);
+
+        jSeparator1.setBackground(new java.awt.Color(0, 0, 0));
+        jSeparator1.setForeground(new java.awt.Color(0, 0, 0));
+        SidePanel.add(jSeparator1);
+        jSeparator1.setBounds(0, 130, 200, 10);
 
         getContentPane().add(SidePanel);
         SidePanel.setBounds(0, 0, 200, 600);
@@ -196,12 +196,12 @@ addHoverEffect(Review3, normalColor, hoverColor);
         Logo2.setFont(new java.awt.Font("Segoe UI Variable", 1, 36)); // NOI18N
         Logo2.setText("7 ~ 11");
         TopBarPanel.add(Logo2);
-        Logo2.setBounds(10, 30, 100, 40);
+        Logo2.setBounds(10, 30, 130, 40);
 
         RevenueText.setFont(new java.awt.Font("Segoe UI", 2, 14)); // NOI18N
         RevenueText.setText("Overall revenue illustration of last 7 days");
         TopBarPanel.add(RevenueText);
-        RevenueText.setBounds(10, 80, 270, 20);
+        RevenueText.setBounds(10, 80, 300, 20);
 
         MinimizeButton.setBackground(new java.awt.Color(255, 243, 224));
         MinimizeButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/minimize-sign.png"))); // NOI18N
@@ -288,11 +288,13 @@ addHoverEffect(Review3, normalColor, hoverColor);
         RevenuePanelLayout.setHorizontalGroup(
             RevenuePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, RevenuePanelLayout.createSequentialGroup()
-                .addContainerGap(26, Short.MAX_VALUE)
-                .addGroup(RevenuePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                    .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addGap(26, 26, 26))
+                .addContainerGap(16, Short.MAX_VALUE)
+                .addGroup(RevenuePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(RevenuePanelLayout.createSequentialGroup()
+                        .addGap(6, 6, 6)
+                        .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 154, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jLabel1))
+                .addGap(20, 20, 20))
         );
         RevenuePanelLayout.setVerticalGroup(
             RevenuePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -357,7 +359,7 @@ addHoverEffect(Review3, normalColor, hoverColor);
                 .addContainerGap(30, Short.MAX_VALUE)
                 .addGroup(EmployeePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                     .addComponent(jLabel6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jLabel5, javax.swing.GroupLayout.DEFAULT_SIZE, 140, Short.MAX_VALUE))
+                    .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 140, Short.MAX_VALUE))
                 .addGap(26, 26, 26))
         );
         EmployeePanelLayout.setVerticalGroup(
@@ -626,6 +628,7 @@ MinimizeButton.setOpaque(false);
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
+    private javax.swing.JSeparator jSeparator1;
     private javax.swing.JPanel revenueChartPanel;
     // End of variables declaration//GEN-END:variables
 

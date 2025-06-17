@@ -379,4 +379,8 @@ public class SignUpp extends javax.swing.JFrame {
         return jConfirmPass;
     }
 
+    public void open() {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
+
 }

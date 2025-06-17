@@ -90,6 +90,8 @@ public class SignInController {
         public void actionPerformed(ActionEvent e) {
             SignUpp signup = new SignUpp();
             signup.setVisible(true);
+            signup.open();
+            close();
         }
     }
 }

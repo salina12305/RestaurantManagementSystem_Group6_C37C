@@ -3,9 +3,6 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
 package Database;
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.ResultSet;
 import java.sql.*;
 /**
  *
@@ -70,5 +67,6 @@ public class MySqlConnection implements Database {
           return -1;
       }
     }
-    
+
+
 }

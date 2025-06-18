@@ -43,7 +43,6 @@ public class ManageMenu extends javax.swing.JFrame {
         no_item = new javax.swing.JTextField();
         emp_name = new javax.swing.JTextField();
         CreateItem = new javax.swing.JButton();
-        UpdateOrder = new javax.swing.JButton();
         jButton3 = new javax.swing.JButton();
         jLabel35 = new javax.swing.JLabel();
         jLabel34 = new javax.swing.JLabel();
@@ -147,14 +146,6 @@ public class ManageMenu extends javax.swing.JFrame {
             }
         });
 
-        UpdateOrder.setBackground(new java.awt.Color(255, 243, 224));
-        UpdateOrder.setText("Update Item");
-        UpdateOrder.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                UpdateOrderActionPerformed(evt);
-            }
-        });
-
         jButton3.setBackground(new java.awt.Color(255, 243, 224));
         jButton3.setText("Delete Item");
         jButton3.addActionListener(new java.awt.event.ActionListener() {
@@ -188,14 +179,13 @@ public class ManageMenu extends javax.swing.JFrame {
                                     .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                         .addComponent(price)
                                         .addComponent(no_item)))))
-                        .addGap(0, 0, Short.MAX_VALUE))
+                        .addGap(0, 168, Short.MAX_VALUE))
                     .addGroup(jPanel8Layout.createSequentialGroup()
+                        .addGap(56, 56, 56)
                         .addComponent(CreateItem)
-                        .addGap(54, 54, 54)
-                        .addComponent(UpdateOrder)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 55, Short.MAX_VALUE)
+                        .addGap(92, 92, 92)
                         .addComponent(jButton3)
-                        .addGap(44, 44, 44))))
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
         );
         jPanel8Layout.setVerticalGroup(
             jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -219,7 +209,6 @@ public class ManageMenu extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 52, Short.MAX_VALUE)
                 .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(CreateItem)
-                    .addComponent(UpdateOrder)
                     .addComponent(jButton3))
                 .addGap(45, 45, 45))
         );
@@ -330,7 +319,7 @@ public class ManageMenu extends javax.swing.JFrame {
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(405, 405, 405)
                         .addComponent(jLabel10, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 25, Short.MAX_VALUE)
                 .addComponent(jLabel35)
                 .addGap(39, 39, 39))
         );
@@ -454,10 +443,6 @@ public class ManageMenu extends javax.swing.JFrame {
  
     }//GEN-LAST:event_CreateItemActionPerformed
 
-    private void UpdateOrderActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_UpdateOrderActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_UpdateOrderActionPerformed
-
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton3ActionPerformed
@@ -511,7 +496,6 @@ public class ManageMenu extends javax.swing.JFrame {
     private javax.swing.JButton Managebutton;
     private javax.swing.JLabel Price;
     private javax.swing.JButton Pricebutton;
-    private javax.swing.JButton UpdateOrder;
     private javax.swing.JTextField emp_name;
     private javax.swing.JTextField item_name;
     private javax.swing.JButton jButton1;

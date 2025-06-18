@@ -4,7 +4,7 @@
  */
 package Controller;
 
-import View.Signup;
+import View.SignUpp;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 
@@ -21,7 +21,7 @@ public class Menu {
 
         if (confirm == JOptionPane.YES_OPTION) {
             currentFrame.setVisible(false);
-            new Signup().setVisible(true);
+            new SignUpp().setVisible(true);
         }
     }
     

@@ -5,6 +5,7 @@
 package RestaurantManagementSystem ;
 
 import Database.*;
+import View.ManageMenu;
 
 /**
  *
@@ -23,6 +24,8 @@ public class RestaurantManagementSystem {
         }else{
             System.out.println("Failed to connect to database");
         } 
+//        ManageMenu view=new ManageMenu();
+//        MenuController 
     }   
 }
 

@@ -10,6 +10,7 @@ import com.sun.jdi.connect.spi.Connection;
 import java.awt.HeadlessException;
 import java.sql.SQLException;
 import javax.swing.JOptionPane;
+import javax.swing.JTextField;
 
 /**
  *
@@ -78,5 +79,21 @@ public class MenuController {
         } catch (HeadlessException | NumberFormatException | SQLException e) {
             JOptionPane.showMessageDialog(null, "Error deleting order: " + e.getMessage());
         }
+    }
+
+    public static void create(JTextField Username, JTextField ItemName, JTextField PriceOfItem, JTextField no_item, JTextField EmployeeName) {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
+
+    public static void update(JTextField Username, JTextField ItemName, JTextField PriceOfItem, JTextField no_item, JTextField EmployeeName) {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
+
+    public static void deleteOrder(JTextField Username, JTextField ItemName, JTextField PriceOfItem, JTextField no_item, JTextField EmployeeName) {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
+
+    public static void delete(JTextField Username, JTextField ItemName, JTextField PriceOfItem, JTextField no_item, JTextField EmployeeName) {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
 }

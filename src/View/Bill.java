@@ -2,6 +2,7 @@ package View;
 
 import java.awt.event.ActionListener;
 import javax.swing.JOptionPane;
+import javax.swing.JTextField;
 
 /**
  *
@@ -396,6 +397,7 @@ public javax.swing.JTextField getCustomerNameField(){
     return jname;
 }
 public javax.swing.JTextField getPhoneNumberField(){
+        JTextField jphonenumber = null;
     return jphonenumber;
 }
 public javax.swing.JTable getBillTable() {

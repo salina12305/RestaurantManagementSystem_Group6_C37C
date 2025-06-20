@@ -75,8 +75,14 @@ public class ESignInController {
                     System.out.println("Logged-in role: " + role);
 
                     if ("employee".equalsIgnoreCase(role)) {
-                        EmployeeDashboard dashboard = new EmployeeDashboard();
-                        dashboard.setVisible(true);
+                        EmployeeDashboard dash = new EmployeeDashboard();
+                        dash.setVisible(true);
+//                        ESignInController control = new ESignInController(dash);
+//                        control.open();
+//                        EmployeeDashboard dashboards = new EmployeeDashboard();
+//                        dashboards.setVisible(true);
+//                        ESignInController controller = new ESignInController(dashboards);
+//                        controller.open();
 //                    } else if ("admin".equalsIgnoreCase(role)) {
 //                        AdminDashboard dashboard = new AdminDashboard();
 //                        dashboard.setVisible(true);

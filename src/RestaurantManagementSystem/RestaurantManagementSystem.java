@@ -5,6 +5,8 @@
 package RestaurantManagementSystem ;
 
 import Database.*;
+import View.Bill;
+import controller.BillController;
 
 /**
  *
@@ -17,12 +19,21 @@ public class RestaurantManagementSystem {
      */
     public static void main(String[] args) {
         // TODO code application logic here
-        Database db= new MySqlConnection();
-        if(db.openConnection()!=null){
-            System.out.println("Database conneected successfully!");
-        }else{
-            System.out.println("Failed to connect to database");
-        } 
-    }   
+//        Database db= new MySqlConnection();
+//        if(db.openConnection()!=null){
+//            System.out.println("Database conneected successfully!");
+//        }else{
+//            System.out.println("Failed to connect to database");
+//        } 
+//    }
+
+ java.awt.EventQueue.invokeLater(new Runnable() {
+        public void run() {
+            Bill billView = new Bill();
+            BillController controller = new BillController(billView); // <<== this attaches listener
+            controller.open();
+        }
+    });
+}
 }
 

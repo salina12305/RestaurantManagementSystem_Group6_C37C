@@ -195,6 +195,7 @@ public class SignIn extends javax.swing.JFrame {
                     .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 12, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(Bsignup))
                 .addGap(45, 45, 45))
+
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addComponent(jLabel6)
                 .addGap(0, 0, Short.MAX_VALUE))
@@ -203,6 +204,7 @@ public class SignIn extends javax.swing.JFrame {
                     .addGap(157, 157, 157)
                     .addComponent(jEmail1, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addContainerGap(175, Short.MAX_VALUE)))
+
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());

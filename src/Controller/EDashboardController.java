@@ -28,6 +28,16 @@ import org.jfree.chart.renderer.category.LineAndShapeRenderer;
 import org.jfree.data.category.DefaultCategoryDataset;
 import java.awt.*;
 import java.awt.geom.Ellipse2D;
+import View.EmployeeDashboard;
+import View.EmployeeSignIn; 
+import View.Reservation;
+import View.SecurityQuestion;
+import View.SignIn;
+import View.SignUpp;
+import java.awt.event.ActionEvent;
+import javax.swing.*;
+import java.awt.event.ActionListener;
+
 
 
 public class EDashboardController {
@@ -48,6 +58,13 @@ public class EDashboardController {
     panel.add(chartPanel, BorderLayout.CENTER);
     panel.validate();
 }
+     private void close() {
+         
+        }
+     private void open(){
+         
+     }
+     
 
 
     public static void applyHoverEffect(JButton button) {
@@ -122,6 +139,59 @@ public class EDashboardController {
     revenueChartPanel.revalidate();
     revenueChartPanel.repaint();
     }
+
+    public void setupLogoutListener(EmployeeDashboard view) {
+    view.addLogoutListener(new LogoutListener(view));
+}
+    
+    class LogoutListener implements ActionListener {
+    private JFrame currentFrame;
+
+    public LogoutListener(JFrame frame) {
+        this.currentFrame = frame;
+    }
+
+    @Override
+    public void actionPerformed(ActionEvent e) {
+        int confirm = JOptionPane.showConfirmDialog(null,
+                "Are you sure you want to logout?",
+                "Logout Confirmation",
+                JOptionPane.YES_NO_OPTION);
+
+        if (confirm == JOptionPane.YES_OPTION) {
+            currentFrame.dispose(); // 
+            new EmployeeSignIn().setVisible(true); 
+        }
+    }
+}
+    
+    public void setupReservationListener(EmployeeDashboard view) {
+    view.addReservationListener(new ActionListener() {
+        @Override
+        public void actionPerformed(ActionEvent e) {
+            Reservation reservationView = new Reservation();
+            reservationView.setVisible(true);
+        }
+    });
+}
+    
+// class ReservationListener implements ActionListener {
+//    private JFrame currentFrame;
+//
+//    public ReservationListener(JFrame frame) {
+//        this.currentFrame = frame;
+//    }
+//        @Override
+//        public void actionPerformed(ActionEvent e) {
+//            Reservation  = new Reservation();
+//            view.setVisible(true);
+//            view.open();
+//            close();
+//        }
+//    }
+
+
+
 }
 
 

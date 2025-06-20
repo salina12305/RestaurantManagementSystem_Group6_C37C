@@ -31,8 +31,9 @@ public class RestaurantManagementSystem {
     public static void main(String[] args) {
         
            OrderFrame orderFrame = new OrderFrame();
-OrderController orderController = new OrderController(orderFrame);
-orderFrame.setVisible(true);
+           OrderController orderController = new OrderController(orderFrame); 
+           orderFrame.setVisible(true);
+
 
     }
 }

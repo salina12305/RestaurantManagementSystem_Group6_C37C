@@ -4,7 +4,9 @@
  */
 package RestaurantManagementSystem ;
 
+import Controller.OrderController;
 import Database.*;
+import View.OrderFrame;
 
 /**
  *
@@ -15,14 +17,23 @@ public class RestaurantManagementSystem {
     /**
      * @param args the command line arguments
      */
+//    public static void main(String[] args) {
+//        // TODO code application logic here
+//        Database db= new MySqlConnection();
+//        if(db.openConnection()!=null){
+//            System.out.println("Database conneected successfully!");
+//        }else{
+//            System.out.println("Failed to connect to database");
+//        } 
+//    }   
+//}
+
     public static void main(String[] args) {
-        // TODO code application logic here
-        Database db= new MySqlConnection();
-        if(db.openConnection()!=null){
-            System.out.println("Database conneected successfully!");
-        }else{
-            System.out.println("Failed to connect to database");
-        } 
-    }   
+        
+           OrderFrame orderFrame = new OrderFrame();
+OrderController orderController = new OrderController(orderFrame);
+orderFrame.setVisible(true);
+
+    }
 }
 

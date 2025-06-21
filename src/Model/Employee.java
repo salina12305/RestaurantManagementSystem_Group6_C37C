@@ -15,11 +15,14 @@ public class Employee {
     private String name, gender, status, role, shift, department;
     private double rating;
     private Date joinDate;
-    private String address, email, phone;
     private Date dob;
+    private String address, email, phone;
+    private String imagePath;
 
+    // Full constructor
     public Employee(int empId, String name, String gender, String status, double rating, String role,
-                    String shift, String department, Date joinDate, String address, String email, String phone, Date dob) {
+                    String shift, String department, Date joinDate, Date dob, String address,
+                    String email, String phone, String imagePath) {
         this.empId = empId;
         this.name = name;
         this.gender = gender;
@@ -29,15 +32,18 @@ public class Employee {
         this.shift = shift;
         this.department = department;
         this.joinDate = joinDate;
+        this.dob = dob;
         this.address = address;
         this.email = email;
         this.phone = phone;
-        this.dob = dob;
+        this.imagePath = imagePath;
     }
 
+    // For new employee without ID
     public Employee(String name, String gender, String status, double rating, String role,
-                    String shift, String department, Date joinDate, String address, String email, String phone, Date dob) {
-        this(0, name, gender, status, rating, role, shift, department, joinDate, address, email, phone, dob);
+                    String shift, String department, Date joinDate, Date dob, String address,
+                    String email, String phone, String imagePath) {
+        this(0, name, gender, status, rating, role, shift, department, joinDate, dob, address, email, phone, imagePath);
     }
 
     // Getters
@@ -50,10 +56,11 @@ public class Employee {
     public String getShift() { return shift; }
     public String getDepartment() { return department; }
     public Date getJoinDate() { return joinDate; }
+    public Date getDob() { return dob; }
     public String getAddress() { return address; }
     public String getEmail() { return email; }
     public String getPhone() { return phone; }
-    public Date getDob() { return dob; }
+    public String getImagePath() { return imagePath; }
 
     // Setters
     public void setEmpId(int empId) { this.empId = empId; }
@@ -65,10 +72,10 @@ public class Employee {
     public void setShift(String shift) { this.shift = shift; }
     public void setDepartment(String department) { this.department = department; }
     public void setJoinDate(Date joinDate) { this.joinDate = joinDate; }
+    public void setDob(Date dob) { this.dob = dob; }
     public void setAddress(String address) { this.address = address; }
     public void setEmail(String email) { this.email = email; }
     public void setPhone(String phone) { this.phone = phone; }
-    public void setDob(Date dob) { this.dob = dob; }
+    public void setImagePath(String imagePath) { this.imagePath = imagePath; }
 }
-
 

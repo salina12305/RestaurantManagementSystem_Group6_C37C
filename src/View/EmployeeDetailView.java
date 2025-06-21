@@ -20,16 +20,18 @@ private EmployeeController Controller;
 public EmployeeDetailView() {
         initComponents();
 Controller = new EmployeeController(
-    txtID, txtName, txtGender, txtStatus, txtRating,
-    txtRole, txtShift, txtDepartment, txtJoinedDate,
-    txtAddress, txtEmail, txtPhoneNumber,txtDob     
+    txtID, txtName, txtGender, txtStatus, txtRating, txtRole, txtShift,
+    txtDepartment, txtJoinedDate, txtDob, txtAddress, txtEmail, txtPhoneNumber, lblProfileImage
 );
 
-       btnAdd.addActionListener(e -> Controller.saveEmployee());
-    btnSearch.addActionListener(e -> Controller.loadEmployee());
-    btnEdit.addActionListener(e -> Controller.updateEmployee());
-    btnDelete.addActionListener(e -> Controller.deleteEmployee());
-    btnSearch.addActionListener(e -> Controller.loadEmployeeByName());
+
+btnSearch.addActionListener(e -> Controller.loadEmployee());
+btnAdd.addActionListener(e -> Controller.saveEmployee());
+btnEdit.addActionListener(e -> Controller.updateEmployee());
+btnDelete.addActionListener(e -> Controller.deleteEmployee());
+btnBrowseImage.addActionListener(e -> Controller.chooseProfileImage());
+
+
 
 
 
@@ -105,6 +107,7 @@ public boolean isValidDate(String dateStr) {
         btnAdd = new javax.swing.JButton();
         btnEdit = new javax.swing.JButton();
         btnSearch = new javax.swing.JButton();
+        btnBrowseImage = new javax.swing.JButton();
 
         jLabel2.setText("jLabel2");
 
@@ -369,6 +372,17 @@ public boolean isValidDate(String dateStr) {
         btnSearch.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         CenterPanel.add(btnSearch, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 250, 120, 50));
 
+        btnBrowseImage.setBackground(new java.awt.Color(255, 243, 224));
+        btnBrowseImage.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        btnBrowseImage.setText("Select Image");
+        btnBrowseImage.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        btnBrowseImage.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnBrowseImageActionPerformed(evt);
+            }
+        });
+        CenterPanel.add(btnBrowseImage, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 10, 120, 50));
+
         getContentPane().add(CenterPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 160, 800, 440));
 
         pack();
@@ -397,6 +411,10 @@ public boolean isValidDate(String dateStr) {
     private void txtAddressActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtAddressActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_txtAddressActionPerformed
+
+    private void btnBrowseImageActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBrowseImageActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnBrowseImageActionPerformed
 
     /**
      * @param args the command line arguments
@@ -464,6 +482,7 @@ public boolean isValidDate(String dateStr) {
     private javax.swing.JPanel TopBarPanel;
     private javax.swing.JLabel WorkLbl;
     private javax.swing.JButton btnAdd;
+    private javax.swing.JButton btnBrowseImage;
     private javax.swing.JButton btnDelete;
     private javax.swing.JButton btnEdit;
     private javax.swing.JButton btnSearch;

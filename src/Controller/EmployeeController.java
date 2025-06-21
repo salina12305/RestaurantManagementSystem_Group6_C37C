@@ -12,17 +12,23 @@ import Dao.EmployeeDAO;
 import Model.Employee;
 
 import javax.swing.*;
+import java.awt.*;
+import java.io.File;
 import java.sql.Date;
 
 public class EmployeeController {
     private JTextField txtID, txtName, txtGender, txtStatus, txtRating, txtRole,
-            txtShift, txtDepartment, txtJoinedDate, txtAddress,
-            txtEmail, txtPhoneNumber, txtDob;
+            txtShift, txtDepartment, txtJoinedDate, txtDOB, txtAddress,
+            txtEmail, txtPhoneNumber;
+    private JLabel lblProfileImage;
+    private String imagePath;
 
-    public EmployeeController(JTextField txtID, JTextField txtName, JTextField txtGender, JTextField txtStatus,
-                              JTextField txtRating, JTextField txtRole, JTextField txtShift, JTextField txtDepartment,
-                              JTextField txtJoinedDate, JTextField txtAddress, JTextField txtEmail,
-                              JTextField txtPhoneNumber, JTextField txtDob) {
+    public EmployeeController(
+        JTextField txtID, JTextField txtName, JTextField txtGender, JTextField txtStatus,
+        JTextField txtRating, JTextField txtRole, JTextField txtShift, JTextField txtDepartment,
+        JTextField txtJoinedDate, JTextField txtDOB, JTextField txtAddress, JTextField txtEmail,
+        JTextField txtPhoneNumber, JLabel lblProfileImage
+    ) {
         this.txtID = txtID;
         this.txtName = txtName;
         this.txtGender = txtGender;
@@ -32,35 +38,32 @@ public class EmployeeController {
         this.txtShift = txtShift;
         this.txtDepartment = txtDepartment;
         this.txtJoinedDate = txtJoinedDate;
+        this.txtDOB = txtDOB;
         this.txtAddress = txtAddress;
         this.txtEmail = txtEmail;
         this.txtPhoneNumber = txtPhoneNumber;
-        this.txtDob = txtDob;
+        this.lblProfileImage = lblProfileImage;
     }
 
     public void loadEmployee() {
+        String keyword = txtID.getText().trim();
+        Employee emp;
+
         try {
-            int id = Integer.parseInt(txtID.getText());
-            Employee emp = new EmployeeDAO().getEmployeeById(id);
+            if (keyword.matches("\\d+")) {
+                emp = new EmployeeDAO().getEmployeeById(Integer.parseInt(keyword));
+            } else {
+                emp = new EmployeeDAO().getEmployeeByName(keyword);
+            }
 
             if (emp != null) {
-                txtName.setText(emp.getName());
-                txtGender.setText(emp.getGender());
-                txtStatus.setText(emp.getStatus());
-                txtRating.setText(String.valueOf(emp.getRating()));
-                txtRole.setText(emp.getRole());
-                txtShift.setText(emp.getShift());
-                txtDepartment.setText(emp.getDepartment());
-                txtJoinedDate.setText(emp.getJoinDate() != null ? emp.getJoinDate().toString() : "");
-                txtAddress.setText(emp.getAddress());
-                txtEmail.setText(emp.getEmail());
-                txtPhoneNumber.setText(emp.getPhone());
-                txtDob.setText(emp.getDob() != null ? emp.getDob().toString() : "");
+                fillFormWithEmployee(emp);
             } else {
                 JOptionPane.showMessageDialog(null, "Employee not found.");
             }
-        } catch (NumberFormatException e) {
-            JOptionPane.showMessageDialog(null, "Please enter a valid numeric ID.");
+
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(null, "Error loading employee: " + e.getMessage());
         }
     }
 
@@ -94,12 +97,40 @@ public class EmployeeController {
         }
     }
 
+    public void chooseProfileImage() {
+        JFileChooser fileChooser = new JFileChooser();
+        int option = fileChooser.showOpenDialog(null);
+        if (option == JFileChooser.APPROVE_OPTION) {
+            File file = fileChooser.getSelectedFile();
+            imagePath = file.getAbsolutePath();
+            setProfileImage(imagePath);
+        }
+    }
+
+    private void fillFormWithEmployee(Employee emp) {
+        txtID.setText(String.valueOf(emp.getEmpId()));
+        txtName.setText(emp.getName());
+        txtGender.setText(emp.getGender());
+        txtStatus.setText(emp.getStatus());
+        txtRating.setText(String.valueOf(emp.getRating()));
+        txtRole.setText(emp.getRole());
+        txtShift.setText(emp.getShift());
+        txtDepartment.setText(emp.getDepartment());
+        txtJoinedDate.setText(emp.getJoinDate().toString());
+        txtDOB.setText(emp.getDob().toString());
+        txtAddress.setText(emp.getAddress());
+        txtEmail.setText(emp.getEmail());
+        txtPhoneNumber.setText(emp.getPhone());
+        imagePath = emp.getImagePath();
+
+        setProfileImage(imagePath);
+    }
+
     private Employee getFormData(boolean includeId) {
         int id = includeId ? Integer.parseInt(txtID.getText()) : 0;
         double rating = Double.parseDouble(txtRating.getText());
-
-        Date joinDate = Date.valueOf(txtJoinedDate.getText().trim());
-        Date dob = Date.valueOf(txtDob.getText().trim());
+        Date joinDate = Date.valueOf(txtJoinedDate.getText());
+        Date dob = Date.valueOf(txtDOB.getText());
 
         return new Employee(
                 id,
@@ -111,38 +142,21 @@ public class EmployeeController {
                 txtShift.getText(),
                 txtDepartment.getText(),
                 joinDate,
+                dob,
                 txtAddress.getText(),
                 txtEmail.getText(),
                 txtPhoneNumber.getText(),
-                dob
+                imagePath
         );
     }
-    
-    public void loadEmployeeByName() {
-    String name = txtName.getText().trim();
-    if (name.isEmpty()) {
-        JOptionPane.showMessageDialog(null, "Please enter a name to search.");
-        return;
-    }
 
-    Employee emp = new EmployeeDAO().getEmployeeByName(name);
-
-    if (emp != null) {
-        txtID.setText(String.valueOf(emp.getEmpId()));
-        txtGender.setText(emp.getGender());
-        txtStatus.setText(emp.getStatus());
-        txtRating.setText(String.valueOf(emp.getRating()));
-        txtRole.setText(emp.getRole());
-        txtShift.setText(emp.getShift());
-        txtDepartment.setText(emp.getDepartment());
-        txtJoinedDate.setText(emp.getJoinDate() != null ? emp.getJoinDate().toString() : "");
-        txtAddress.setText(emp.getAddress());
-        txtEmail.setText(emp.getEmail());
-        txtPhoneNumber.setText(emp.getPhone());
-        txtDob.setText(emp.getDob() != null ? emp.getDob().toString() : "");
-    } else {
-        JOptionPane.showMessageDialog(null, "Employee not found.");
+    private void setProfileImage(String path) {
+        if (lblProfileImage != null && path != null && !path.isEmpty()) {
+            ImageIcon icon = new ImageIcon(path);
+            Image img = icon.getImage().getScaledInstance(lblProfileImage.getWidth(), lblProfileImage.getHeight(), Image.SCALE_SMOOTH);
+            lblProfileImage.setIcon(new ImageIcon(img));
+        }
     }
 }
 
-}
+

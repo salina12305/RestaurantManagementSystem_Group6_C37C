@@ -7,7 +7,7 @@ package Dao;
 /**
  *
  * @author Nitro
- */
+*/
 import Database.MySqlConnection;
 import Model.Employee;
 
@@ -17,8 +17,8 @@ public class EmployeeDAO {
     MySqlConnection mysql = new MySqlConnection();
 
     public boolean addEmployee(Employee emp) {
-        String sql = "INSERT INTO employees (name, gender, status, rating, role, shift, department, join_date, address, email, phone, dob) " +
-                     "VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+        String sql = "INSERT INTO employees (name, gender, status, rating, role, shift, department, join_date, dob, address, email, phone, imagePath) " +
+                     "VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
 
         try (Connection conn = mysql.openConnection();
              PreparedStatement stmt = conn.prepareStatement(sql)) {
@@ -31,10 +31,11 @@ public class EmployeeDAO {
             stmt.setString(6, emp.getShift());
             stmt.setString(7, emp.getDepartment());
             stmt.setDate(8, emp.getJoinDate());
-            stmt.setString(9, emp.getAddress());
-            stmt.setString(10, emp.getEmail());
-            stmt.setString(11, emp.getPhone());
-            stmt.setDate(12, emp.getDob());
+            stmt.setDate(9, emp.getDob());
+            stmt.setString(10, emp.getAddress());
+            stmt.setString(11, emp.getEmail());
+            stmt.setString(12, emp.getPhone());
+            stmt.setString(13, emp.getImagePath());
 
             return stmt.executeUpdate() > 0;
 
@@ -54,21 +55,27 @@ public class EmployeeDAO {
             ResultSet rs = stmt.executeQuery();
 
             if (rs.next()) {
-                return new Employee(
-                        rs.getInt("emp_id"),
-                        rs.getString("name"),
-                        rs.getString("gender"),
-                        rs.getString("status"),
-                        rs.getDouble("rating"),
-                        rs.getString("role"),
-                        rs.getString("shift"),
-                        rs.getString("department"),
-                        rs.getDate("join_date"),
-                        rs.getString("address"),
-                        rs.getString("email"),
-                        rs.getString("phone"),
-                        rs.getDate("dob")
-                );
+                return extractEmployeeFromResultSet(rs);
+            }
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
+        return null;
+    }
+
+    public Employee getEmployeeByName(String name) {
+        String sql = "SELECT * FROM employees WHERE name = ?";
+
+        try (Connection conn = mysql.openConnection();
+             PreparedStatement stmt = conn.prepareStatement(sql)) {
+
+            stmt.setString(1, name);
+            ResultSet rs = stmt.executeQuery();
+
+            if (rs.next()) {
+                return extractEmployeeFromResultSet(rs);
             }
 
         } catch (SQLException e) {
@@ -79,7 +86,7 @@ public class EmployeeDAO {
     }
 
     public boolean updateEmployee(Employee emp) {
-        String sql = "UPDATE employees SET name=?, gender=?, status=?, rating=?, role=?, shift=?, department=?, join_date=?, address=?, email=?, phone=?, dob=? WHERE emp_id=?";
+        String sql = "UPDATE employees SET name=?, gender=?, status=?, rating=?, role=?, shift=?, department=?, join_date=?, dob=?, address=?, email=?, phone=?, imagePath=? WHERE emp_id=?";
 
         try (Connection conn = mysql.openConnection();
              PreparedStatement stmt = conn.prepareStatement(sql)) {
@@ -92,11 +99,12 @@ public class EmployeeDAO {
             stmt.setString(6, emp.getShift());
             stmt.setString(7, emp.getDepartment());
             stmt.setDate(8, emp.getJoinDate());
-            stmt.setString(9, emp.getAddress());
-            stmt.setString(10, emp.getEmail());
-            stmt.setString(11, emp.getPhone());
-            stmt.setDate(12, emp.getDob());
-            stmt.setInt(13, emp.getEmpId());
+            stmt.setDate(9, emp.getDob());
+            stmt.setString(10, emp.getAddress());
+            stmt.setString(11, emp.getEmail());
+            stmt.setString(12, emp.getPhone());
+            stmt.setString(13, emp.getImagePath());
+            stmt.setInt(14, emp.getEmpId());
 
             return stmt.executeUpdate() > 0;
 
@@ -120,16 +128,9 @@ public class EmployeeDAO {
             return false;
         }
     }
-    public Employee getEmployeeByName(String name) {
-    String sql = "SELECT * FROM employees WHERE name = ?";
-    try (Connection conn = mysql.openConnection();
-         PreparedStatement stmt = conn.prepareStatement(sql)) {
 
-        stmt.setString(1, name);
-        ResultSet rs = stmt.executeQuery();
-
-        if (rs.next()) {
-            return new Employee(
+    private Employee extractEmployeeFromResultSet(ResultSet rs) throws SQLException {
+        return new Employee(
                 rs.getInt("emp_id"),
                 rs.getString("name"),
                 rs.getString("gender"),
@@ -139,18 +140,15 @@ public class EmployeeDAO {
                 rs.getString("shift"),
                 rs.getString("department"),
                 rs.getDate("join_date"),
+                rs.getDate("dob"),
                 rs.getString("address"),
                 rs.getString("email"),
                 rs.getString("phone"),
-                rs.getDate("dob")
-            );
-        }
-
-    } catch (SQLException e) {
-        e.printStackTrace();
+                rs.getString("imagePath")
+        );
     }
-    return null;
 }
 
-}
+
+
 

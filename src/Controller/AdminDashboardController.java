@@ -33,26 +33,7 @@ public class AdminDashboardController {
     public static void loadRevenueChart(JPanel panel, JFrame frame) {
     DefaultCategoryDataset dataset = new DefaultCategoryDataset();
 
-    try (Connection conn = DriverManager.getConnection(
-            "jdbc:mysql://localhost:3306/restaurant", "root", "qwerty1234")) {
-
-        String query = "SELECT MONTH(order_date) AS month, SUM(total_amount) AS revenue " +
-                       "FROM orders GROUP BY MONTH(order_date)";
-        PreparedStatement stmt = conn.prepareStatement(query);
-        ResultSet rs = stmt.executeQuery();
-
-        while (rs.next()) {
-            int month = rs.getInt("month");
-            double revenue = rs.getDouble("revenue");
-            String monthName = Month.of(month).name().substring(0, 3); // e.g. JAN, FEB
-            dataset.addValue(revenue, "Revenue", monthName);
-        }
-
-    } catch (SQLException e) {
-        JOptionPane.showMessageDialog(frame, "Error loading revenue chart: " + e.getMessage());
-        return;
-    }
-
+   
     JFreeChart chart = ChartFactory.createBarChart(
         "Monthly Revenue", "Month", "Revenue", dataset,
         PlotOrientation.VERTICAL, false, true, false

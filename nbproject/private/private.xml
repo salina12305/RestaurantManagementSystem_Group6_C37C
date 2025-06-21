@@ -3,22 +3,18 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/Nitro/RestaurantManagementSystem_Group6_C37C/src/View/SignIn.java</file>
-            <file>file:/C:/Users/Nitro/RestaurantManagementSystem_Group6_C37C/src/Dao/UserDao.java</file>
-            <file>file:/C:/Users/Nitro/RestaurantManagementSystem_Group6_C37C/src/Database/MySqlConnection.java</file>
-            <file>file:/C:/Users/Nitro/RestaurantManagementSystem_Group6_C37C/src/RestaurantManagementSystem/RestaurantManagementSystem.java</file>
             <file>file:/C:/Users/Nitro/RestaurantManagementSystem_Group6_C37C/src/View/AdminDashboard.java</file>
-            <file>file:/C:/Users/Nitro/RestaurantManagementSystem_Group6_C37C/src/Database/Database.java</file>
-            <file>file:/C:/Users/Nitro/RestaurantManagementSystem_Group6_C37C/src/Controller/New.java</file>
-            <file>file:/C:/Users/Nitro/RestaurantManagementSystem_Group6_C37C/src/Database/DBConnection.java</file>
-            <file>file:/C:/Users/Nitro/RestaurantManagementSystem_Group6_C37C/src/Images/GradientBar.png</file>
-            <file>file:/C:/Users/Nitro/RestaurantManagementSystem_Group6_C37C/src/Images/dashboard.png</file>
-            <file>file:/C:/Users/Nitro/RestaurantManagementSystem_Group6_C37C/src/Images/employee.png</file>
-            <file>file:/C:/Users/Nitro/RestaurantManagementSystem_Group6_C37C/src/Images/minimize-sign.png</file>
-            <file>file:/C:/Users/Nitro/RestaurantManagementSystem_Group6_C37C/src/Images/order.png</file>
-            <file>file:/C:/Users/Nitro/RestaurantManagementSystem_Group6_C37C/src/Images/reject.png</file>
-            <file>file:/C:/Users/Nitro/RestaurantManagementSystem_Group6_C37C/src/Screenshot%202025-05-21%20at%2018.17.25.png</file>
+            <file>file:/C:/Users/Nitro/RestaurantManagementSystem_Group6_C37C/src/View/EmployeeDetailView.java</file>
             <file>file:/C:/Users/Nitro/RestaurantManagementSystem_Group6_C37C/src/Model/User.java</file>
+            <file>file:/C:/Users/Nitro/RestaurantManagementSystem_Group6_C37C/src/Dao/UserDao.java</file>
+            <file>file:/C:/Users/Nitro/RestaurantManagementSystem_Group6_C37C/src/Dao/AdminDashboardDao.java</file>
+            <file>file:/C:/Users/Nitro/RestaurantManagementSystem_Group6_C37C/src/Model/Employee.java</file>
+            <file>file:/C:/Users/Nitro/RestaurantManagementSystem_Group6_C37C/src/Database/DBConnection.java</file>
+            <file>file:/C:/Users/Nitro/RestaurantManagementSystem_Group6_C37C/src/Database/Database.java</file>
+            <file>file:/C:/Users/Nitro/RestaurantManagementSystem_Group6_C37C/src/Database/MySqlConnection.java</file>
+            <file>file:/C:/Users/Nitro/RestaurantManagementSystem_Group6_C37C/src/Dao/EmployeeDAO.java</file>
+            <file>file:/C:/Users/Nitro/RestaurantManagementSystem_Group6_C37C/src/Controller/EmployeeController.java</file>
+            <file>file:/C:/Users/Nitro/RestaurantManagementSystem_Group6_C37C/src/Controller/AdminDashboardController.java</file>
         </group>
     </open-files>
 </project-private>

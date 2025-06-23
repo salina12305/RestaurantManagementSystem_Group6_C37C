@@ -18,7 +18,6 @@ public class MySqlConnection implements Database {
          try{
             String username="root";
             String password="12345678";
-
             String database="Restaurant";
 
             Connection connection;

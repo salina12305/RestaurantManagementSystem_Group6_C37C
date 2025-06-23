@@ -10,6 +10,7 @@ import View.SignIn;
 import Model.SigninRequest;
 import View.AdminDashboard;
 import View.EmployeeDashboard;
+import View.EmployeeSignIn;
 import View.SecurityQuestion;
 import View.SignUpp;
 
@@ -94,6 +95,16 @@ public class SignInController {
             close();
         }
     }
+     class ELoginListener implements ActionListener {
+        @Override
+        public void actionPerformed(ActionEvent e) {
+            EmployeeSignIn signinView = new EmployeeSignIn();
+            ESignInController signin = new ESignInController(signinView);
+
+            signin.open();
+            close();
+        }
+     }
 }
 
 

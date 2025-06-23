@@ -1,27 +1,34 @@
-package model;
+package Model;
 
-public class Bill {
-    private String itemName;
+public class BillModel {
+    private int id;
+    private String item;
     private int quantity;
     private double rate;
     private double amount;
     private double discount;
     private double tax;
-    private double totalPrice;
+    private double total;
+    private String customerName; 
 
-    public Bill(String itemName, int quantity, double rate, double amount, double discount, double tax, double totalPrice) {
-        this.itemName = itemName;
+    public BillModel(int id, String item, int quantity, double rate, double amount, double discount, double tax, double total,String customerName) {
+        this.id = id;
+        this.item = item;
         this.quantity = quantity;
         this.rate = rate;
         this.amount = amount;
         this.discount = discount;
         this.tax = tax;
-        this.totalPrice = totalPrice;
+        this.total = total;
+        this.customerName = customerName;
     }
 
     // Getters
-    public String getItemName() {
-        return itemName;
+    public int getId(){
+        return id;
+    }
+    public String getItem() {
+        return item;
     }
 
     public int getQuantity() {
@@ -44,13 +51,20 @@ public class Bill {
         return tax;
     }
 
-    public double getTotalPrice() {
-        return totalPrice;
+    public double getTotal() {
+        return total;
     }
-
+    
+    public String getCustomerName() {
+        return customerName;
+     }
+    
     // Setters
-    public void setItemName(String itemName) {
-        this.itemName = itemName;
+    public void setId(int id){
+        this.id=id;
+    }
+    public void setItemName(String item) {
+        this.item = item;
     }
 
     public void setQuantity(int quantity) {
@@ -73,7 +87,11 @@ public class Bill {
         this.tax = tax;
     }
 
-    public void setTotalPrice(double totalPrice) {
-        this.totalPrice = totalPrice;
+    public void setTotalPrice(double total) {
+        this.total = total;
+    }
+    
+    public void setCustomerName(String customerName) {
+        this.customerName= customerName;
     }
 }

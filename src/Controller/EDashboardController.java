@@ -1,8 +1,12 @@
 
-
 package Controller;
 
+import Dao.EDashboardDao;
 import Database.MySqlConnection;
+import View.Bill;
+import View.EmployeeDashboard;
+import View.OrderFrame;
+import View.EmployeeSignIn; 
 import java.awt.Color;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
@@ -27,105 +31,93 @@ import org.jfree.chart.plot.PlotOrientation;
 import org.jfree.chart.renderer.category.LineAndShapeRenderer;
 import org.jfree.data.category.DefaultCategoryDataset;
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.awt.geom.Ellipse2D;
 
-
 public class EDashboardController {
-    MySqlConnection mysql= new MySqlConnection();
     
-    public static void loadRevenueChart(JPanel panel, JFrame frame) {
-    DefaultCategoryDataset dataset = new DefaultCategoryDataset();
 
+    MySqlConnection mysql = new MySqlConnection();
+    private EmployeeDashboard view;
+    private JFrame userView;
+    private OrderFrame orderView;
+    private Bill billView;
+    
 
+    public EDashboardController() {}
 
-    JFreeChart chart = ChartFactory.createBarChart(
-        "Monthly Revenue", "Month", "Revenue", dataset,
-        PlotOrientation.VERTICAL, false, true, false
-    );
-
-    ChartPanel chartPanel = new ChartPanel(chart);
-    panel.removeAll();
-    panel.add(chartPanel, BorderLayout.CENTER);
-    panel.validate();
-}
-
-
-    public static void applyHoverEffect(JButton button) {
-        Color originalColor = button.getBackground();
-        Color hoverColor = new Color(200, 200, 255); // Light blue on hover
-
-        button.addMouseListener(new MouseAdapter() {
-            @Override
-            public void mouseEntered(MouseEvent e) {
-                button.setBackground(hoverColor);
-            }
-
-            @Override
-            public void mouseExited(MouseEvent e) {
-                button.setBackground(originalColor);
-            }
-        });
+    public EDashboardController(EmployeeDashboard view) {
+        this.view=view;
+        EDashboardDao.loadRevenueChartFromDB(view.getRevenueChartPanel());
+//       
+        view.addLogoutListener(new LogoutListener(view));
+        view.addOrderListener(new OrderListener());
+        view.addBillListener(new BillListener());
     }
 
     public static void loadRevenueChartFromDB(JPanel revenueChartPanel) {
-    DefaultCategoryDataset dataset = new DefaultCategoryDataset();
 
-    try (Connection conn = DriverManager.getConnection("jdbc:mysql://127.0.0.1:3306/restaurant", "root", "12345678")) {
+    }
+    public void setupLogoutListener(EmployeeDashboard view) {
+        view.addLogoutListener(new LogoutListener(view));
+    }
 
-        String sql = "SELECT MONTH(order_date) AS month, SUM(total_amount) AS total " +
-                     "FROM orders GROUP BY MONTH(order_date) ORDER BY MONTH(order_date)";
-        PreparedStatement stmt = conn.prepareStatement(sql);
-        ResultSet rs = stmt.executeQuery();
+    class LogoutListener implements ActionListener {
+        private JFrame currentFrame;
 
-        String[] monthNames = {
-            "Jan", "Feb", "Mar", "Apr", "May", "Jun",
-            "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"
-        };
-
-        while (rs.next()) {
-            int month = rs.getInt("month");
-            double total = rs.getDouble("total");
-            dataset.addValue(total, "Revenue", monthNames[month - 1]);
+        public LogoutListener(JFrame frame) {
+            this.currentFrame = frame;
         }
 
-    } catch (SQLException e) {
-        System.out.println("Error loading chart data:");
-        e.printStackTrace();
+        @Override
+        public void actionPerformed(ActionEvent e) {
+            System.out.println("Logout button clicked");
+            int confirm = JOptionPane.showConfirmDialog(null,
+                    "Are you sure you want to logout?",
+                    "Logout Confirmation",
+                    JOptionPane.YES_NO_OPTION);
+
+            if (confirm == JOptionPane.YES_OPTION) {
+                currentFrame.dispose(); // Close dashboard
+                new EmployeeSignIn().setVisible(true); 
+            }
+        }
     }
-
-    // Chart Styling
-    JFreeChart lineChart = ChartFactory.createLineChart(
-        "Monthly Revenue", "Month", "Revenue (Rs)",
-        dataset, PlotOrientation.VERTICAL,
-        false, true, false
-    );
-
-    CategoryPlot plot = lineChart.getCategoryPlot();
-    plot.setBackgroundPaint(Color.WHITE);
-    plot.setRangeGridlinePaint(Color.LIGHT_GRAY);
-
-    LineAndShapeRenderer renderer = new LineAndShapeRenderer();
-    renderer.setSeriesPaint(0, new Color(52, 152, 219));
-    renderer.setSeriesStroke(0, new BasicStroke(2.5f));
-    renderer.setSeriesShape(0, new Ellipse2D.Double(-3, -3, 6, 6));
-    renderer.setSeriesShapesVisible(0, true);
-
-    plot.setRenderer(renderer);
-    lineChart.getTitle().setFont(new Font("SansSerif", Font.BOLD, 16));
-
-    // Add to panel
-    ChartPanel chartPanel = new ChartPanel(lineChart);
-    chartPanel.setPreferredSize(new Dimension(revenueChartPanel.getWidth(), revenueChartPanel.getHeight()));
-    revenueChartPanel.removeAll();
-    revenueChartPanel.setLayout(new BorderLayout());
-    revenueChartPanel.add(chartPanel, BorderLayout.CENTER);
-    revenueChartPanel.revalidate();
-    revenueChartPanel.repaint();
+     public void setupOrderListener(EmployeeDashboard view) {
+        view.addOrderListener(new OrderListener());
     }
+     
+    class OrderListener implements ActionListener {
+        @Override
+        public void actionPerformed(ActionEvent e) {
+            System.out.println("Order button clicked"); 
+            OrderFrame orderView = new OrderFrame();
+            new OrderController(orderView);
+            orderView.setVisible(true);
+
+            if (view != null) view.dispose();
+        }
+      }
+    
+     public void setupBillListener(EmployeeDashboard view) {
+        view.addBillListener(new BillListener());
+    }
+     
+    class BillListener implements ActionListener {
+        @Override
+        public void actionPerformed(ActionEvent e) {
+            System.out.println("Bill button clicked"); 
+            Bill billView = new Bill();
+            new BillController(billView);
+            billView.setVisible(true);
+
+            if (view != null) view.dispose();
+        }
+      }
+    
+    private void close() {
+        
+    }    
 }
-
-
-
-
-
 

@@ -1,6 +1,7 @@
 
 package View;
 
+import Controller.EDashboardController;
 import java.awt.Color;
 import java.awt.event.ActionListener;
 
@@ -15,6 +16,9 @@ public class EmployeeSignIn extends javax.swing.JFrame {
      */
     public EmployeeSignIn() {
         initComponents();
+        
+
+
     }
 
     /**
@@ -357,17 +361,13 @@ public void addLoginUserListener(ActionListener listener) {
        System.out.println("ForgotPassword");
        btnforgot.addActionListener(listener);
    }
-    
-    /**
-     * @return the emailField
-     */
+   
+  
     public javax.swing.JTextField getEmailField() {
         return jTextEmail;
     }
 
-    /**
-     * @return the passwordField
-     */
+   
     public javax.swing.JTextField getPasswordField() {
         return jTextPass;
     }

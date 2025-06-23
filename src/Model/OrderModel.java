@@ -1,6 +1,6 @@
 package Model;
 
-public class Order {
+public class OrderModel {
     private int orderId;
     private String itemName;
     private int noOfItem;
@@ -8,7 +8,7 @@ public class Order {
     private String customerName;
     private String employeeName;
 
-    public Order(int orderId, String itemName, int noOfItem, double price, String customerName, String employeeName) {
+    public OrderModel(int orderId, String itemName, int noOfItem, double price, String customerName, String employeeName) {
         this.orderId = orderId;
         this.itemName = itemName;
         this.noOfItem = noOfItem;
@@ -17,13 +17,13 @@ public class Order {
         this.employeeName = employeeName;
     }
 
-    public Order(String itemName, int noOfItem, double price, String customerName, String employeeName) {
-        this.itemName = itemName;
-        this.noOfItem = noOfItem;
-        this.price = price;
-        this.customerName = customerName;
-        this.employeeName = employeeName;
-    }
+//    public OrderModel(String itemName, int noOfItem, double price, String customerName, String employeeName) {
+//        this.itemName = itemName;
+//        this.noOfItem = noOfItem;
+//        this.price = price;
+//        this.customerName = customerName;
+//        this.employeeName = employeeName;
+//    }
 
     public int getOrderId() { return orderId; }
     public String getItemName() { return itemName; }

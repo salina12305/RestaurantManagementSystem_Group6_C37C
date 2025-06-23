@@ -109,6 +109,16 @@ public class ESignInController {
 //            ESignInController controller = new ESignInController(signIn);
         }
     }
+    class ELoginListener implements ActionListener {
+        @Override
+        public void actionPerformed(ActionEvent e) {
+            EmployeeSignIn signinView = new EmployeeSignIn();
+            ESignInController signin = new ESignInController(signinView);
+
+            signin.open();
+            close();
+        }
+     }
 }
 
  

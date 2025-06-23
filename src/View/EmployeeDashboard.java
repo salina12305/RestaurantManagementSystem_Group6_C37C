@@ -1,16 +1,36 @@
 
 package View;
 import Controller.EDashboardController;
+import java.awt.event.ActionListener;
+import javax.swing.JPanel;
 
 public class EmployeeDashboard extends javax.swing.JFrame {
 
     
+//    public EmployeeDashboard() {
+//        initComponents();
+//        EDashboardController.loadRevenueChartFromDB(revenueChartPanel);
+//        EDashboardController controller = new EDashboardController(this);
+//        controller.setupLogoutListener(this);
+//        controller.setupOrderListener(this);     
+//    }
+//    public EmployeeDashboard() {
+//    initComponents();
+//    EDashboardController.loadRevenueChartFromDB(revenueChartPanel);
+//
+//    EDashboardController controller = new EDashboardController(); 
+//    controller.setupLogoutListener(this);
+//    controller.setupOrderListener(this);
+//}
+    
     public EmployeeDashboard() {
-        initComponents();
-        EDashboardController.loadRevenueChartFromDB(revenueChartPanel);
-
-        
+    initComponents();
+    EDashboardController controller = new EDashboardController(this);  // ✅ correct way
+    setVisible(true);  // ✅ display it after loading is done inside controller
+    
     }
+
+
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -31,13 +51,15 @@ public class EmployeeDashboard extends javax.swing.JFrame {
         jPanel1 = new javax.swing.JPanel();
         SidePanel = new javax.swing.JPanel();
         Logo1 = new javax.swing.JLabel();
-        DashboardButton = new javax.swing.JButton();
+        eventbtn = new javax.swing.JButton();
         OrderButton = new javax.swing.JButton();
         BillButton = new javax.swing.JButton();
         LogoutButton = new javax.swing.JButton();
         Slogan = new javax.swing.JLabel();
         Menubtn = new javax.swing.JButton();
         jSeparator3 = new javax.swing.JSeparator();
+        DashboardButton1 = new javax.swing.JButton();
+        reservationbtn = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -101,19 +123,19 @@ public class EmployeeDashboard extends javax.swing.JFrame {
         SidePanel.add(Logo1);
         Logo1.setBounds(30, 0, 136, 110);
 
-        DashboardButton.setBackground(new java.awt.Color(255, 243, 224));
-        DashboardButton.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        DashboardButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/dashboard.png"))); // NOI18N
-        DashboardButton.setText("Dashboard");
-        DashboardButton.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        DashboardButton.setIconTextGap(10);
-        DashboardButton.addActionListener(new java.awt.event.ActionListener() {
+        eventbtn.setBackground(new java.awt.Color(255, 243, 224));
+        eventbtn.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        eventbtn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/order.png"))); // NOI18N
+        eventbtn.setText("Event Booking");
+        eventbtn.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        eventbtn.setIconTextGap(10);
+        eventbtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                DashboardButtonActionPerformed(evt);
+                eventbtnActionPerformed(evt);
             }
         });
-        SidePanel.add(DashboardButton);
-        DashboardButton.setBounds(20, 190, 160, 40);
+        SidePanel.add(eventbtn);
+        eventbtn.setBounds(20, 290, 160, 40);
 
         OrderButton.setBackground(new java.awt.Color(255, 243, 224));
         OrderButton.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
@@ -127,10 +149,11 @@ public class EmployeeDashboard extends javax.swing.JFrame {
             }
         });
         SidePanel.add(OrderButton);
-        OrderButton.setBounds(20, 290, 160, 40);
+        OrderButton.setBounds(20, 390, 160, 40);
 
         BillButton.setBackground(new java.awt.Color(255, 243, 224));
         BillButton.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        BillButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/order.png"))); // NOI18N
         BillButton.setText("Bill");
         BillButton.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         BillButton.setIconTextGap(10);
@@ -140,7 +163,7 @@ public class EmployeeDashboard extends javax.swing.JFrame {
             }
         });
         SidePanel.add(BillButton);
-        BillButton.setBounds(20, 340, 160, 40);
+        BillButton.setBounds(20, 440, 160, 40);
 
         LogoutButton.setBackground(new java.awt.Color(255, 243, 224));
         LogoutButton.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
@@ -169,23 +192,50 @@ public class EmployeeDashboard extends javax.swing.JFrame {
         Menubtn.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         Menubtn.setIconTextGap(10);
         SidePanel.add(Menubtn);
-        Menubtn.setBounds(20, 240, 160, 40);
+        Menubtn.setBounds(20, 340, 160, 40);
 
         jSeparator3.setBackground(new java.awt.Color(0, 0, 0));
         jSeparator3.setForeground(new java.awt.Color(0, 0, 0));
         SidePanel.add(jSeparator3);
         jSeparator3.setBounds(0, 120, 200, 20);
 
+        DashboardButton1.setBackground(new java.awt.Color(255, 243, 224));
+        DashboardButton1.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        DashboardButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/dashboard.png"))); // NOI18N
+        DashboardButton1.setText("Dashboard");
+        DashboardButton1.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        DashboardButton1.setIconTextGap(10);
+        DashboardButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                DashboardButton1ActionPerformed(evt);
+            }
+        });
+        SidePanel.add(DashboardButton1);
+        DashboardButton1.setBounds(20, 190, 160, 40);
+
+        reservationbtn.setBackground(new java.awt.Color(255, 243, 224));
+        reservationbtn.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        reservationbtn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/order.png"))); // NOI18N
+        reservationbtn.setText("Reservation");
+        reservationbtn.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        reservationbtn.setIconTextGap(10);
+        reservationbtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                reservationbtnActionPerformed(evt);
+            }
+        });
+        SidePanel.add(reservationbtn);
+        reservationbtn.setBounds(20, 240, 160, 40);
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(SidePanel, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(DashboardCenterPanel, javax.swing.GroupLayout.PREFERRED_SIZE, 722, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addComponent(DashboardCenterPanel, javax.swing.GroupLayout.PREFERRED_SIZE, 722, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -196,9 +246,10 @@ public class EmployeeDashboard extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void DashboardButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DashboardButtonActionPerformed
+    private void eventbtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_eventbtnActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_DashboardButtonActionPerformed
+       
+    }//GEN-LAST:event_eventbtnActionPerformed
 
     private void OrderButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_OrderButtonActionPerformed
         // TODO add your handling code here:
@@ -211,6 +262,14 @@ public class EmployeeDashboard extends javax.swing.JFrame {
     private void LogoutButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_LogoutButtonActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_LogoutButtonActionPerformed
+
+    private void DashboardButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DashboardButton1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_DashboardButton1ActionPerformed
+
+    private void reservationbtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_reservationbtnActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_reservationbtnActionPerformed
 
     /**
      * @param args the command line arguments
@@ -250,7 +309,7 @@ public class EmployeeDashboard extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton BillButton;
-    private javax.swing.JButton DashboardButton;
+    private javax.swing.JButton DashboardButton1;
     private javax.swing.JPanel DashboardCenterPanel;
     private javax.swing.JLabel Logo1;
     private javax.swing.JButton LogoutButton;
@@ -258,6 +317,7 @@ public class EmployeeDashboard extends javax.swing.JFrame {
     private javax.swing.JButton OrderButton;
     private javax.swing.JPanel SidePanel;
     private javax.swing.JLabel Slogan;
+    private javax.swing.JButton eventbtn;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
@@ -265,6 +325,36 @@ public class EmployeeDashboard extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel1;
     private javax.swing.JSeparator jSeparator3;
     private javax.swing.JSeparator jSeparator4;
+    private javax.swing.JButton reservationbtn;
     private javax.swing.JPanel revenueChartPanel;
     // End of variables declaration//GEN-END:variables
+
+    public JPanel getRevenueChartPanel() {
+    return revenueChartPanel;
+}
+
+    public void addLogoutListener(ActionListener listener) {
+    LogoutButton.addActionListener(listener);
+}
+     public void addOrderListener(ActionListener listener) {
+         System.out.println("Order button clicked");
+    OrderButton.addActionListener(listener); 
+}
+
+public void addMenuListener(ActionListener listener){
+    Menubtn.addActionListener(listener); 
+}
+public void addDashboardListener(ActionListener listener){
+    DashboardButton1.addActionListener(listener); 
+}
+public void addBillListener(ActionListener listener){
+    BillButton.addActionListener(listener);
+}
+public void addReservationListener(ActionListener listener){
+    reservationbtn.addActionListener(listener);
+}
+public void addEventListener(ActionListener listener){
+    eventbtn.addActionListener(listener);
+}
+
 }

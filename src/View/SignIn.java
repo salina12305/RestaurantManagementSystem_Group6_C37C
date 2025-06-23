@@ -11,9 +11,6 @@ public class SignIn extends javax.swing.JFrame {
         return jPass;
     }
 
-    /**
-     * Creates new form SignIn
-     */
     public SignIn() {
         initComponents();
     
@@ -45,6 +42,7 @@ public class SignIn extends javax.swing.JFrame {
         jLabel6 = new javax.swing.JLabel();
         jPass = new javax.swing.JTextField();
         jEmail1 = new javax.swing.JTextField();
+        EmployeeSigninbtn = new javax.swing.JButton();
 
         label1.setText("label1");
 
@@ -134,6 +132,10 @@ public class SignIn extends javax.swing.JFrame {
             }
         });
 
+        EmployeeSigninbtn.setBackground(new java.awt.Color(78, 31, 0));
+        EmployeeSigninbtn.setForeground(new java.awt.Color(255, 228, 201));
+        EmployeeSigninbtn.setText("Employee Login");
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -151,19 +153,24 @@ public class SignIn extends javax.swing.JFrame {
                                 .addGap(64, 64, 64)
                                 .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(69, 69, 69)
-                        .addComponent(jLabel5)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(Bsignup)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addComponent(Bsignin, javax.swing.GroupLayout.PREFERRED_SIZE, 187, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jPass, javax.swing.GroupLayout.PREFERRED_SIZE, 187, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(BForgetPass, javax.swing.GroupLayout.PREFERRED_SIZE, 88, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(40, 40, 40)))
+                        .addGap(40, 40, 40))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(69, 69, 69)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addGap(6, 6, 6)
+                                .addComponent(EmployeeSigninbtn))
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addComponent(jLabel5)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(Bsignup)))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                 .addComponent(jLabel6)
                 .addGap(37, 37, 37)
                 .addComponent(jLabel10)
@@ -194,8 +201,9 @@ public class SignIn extends javax.swing.JFrame {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 12, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(Bsignup))
-                .addGap(45, 45, 45))
-
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(EmployeeSigninbtn)
+                .addGap(10, 10, 10))
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addComponent(jLabel6)
                 .addGap(0, 0, Short.MAX_VALUE))
@@ -204,7 +212,6 @@ public class SignIn extends javax.swing.JFrame {
                     .addGap(157, 157, 157)
                     .addComponent(jEmail1, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addContainerGap(175, Short.MAX_VALUE)))
-
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -329,6 +336,7 @@ public class SignIn extends javax.swing.JFrame {
     private javax.swing.JButton BForgetPass;
     private javax.swing.JButton Bsignin;
     private javax.swing.JButton Bsignup;
+    private javax.swing.JButton EmployeeSigninbtn;
     private javax.swing.JColorChooser jColorChooser1;
     private javax.swing.JColorChooser jColorChooser2;
     private javax.swing.JColorChooser jColorChooser3;
@@ -349,8 +357,6 @@ public class SignIn extends javax.swing.JFrame {
         Bsignin.addActionListener(listener);
     }
  
-
- 
   public void addRegisterListener(ActionListener listener) {
         Bsignup.addActionListener(listener);
     }
@@ -358,8 +364,9 @@ public class SignIn extends javax.swing.JFrame {
   public void addForgotListener(ActionListener listener){
       BForgetPass.addActionListener(listener);
   }
- 
-    
+  public void addELoginListener(ActionListener listener){
+      EmployeeSigninbtn.addActionListener(listener);
+  } 
     /**
      * @return the emailField
      */
@@ -367,12 +374,7 @@ public class SignIn extends javax.swing.JFrame {
         return jEmail1;
     }
 
-//    /**
-//     * @return the passwordField
-//     */
-//    public javax.swing.JTextField getPasswordField() {
-//        return jPass;
-//    }
+
 
 
 }

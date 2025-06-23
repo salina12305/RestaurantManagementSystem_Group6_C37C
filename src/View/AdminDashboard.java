@@ -19,9 +19,6 @@ import javax.swing.JLabel;
 
 public class AdminDashboard extends javax.swing.JFrame {
 
-    /**
-     * Creates new form AdminDashboard
-     */
     public AdminDashboard() {
         initComponents();
         
@@ -84,9 +81,6 @@ addHoverEffect(Review3, normalColor, hoverColor);
         RevenueText = new javax.swing.JLabel();
         MinimizeButton = new javax.swing.JButton();
         ExitButton = new javax.swing.JButton();
-        Profit = new javax.swing.JLabel();
-        Loss = new javax.swing.JLabel();
-        GradientBar = new javax.swing.JLabel();
         RefreshButton = new javax.swing.JButton();
         DashboardCenterPanel = new javax.swing.JPanel();
         RevenuePanel = new javax.swing.JPanel();
@@ -184,7 +178,7 @@ addHoverEffect(Review3, normalColor, hoverColor);
         jSeparator1.setBackground(new java.awt.Color(0, 0, 0));
         jSeparator1.setForeground(new java.awt.Color(0, 0, 0));
         SidePanel.add(jSeparator1);
-        jSeparator1.setBounds(0, 130, 200, 10);
+        jSeparator1.setBounds(0, 130, 200, 3);
 
         getContentPane().add(SidePanel);
         SidePanel.setBounds(0, 0, 200, 600);
@@ -241,20 +235,6 @@ addHoverEffect(Review3, normalColor, hoverColor);
         });
         TopBarPanel.add(ExitButton);
         ExitButton.setBounds(770, 10, 25, 25);
-
-        Profit.setFont(new java.awt.Font("Segoe UI", 2, 14)); // NOI18N
-        Profit.setText("Profit");
-        TopBarPanel.add(Profit);
-        Profit.setBounds(700, 120, 37, 16);
-
-        Loss.setFont(new java.awt.Font("Segoe UI", 2, 14)); // NOI18N
-        Loss.setText("Loss");
-        TopBarPanel.add(Loss);
-        Loss.setBounds(80, 120, 37, 16);
-
-        GradientBar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/GradientBar.png"))); // NOI18N
-        TopBarPanel.add(GradientBar);
-        GradientBar.setBounds(30, 90, 750, 70);
 
         RefreshButton.setBackground(new java.awt.Color(255, 243, 224));
         RefreshButton.setText("↻");
@@ -602,15 +582,12 @@ MinimizeButton.setOpaque(false);
     private javax.swing.JButton EmployeeButton;
     private javax.swing.JPanel EmployeePanel;
     private javax.swing.JButton ExitButton;
-    private javax.swing.JLabel GradientBar;
     private javax.swing.JLabel Logo1;
     private javax.swing.JLabel Logo2;
     private javax.swing.JButton LogoutButton;
-    private javax.swing.JLabel Loss;
     private javax.swing.JButton MinimizeButton;
     private javax.swing.JButton OrderButton;
     private javax.swing.JPanel OrderPanel;
-    private javax.swing.JLabel Profit;
     private javax.swing.JButton RefreshButton;
     private javax.swing.JPanel RevenuePanel;
     private javax.swing.JLabel RevenueText;

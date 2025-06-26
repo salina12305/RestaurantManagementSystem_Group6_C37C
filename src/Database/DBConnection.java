@@ -34,7 +34,11 @@ public class DBConnection {
     public static Connection getConnection() {
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");
+<<<<<<< HEAD
             return DriverManager.getConnection("jdbc:mysql://localhost:3306/Java", "root", "@alexmaharjan03");
+=======
+            return DriverManager.getConnection("jdbc:mysql://localhost:3306/restaurant", "root", "qwerty1234");
+>>>>>>> Employeemanagement
         } catch (ClassNotFoundException | SQLException e) {
             e.printStackTrace();
             return null;

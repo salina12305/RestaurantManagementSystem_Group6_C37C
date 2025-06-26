@@ -1,64 +1,34 @@
 
 package View;
 import java.awt.Color;
-import java.awt.Graphics;
-import java.awt.event.MouseAdapter;
-import java.awt.event.MouseEvent;
 import javax.swing.JFrame;
-import javax.swing.JPanel;
-import java.sql.*;
-import javax.swing.JOptionPane;
-import org.jfree.chart.ChartFactory;
-import org.jfree.chart.ChartPanel;
-import org.jfree.chart.JFreeChart;
-import org.jfree.chart.plot.PlotOrientation;
-import org.jfree.data.category.DefaultCategoryDataset;
-import java.awt.BorderLayout;
-import javax.swing.JLabel;
+
+import controller.AdminDashboardController;
+
 
 
 public class AdminDashboard extends javax.swing.JFrame {
 
     public AdminDashboard() {
         initComponents();
+
+AdminDashboardController.applyHoverEffect(DashboardButton);
+AdminDashboardController.applyHoverEffect(OrderButton);
+AdminDashboardController.applyHoverEffect(EmployeeButton);
+AdminDashboardController.applyHoverEffect(RefreshButton);
+AdminDashboardController.applyHoverEffect(MinimizeButton);
+AdminDashboardController.applyHoverEffect(ExitButton);
+AdminDashboardController.applyHoverEffect(LogoutButton);
+
+
+
+AdminDashboardController.loadRevenueChartFromDB(revenueChartPanel);
+
+
+
+
         
-// Set normal and hover colors
-java.awt.Color normalColor = new java.awt.Color(255, 243, 224);
-java.awt.Color hoverColor = new java.awt.Color(255, 230, 200);
-
-// Apply hover effect to all buttons
-addHoverEffect(DashboardButton, normalColor, hoverColor);
-addHoverEffect(OrderButton, normalColor, hoverColor);
-addHoverEffect(EmployeeButton, normalColor, hoverColor);
-addHoverEffect(LogoutButton, normalColor, hoverColor);
-addHoverEffect(RevenuePanel, normalColor, hoverColor);
-addHoverEffect(OrderPanel, normalColor, hoverColor);
-addHoverEffect(EmployeePanel, normalColor, hoverColor);
-addHoverEffect(Review1, normalColor, hoverColor);
-addHoverEffect(Review2, normalColor, hoverColor);
-addHoverEffect(Review3, normalColor, hoverColor);
-
-
-    }
-    private void addHoverEffect(javax.swing.JButton button, java.awt.Color normalColor, java.awt.Color hoverColor) {
-    button.setOpaque(true);
-    button.setBorderPainted(false);
-    button.setFocusPainted(false);
-    button.setBackground(normalColor);
-
-    button.addMouseListener(new java.awt.event.MouseAdapter() {
-        @Override
-        public void mouseEntered(java.awt.event.MouseEvent evt) {
-            button.setBackground(hoverColor);
-        }
-        @Override
-        public void mouseExited(java.awt.event.MouseEvent evt) {
-            button.setBackground(normalColor);
-        }
-    });
 }
-
-
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -528,13 +498,11 @@ MinimizeButton.setOpaque(false);
     }//GEN-LAST:event_MinimizeButtonMouseExited
 
     private void formWindowOpened(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowOpened
-        loadDashboardData();    
-        showMonthlyRevenueChart();
-        loadRecentReviews();
+        
     }//GEN-LAST:event_formWindowOpened
 
     private void RefreshButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RefreshButtonActionPerformed
-        loadDashboardData();
+       
     }//GEN-LAST:event_RefreshButtonActionPerformed
 
     /**
@@ -608,111 +576,6 @@ MinimizeButton.setOpaque(false);
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JPanel revenueChartPanel;
     // End of variables declaration//GEN-END:variables
-
-private void addHoverEffect(javax.swing.JPanel panel, java.awt.Color normalColor, java.awt.Color hoverColor) {
-    panel.setBackground(normalColor);
-
-    panel.addMouseListener(new java.awt.event.MouseAdapter() {
-        @Override
-        public void mouseEntered(java.awt.event.MouseEvent evt) {
-            panel.setBackground(hoverColor);
-        }
-
-        @Override
-        public void mouseExited(java.awt.event.MouseEvent evt) {
-            panel.setBackground(normalColor);
-        }
-    });
-}
-private void loadDashboardData() {
-    try (Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/restaurant", "root", "qwerty1234")) {
-
-        // Monthly Revenue
-        String revenueQuery = "SELECT SUM(total_amount) FROM orders WHERE MONTH(order_date) = MONTH(CURDATE())";
-        try (PreparedStatement stmt = conn.prepareStatement(revenueQuery); ResultSet rs = stmt.executeQuery()) {
-            if (rs.next()) {
-                jLabel2.setText("Rs " + rs.getInt(1));
-            }
-        }
-
-        // Total Orders
-        String orderQuery = "SELECT COUNT(*) FROM orders";
-        try (PreparedStatement stmt = conn.prepareStatement(orderQuery); ResultSet rs = stmt.executeQuery()) {
-            if (rs.next()) {
-                jLabel4.setText(String.valueOf(rs.getInt(1)));
-            }
-        }
-
-        // Total Employees
-        String employeeQuery = "SELECT COUNT(*) FROM employees";
-        try (PreparedStatement stmt = conn.prepareStatement(employeeQuery); ResultSet rs = stmt.executeQuery()) {
-            if (rs.next()) {
-                jLabel6.setText(String.valueOf(rs.getInt(1)));
-            }
-        }
-
-        // Recent Reviews (3 latest)
-        String reviewQuery = "SELECT customer_name FROM reviews ORDER BY id DESC LIMIT 3";
-        try (PreparedStatement stmt = conn.prepareStatement(reviewQuery); ResultSet rs = stmt.executeQuery()) {
-            if (rs.next()) Customer1.setText(rs.getString(1));
-            if (rs.next()) Customer2.setText(rs.getString(1));
-            if (rs.next()) Review.setText(rs.getString(1));
-        }
-
-    } catch (SQLException e) {
-        System.out.println("Failed to load dashboard data");
-        e.printStackTrace();
-    }
-}
-private void showMonthlyRevenueChart() {
-    DefaultCategoryDataset dataset = new DefaultCategoryDataset();
-
-    // Sample data — replace with DB data later
-    dataset.addValue(1200, "Revenue", "Jan");
-    dataset.addValue(1500, "Revenue", "Feb");
-    dataset.addValue(1800, "Revenue", "Mar");
-    dataset.addValue(1400, "Revenue", "Apr");
-    dataset.addValue(2000, "Revenue", "May");
-
-    JFreeChart chart = ChartFactory.createBarChart(
-        "Monthly Revenue", // Title
-        "Month",            // X-axis Label
-        "Revenue",          // Y-axis Label
-        dataset,            // Dataset
-        PlotOrientation.VERTICAL,
-        false, true, false
-    );
-
-    ChartPanel chartPanel = new ChartPanel(chart);
-    revenueChartPanel.removeAll();
-    revenueChartPanel.add(chartPanel, BorderLayout.CENTER);
-    revenueChartPanel.validate();
-}
-private void loadRecentReviews() {
-    try {
-        Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/restaurant", "root", "qwerty1234");
-        String query = "SELECT customer_name, review_text FROM reviews ORDER BY id DESC LIMIT 3";
-        PreparedStatement stmt = conn.prepareStatement(query);
-        ResultSet rs = stmt.executeQuery();
-
-        JLabel[] nameLabels = { Customer1, Customer2, Customer3 };
-        JLabel[] reviewLabels = { CustomerReview1, CustomerReview2, CustomerReview3 };
-
-        int i = 0;
-        while (rs.next() && i < 3) {
-            nameLabels[i].setText(rs.getString("customer_name"));
-            reviewLabels[i].setText(rs.getString("review_text"));
-            i++;
-        }
-
-        conn.close();
-    } catch (SQLException e) {
-        System.out.println("Failed to load reviews");
-        e.printStackTrace();
-    }
-}
-
-
 
 }
 

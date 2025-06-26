@@ -3,9 +3,6 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
 package Database;
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.ResultSet;
 import java.sql.*;
 /**
  *
@@ -20,6 +17,8 @@ public class MySqlConnection implements Database {
             String password="12345678";
             String database="Restaurant";
 
+            String password="@alexmaharjan03";
+            String database="Java";
             Connection connection;
             
             connection= DriverManager.getConnection(

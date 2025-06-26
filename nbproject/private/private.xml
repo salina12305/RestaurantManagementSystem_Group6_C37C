@@ -13,6 +13,18 @@
             <file>file:/Users/uttu/NetBeansProjects/RestaurantManagementSystem_Group6_C37C/src/Dao/OrderDao.java</file>
             <file>file:/Users/uttu/NetBeansProjects/RestaurantManagementSystem_Group6_C37C/src/Controller/OrderController.java</file>
             <file>file:/Users/uttu/NetBeansProjects/RestaurantManagementSystem_Group6_C37C/src/Model/OrderModel.java</file>
+            <file>file:/C:/Users/aiden/Documents/RMS/RestaurantManagementSystem_Group6_C37C/src/Dao/DatabaseConnection.java</file>
+            <file>file:/C:/Users/aiden/Documents/RMS/RestaurantManagementSystem_Group6_C37C/src/Dao/DBConnection.java</file>
+            <file>file:/C:/Users/aiden/Documents/RMS/RestaurantManagementSystem_Group6_C37C/src/Database/DBConnection.java</file>
+            <file>file:/C:/Users/aiden/Documents/RMS/RestaurantManagementSystem_Group6_C37C/src/Database/Database.java</file>
+            <file>file:/C:/Users/aiden/Documents/RMS/RestaurantManagementSystem_Group6_C37C/src/Model/MenuItem.java</file>
+            <file>file:/C:/Users/aiden/Documents/RMS/RestaurantManagementSystem_Group6_C37C/src/View/ManageMenu.java</file>
+            <file>file:/C:/Users/aiden/Documents/RMS/RestaurantManagementSystem_Group6_C37C/src/Database/MySqlConnection.java</file>
+            <file>file:/C:/Users/aiden/Documents/RMS/RestaurantManagementSystem_Group6_C37C/src/Dao/MenuDAO.java</file>
+            <file>file:/C:/Users/aiden/Documents/RMS/RestaurantManagementSystem_Group6_C37C/src/Controller/MenuController.java</file>
+            <file>file:/C:/Users/aiden/Documents/RMS/RestaurantManagementSystem_Group6_C37C/src/Controller/Menu.java</file>
+            <file>file:/C:/Users/aiden/Documents/RMS/RestaurantManagementSystem_Group6_C37C/src/Controller/DatabaseConnection.java</file>
+            <file>file:/C:/Users/aiden/Documents/RMS/RestaurantManagementSystem_Group6_C37C/src/RestaurantManagementSystem/RestaurantManagementSystem.java</file>
         </group>
     </open-files>
 </project-private>

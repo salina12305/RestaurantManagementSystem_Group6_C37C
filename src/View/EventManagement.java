@@ -6,16 +6,20 @@ package View;
 
 import Controller.EventController;
 
+
 /**
  *
  * @author aiden
  */
 public class EventManagement extends javax.swing.JFrame {
+    
 
     /**
      * Creates new form EventManagement
      */
     public EventManagement() {
+        
+        
         initComponents();
         
     }
@@ -502,21 +506,22 @@ public class EventManagement extends javax.swing.JFrame {
     }//GEN-LAST:event_CreateMouseClicked
 
     private void CreateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CreateActionPerformed
-        EventController.handleCreate(this, Customer_Name, Event, Date, AssignedStaff, Floor);
+        
     }//GEN-LAST:event_CreateActionPerformed
 
     private void UpdateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_UpdateActionPerformed
-        EventController.handleUpdate(this, Customer_Name, Event, Date, AssignedStaff, Floor);
+        
     }//GEN-LAST:event_UpdateActionPerformed
 
     private void CancelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CancelActionPerformed
-        EventController.handleCancel(Customer_Name, Event, Date, AssignedStaff, Floor);
+        
     }//GEN-LAST:event_CancelActionPerformed
 
     /**
      * @param args the command line arguments
      */
     public static void main(String args[]) {
+        
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
         /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
@@ -538,13 +543,16 @@ public class EventManagement extends javax.swing.JFrame {
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
             java.util.logging.Logger.getLogger(EventManagement.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
-        //</editor-fold>
-        //</editor-fold>
+      
+       
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new EventManagement().setVisible(true);
+                EventManagement view = new EventManagement();
+                new Controller.EventController(view);
+                view.setVisible(true);
+
             }
         });
     }
@@ -580,4 +588,40 @@ public class EventManagement extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel8;
     private javax.swing.JSeparator jSeparator3;
     // End of variables declaration//GEN-END:variables
+
+    // === GETTERS ===
+public javax.swing.JTextField getCustomerNameField() {
+    return Customer_Name;
+}
+
+public javax.swing.JTextField getEventField() {
+    return Event;
+}
+
+public javax.swing.JTextField getDateField() {
+    return Date;
+}
+
+public javax.swing.JTextField getStaffAssignedField() {
+    return AssignedStaff;
+}
+
+public javax.swing.JTextField getFloorField() {
+    return Floor;
+}
+
+// === LISTENER ATTACHERS ===
+public void addCreateEventListener(java.awt.event.ActionListener listener) {
+    Create.addActionListener(listener);
+}
+
+public void addUpdateEventListener(java.awt.event.ActionListener listener) {
+    Update.addActionListener(listener);
+}
+
+public void addCancelEventListener(java.awt.event.ActionListener listener) {
+    Cancel.addActionListener(listener);
+}
+
+    
 }

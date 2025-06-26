@@ -28,7 +28,6 @@ public class EDashboardDao {
     MySqlConnection mysql = new MySqlConnection(); 
     
     
-
    public static void loadRevenueChartFromDB(JPanel revenueChartPanel) {
         DefaultCategoryDataset dataset = new DefaultCategoryDataset();
         try (Connection conn = DriverManager.getConnection("jdbc:mysql://127.0.0.1:3306/restaurant", "root", "12345678")) {

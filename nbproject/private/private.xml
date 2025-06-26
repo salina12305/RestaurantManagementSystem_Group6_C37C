@@ -7,12 +7,12 @@
             <file>file:/Users/uttu/NetBeansProjects/RestaurantManagementSystem_Group6_C37C/src/View/Bill.java</file>
             <file>file:/Users/uttu/NetBeansProjects/RestaurantManagementSystem_Group6_C37C/src/Controller/BillController.java</file>
             <file>file:/Users/uttu/NetBeansProjects/RestaurantManagementSystem_Group6_C37C/src/Controller/EDashboardController.java</file>
-            <file>file:/Users/uttu/NetBeansProjects/RestaurantManagementSystem_Group6_C37C/src/Dao/EmployeeUserDao.java</file>
             <file>file:/Users/uttu/NetBeansProjects/RestaurantManagementSystem_Group6_C37C/src/Dao/BillDao.java</file>
             <file>file:/Users/uttu/NetBeansProjects/RestaurantManagementSystem_Group6_C37C/src/Dao/EDashboardDao.java</file>
             <file>file:/Users/uttu/NetBeansProjects/RestaurantManagementSystem_Group6_C37C/src/View/EmployeeDashboard.java</file>
             <file>file:/Users/uttu/NetBeansProjects/RestaurantManagementSystem_Group6_C37C/src/Dao/OrderDao.java</file>
             <file>file:/Users/uttu/NetBeansProjects/RestaurantManagementSystem_Group6_C37C/src/Controller/OrderController.java</file>
+            <file>file:/Users/uttu/NetBeansProjects/RestaurantManagementSystem_Group6_C37C/src/Model/OrderModel.java</file>
         </group>
     </open-files>
 </project-private>

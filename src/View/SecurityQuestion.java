@@ -1,17 +1,11 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
- */
+
 package View;
 
 import java.awt.event.ActionListener;
 import Dao.AuthDao;
 import Model.SecAnswers;
 import javax.swing.JOptionPane;
-/**
- *
- * @author uttu
- */
+
 public class SecurityQuestion extends javax.swing.JFrame {
 private String mode;
 private String email;

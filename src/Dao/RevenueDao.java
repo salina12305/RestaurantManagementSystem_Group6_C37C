@@ -14,10 +14,7 @@ import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 import org.jfree.data.category.DefaultCategoryDataset;
 
-/**
- *
- * @author uttu
- */
+
 public class RevenueDao {
 
     MySqlConnection mysql = new MySqlConnection();

@@ -8,8 +8,6 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 
-
-
 public class AuthDao {
     MySqlConnection  mysql = new MySqlConnection();
     
@@ -29,8 +27,7 @@ public void insertSecurityAnswers(SecAnswers user){
         e.printStackTrace();
     }finally {
         mysql.closeConnection(conn);
-    }
-    
+    }   
 }
     public boolean validateSecurityAnswers (String email, String[] answers){
         if(email==null || answers==null)return false;
@@ -77,7 +74,6 @@ public void insertSecurityAnswers(SecAnswers user){
             pstmt.setString(1, email);
             ResultSet rs = pstmt.executeQuery();
             return rs.next();
-//            return result.next();  // returns true if email is found
         } catch (SQLException e) {
             e.printStackTrace();
              return false;

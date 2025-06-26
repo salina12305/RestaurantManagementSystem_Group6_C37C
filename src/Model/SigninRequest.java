@@ -13,9 +13,6 @@ public class SigninRequest {
         this.password = password;
        
     }
-
-    
-    
     
     public String getEmail() {
         return email;
@@ -41,8 +38,5 @@ public String getRole() {
 
 public void setRole(String role) {
     this.role = role;
-}
-
-
-     
+}     
 }

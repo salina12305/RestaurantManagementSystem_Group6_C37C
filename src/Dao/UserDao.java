@@ -82,35 +82,6 @@ public class UserDao {
         return false;
     }
     
-//    public User signIn(ESigninRequest signin){
-//        Connection conn = mysql.openConnection();
-//        String sql = "SELECT * FROM users where email = ? and password = ?";
-//        try (PreparedStatement pstmt = conn.prepareStatement(sql)) {
-//            pstmt.setString(1, signin.getEmail());
-//            pstmt.setString(2, signin.getPassword());
-//            ResultSet result = pstmt.executeQuery();
-//            if(result.next()){
-//                User user  = new User(
-//                    result.getString("company_name"),
-//                    result.getString("email"),
-//                    result.getString("password"),
-//                    result.getString("confirm_password"),
-//                    result.getString("role")
-//                );
-//                user.setId(result.getInt("id"));
-//                
-//                return user;
-//            }
-//        } catch (SQLException ex) {
-//            System.out.println(ex);
-//        } finally {
-//            mysql.closeConnection(conn);
-//        }
-//        return null;
-//    }
-//
-
-    
     public User esignIn(ESigninRequest signin){
         Connection conn = mysql.openConnection();
         String sql = "SELECT * FROM users where email = ? and password = ?";

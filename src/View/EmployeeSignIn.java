@@ -5,10 +5,6 @@ import Controller.EDashboardController;
 import java.awt.Color;
 import java.awt.event.ActionListener;
 
-/**
- *
- * @author uttu
- */
 public class EmployeeSignIn extends javax.swing.JFrame {
 
     /**

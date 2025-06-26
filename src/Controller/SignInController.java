@@ -61,7 +61,7 @@ public class SignInController {
                         return;
                     }
 
-                    close(); // close SignIn window
+                    close();
                 }
 
             } catch (Exception ex) {
@@ -95,7 +95,7 @@ public class SignInController {
             close();
         }
     }
-     class ELoginListener implements ActionListener {
+    class ELoginListener implements ActionListener {
         @Override
         public void actionPerformed(ActionEvent e) {
             EmployeeSignIn signinView = new EmployeeSignIn();
@@ -104,7 +104,7 @@ public class SignInController {
             signin.open();
             close();
         }
-     }
+    }
 }
 
 

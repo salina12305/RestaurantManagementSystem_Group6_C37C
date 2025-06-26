@@ -1,9 +1,8 @@
 
 package RestaurantManagementSystem ;
-import Controller.ESignInController;
 
+import Controller.ESignInController;
 import View.EmployeeSignIn;
-import Database.*;
 
 public class RestaurantManagementSystem {
     public static void main(String[] args) {

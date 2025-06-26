@@ -1,11 +1,7 @@
 package View;
 
 import Controller.OrderController;
-//import Dao.OrderDao;
-//import Model.Order;
-
 import java.awt.event.ActionListener;
-
 import javax.swing.JButton;
 
 public class OrderFrame extends javax.swing.JFrame{
@@ -13,7 +9,8 @@ public class OrderFrame extends javax.swing.JFrame{
    public OrderFrame(){
      initComponents();
     OrderController controller = new OrderController(this);
-    controller.setupLogoutListener();
+    setVisible(true);
+    DashboardBtn.setVisible(true);
 }
 
     /**
@@ -61,7 +58,7 @@ public class OrderFrame extends javax.swing.JFrame{
         Menubtn3 = new javax.swing.JButton();
         SidePanel2 = new javax.swing.JPanel();
         Logo3 = new javax.swing.JLabel();
-        DashboardButton2 = new javax.swing.JButton();
+        DashboardBtn = new javax.swing.JButton();
         OrderButton2 = new javax.swing.JButton();
         BillButton2 = new javax.swing.JButton();
         LogoutButton2 = new javax.swing.JButton();
@@ -367,14 +364,14 @@ public class OrderFrame extends javax.swing.JFrame{
         SidePanel2.add(Logo3);
         Logo3.setBounds(30, 0, 136, 110);
 
-        DashboardButton2.setBackground(new java.awt.Color(255, 243, 224));
-        DashboardButton2.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        DashboardButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/dashboard.png"))); // NOI18N
-        DashboardButton2.setText("Dashboard");
-        DashboardButton2.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        DashboardButton2.setIconTextGap(10);
-        SidePanel2.add(DashboardButton2);
-        DashboardButton2.setBounds(20, 190, 160, 40);
+        DashboardBtn.setBackground(new java.awt.Color(255, 243, 224));
+        DashboardBtn.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        DashboardBtn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/dashboard.png"))); // NOI18N
+        DashboardBtn.setText("Dashboard");
+        DashboardBtn.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        DashboardBtn.setIconTextGap(10);
+        SidePanel2.add(DashboardBtn);
+        DashboardBtn.setBounds(20, 190, 160, 40);
 
         OrderButton2.setBackground(new java.awt.Color(255, 243, 224));
         OrderButton2.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
@@ -382,6 +379,11 @@ public class OrderFrame extends javax.swing.JFrame{
         OrderButton2.setText("Order");
         OrderButton2.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         OrderButton2.setIconTextGap(10);
+        OrderButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                OrderButton2ActionPerformed(evt);
+            }
+        });
         SidePanel2.add(OrderButton2);
         OrderButton2.setBounds(20, 390, 160, 40);
 
@@ -499,6 +501,10 @@ public class OrderFrame extends javax.swing.JFrame{
         // TODO add your handling code here:
     }//GEN-LAST:event_createOrderBtnActionPerformed
 
+    private void OrderButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_OrderButton2ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_OrderButton2ActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -516,8 +522,8 @@ public class OrderFrame extends javax.swing.JFrame{
     private javax.swing.JButton BillButton1;
     private javax.swing.JButton BillButton2;
     private javax.swing.JTextField CustomerNameField;
+    private javax.swing.JButton DashboardBtn;
     private javax.swing.JButton DashboardButton1;
-    private javax.swing.JButton DashboardButton2;
     private javax.swing.JLabel Logo2;
     private javax.swing.JLabel Logo3;
     private javax.swing.JButton LogoutButton1;
@@ -586,9 +592,11 @@ public void addOrderListener(ActionListener listener) {
     Menubtn4.addActionListener(listener); 
 }
 public void addDashboardListener(ActionListener listener){
-    DashboardButton1.addActionListener(listener); 
+    System.out.println("Dashboard clicked");
+    DashboardBtn.addActionListener(listener); 
 }
 public void addBillListener(ActionListener listener){
+//    System.out.println("Bill button clicked");
     BillButton2.addActionListener(listener);
 }
 public void addReservationListener(ActionListener listener){
@@ -599,9 +607,6 @@ public void addEventListener(ActionListener listener){
 }
 
 
-
-
-// === Getters for all text fields ===
 
 public javax.swing.JTextField getOrderIdField() {
     return orderId;

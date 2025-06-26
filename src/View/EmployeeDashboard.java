@@ -6,31 +6,11 @@ import javax.swing.JPanel;
 
 public class EmployeeDashboard extends javax.swing.JFrame {
 
-    
-//    public EmployeeDashboard() {
-//        initComponents();
-//        EDashboardController.loadRevenueChartFromDB(revenueChartPanel);
-//        EDashboardController controller = new EDashboardController(this);
-//        controller.setupLogoutListener(this);
-//        controller.setupOrderListener(this);     
-//    }
-//    public EmployeeDashboard() {
-//    initComponents();
-//    EDashboardController.loadRevenueChartFromDB(revenueChartPanel);
-//
-//    EDashboardController controller = new EDashboardController(); 
-//    controller.setupLogoutListener(this);
-//    controller.setupOrderListener(this);
-//}
-    
     public EmployeeDashboard() {
     initComponents();
-    EDashboardController controller = new EDashboardController(this);  // ✅ correct way
-    setVisible(true);  // ✅ display it after loading is done inside controller
-    
+//    EDashboardController controller = new EDashboardController(this); 
+//    setVisible(true);  
     }
-
-
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -332,7 +312,6 @@ public class EmployeeDashboard extends javax.swing.JFrame {
     public JPanel getRevenueChartPanel() {
     return revenueChartPanel;
 }
-
     public void addLogoutListener(ActionListener listener) {
     LogoutButton.addActionListener(listener);
 }
@@ -345,6 +324,7 @@ public void addMenuListener(ActionListener listener){
     Menubtn.addActionListener(listener); 
 }
 public void addDashboardListener(ActionListener listener){
+    System.out.println("Dashboard button clicked");
     DashboardButton1.addActionListener(listener); 
 }
 public void addBillListener(ActionListener listener){

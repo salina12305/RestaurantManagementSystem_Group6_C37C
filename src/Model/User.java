@@ -7,7 +7,7 @@ public class User {
     private String email;
     private String password;
     private String confirm_password;
-    private String role; // Add this field
+    private String role; 
 
     public User() {
      
@@ -20,8 +20,6 @@ public class User {
         this.confirm_password = confirm_password;
         this.role = role;
     }
-
-    
 
     public int getId() {
         return id;

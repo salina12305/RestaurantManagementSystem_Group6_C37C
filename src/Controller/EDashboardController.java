@@ -39,18 +39,19 @@ public class EDashboardController {
     
 
     MySqlConnection mysql = new MySqlConnection();
-    private EmployeeDashboard view;
-    private JFrame userView;
-    private OrderFrame orderView;
-    private Bill billView;
-    
-
-    public EDashboardController() {}
+//    private EmployeeDashboard dashboardView;
+//    private JFrame userView;
+//    private OrderFrame orderView;
+//    private Bill billView;
+//    
+    private final EDashboardDao edashboardDao = new EDashboardDao(); 
+    private final EmployeeDashboard dashboardView;
 
     public EDashboardController(EmployeeDashboard view) {
-        this.view=view;
+        this.dashboardView=view;
+        
         EDashboardDao.loadRevenueChartFromDB(view.getRevenueChartPanel());
-//       
+      
         view.addLogoutListener(new LogoutListener(view));
         view.addOrderListener(new OrderListener());
         view.addBillListener(new BillListener());
@@ -62,6 +63,10 @@ public class EDashboardController {
     public void setupLogoutListener(EmployeeDashboard view) {
         view.addLogoutListener(new LogoutListener(view));
     }
+
+    void open() {
+EmployeeDashboard dashboard = new EmployeeDashboard();
+    dashboard.setVisible(true);    }
 
     class LogoutListener implements ActionListener {
         private JFrame currentFrame;
@@ -96,11 +101,11 @@ public class EDashboardController {
             new OrderController(orderView);
             orderView.setVisible(true);
 
-            if (view != null) view.dispose();
+            if (dashboardView != null) dashboardView.dispose();
         }
       }
     
-     public void setupBillListener(EmployeeDashboard view) {
+    public void setupBillListener(EmployeeDashboard view) {
         view.addBillListener(new BillListener());
     }
      
@@ -112,12 +117,13 @@ public class EDashboardController {
             new BillController(billView);
             billView.setVisible(true);
 
-            if (view != null) view.dispose();
+            if (dashboardView != null) dashboardView.dispose();
         }
       }
     
     private void close() {
         
-    }    
+    }   
+    
 }
 

@@ -8,20 +8,14 @@ import javax.swing.JButton;
 import javax.swing.JOptionPane;
 import javax.swing.JTextField;
 
-/**
- *
- * @author Lenovo1
- */
+
 public class Bill extends javax.swing.JFrame {
 
-    /**
-     * Creates new form Bill
-     */
+   
     public Bill() {
         initComponents();
         BillController controller = new BillController(this);
-    controller.setupLogoutListener();
-        
+        setVisible(true);
     }
 
     /**
@@ -362,6 +356,7 @@ public void addDashboardListener(ActionListener listener){
     DashboardButton.addActionListener(listener); 
 }
 public void addBillListener(ActionListener listener){
+    System.out.println("Bill button clicked");
     BillButton.addActionListener(listener);
 }
 public void addReservationListener(ActionListener listener){
@@ -373,5 +368,4 @@ public void addEventListener(ActionListener listener){
 public void addSearchListener(ActionListener listener){
     searchbtn.addActionListener(listener);    
 }
-
 }

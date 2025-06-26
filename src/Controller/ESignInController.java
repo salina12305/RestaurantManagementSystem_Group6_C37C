@@ -77,9 +77,7 @@ public class ESignInController {
                     if ("employee".equalsIgnoreCase(role)) {
                         EmployeeDashboard dashboard = new EmployeeDashboard();
                         dashboard.setVisible(true);
-//                    } else if ("admin".equalsIgnoreCase(role)) {
-//                        AdminDashboard dashboard = new AdminDashboard();
-//                        dashboard.setVisible(true);
+                   
                     } else {
                         JOptionPane.showMessageDialog(userView, "Unknown role");
                         return;
@@ -106,7 +104,7 @@ public class ESignInController {
             sec.setVisible(true);
             AuthController controller = new AuthController(sec);
             controller.open();
-//            ESignInController controller = new ESignInController(signIn);
+
         }
     }
     class ELoginListener implements ActionListener {

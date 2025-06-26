@@ -1,6 +1,6 @@
 
 package View;
-import Controller.SignInController;
+
 import java.awt.Color;
 import java.awt.event.ActionListener;
 import javax.swing.JTextField;
@@ -367,9 +367,7 @@ public class SignIn extends javax.swing.JFrame {
   public void addELoginListener(ActionListener listener){
       EmployeeSigninbtn.addActionListener(listener);
   } 
-    /**
-     * @return the emailField
-     */
+   
     public javax.swing.JTextField getEmailField() {
         return jEmail1;
     }

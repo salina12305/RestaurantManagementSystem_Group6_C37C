@@ -355,31 +355,19 @@ public class SignUpp extends javax.swing.JFrame {
         return jCompanyName;
         
     }
-    
-    
-    /**
-     * @return the emailField
-     */
+   
     public javax.swing.JTextField getEmailField() {
-        return jEmail;
-        
+        return jEmail;   
     }
 
-    /**
-     * @return the passwordField
-     */
-     public javax.swing.JTextField getPasswordField() {
+    public javax.swing.JTextField getPasswordField() {
          return jPass;
-     }
+    }
 
-    /**
-     * @return the usernameField
-     */
     public javax.swing.JTextField getConfrimPassword() {
         return jConfirmPass;
     }
 
     public void open() {
     }
-
 }

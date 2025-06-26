@@ -34,9 +34,45 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.geom.Ellipse2D;
+import View.EmployeeDashboard;
+import View.EmployeeSignIn; 
+import View.Reservation;
+import View.SecurityQuestion;
+import View.SignIn;
+import View.SignUpp;
+import java.awt.event.ActionEvent;
+import javax.swing.*;
+import java.awt.event.ActionListener;
+
 
 public class EDashboardController {
     
+<<<<<<< HEAD
+=======
+    public static void loadRevenueChart(JPanel panel, JFrame frame) {
+    DefaultCategoryDataset dataset = new DefaultCategoryDataset();
+
+
+
+    JFreeChart chart = ChartFactory.createBarChart(
+        "Monthly Revenue", "Month", "Revenue", dataset,
+        PlotOrientation.VERTICAL, false, true, false
+    );
+
+    ChartPanel chartPanel = new ChartPanel(chart);
+    panel.removeAll();
+    panel.add(chartPanel, BorderLayout.CENTER);
+    panel.validate();
+}
+     private void close() {
+         
+        }
+     private void open(){
+         
+     }
+     
+
+>>>>>>> reservation_availability
 
     MySqlConnection mysql = new MySqlConnection();
 //    private EmployeeDashboard dashboardView;
@@ -108,6 +144,7 @@ EmployeeDashboard dashboard = new EmployeeDashboard();
     public void setupBillListener(EmployeeDashboard view) {
         view.addBillListener(new BillListener());
     }
+<<<<<<< HEAD
      
     class BillListener implements ActionListener {
         @Override
@@ -125,5 +162,60 @@ EmployeeDashboard dashboard = new EmployeeDashboard();
         
     }   
     
+=======
+
+    public void setupLogoutListener(EmployeeDashboard view) {
+    view.addLogoutListener(new LogoutListener(view));
+}
+    
+    class LogoutListener implements ActionListener {
+    private JFrame currentFrame;
+
+    public LogoutListener(JFrame frame) {
+        this.currentFrame = frame;
+    }
+
+    @Override
+    public void actionPerformed(ActionEvent e) {
+        int confirm = JOptionPane.showConfirmDialog(null,
+                "Are you sure you want to logout?",
+                "Logout Confirmation",
+                JOptionPane.YES_NO_OPTION);
+
+        if (confirm == JOptionPane.YES_OPTION) {
+            currentFrame.dispose(); // 
+            new EmployeeSignIn().setVisible(true); 
+        }
+    }
+}
+    
+    public void setupReservationListener(EmployeeDashboard view) {
+    view.addReservationListener(new ActionListener() {
+        @Override
+        public void actionPerformed(ActionEvent e) {
+            Reservation reservationView = new Reservation();
+            reservationView.setVisible(true);
+        }
+    });
+}
+    
+// class ReservationListener implements ActionListener {
+//    private JFrame currentFrame;
+//
+//    public ReservationListener(JFrame frame) {
+//        this.currentFrame = frame;
+//    }
+//        @Override
+//        public void actionPerformed(ActionEvent e) {
+//            Reservation  = new Reservation();
+//            view.setVisible(true);
+//            view.open();
+//            close();
+//        }
+//    }
+
+
+
+>>>>>>> reservation_availability
 }
 

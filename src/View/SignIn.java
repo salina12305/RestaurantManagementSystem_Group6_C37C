@@ -7,9 +7,7 @@ import javax.swing.JTextField;
 
 public class SignIn extends javax.swing.JFrame {
     private JTextField passwordField = new JTextField();
-    public JTextField getPasswordField(){
-        return jPass;
-    }
+
 
     /**
      * Creates new form SignIn
@@ -363,6 +361,10 @@ public class SignIn extends javax.swing.JFrame {
      */
     public javax.swing.JTextField getEmailField() {
         return jEmail1;
+    }
+    
+    public JTextField getPasswordField() {
+        return jPass;
     }
 
 //    /**

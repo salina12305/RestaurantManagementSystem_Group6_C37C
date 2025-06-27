@@ -1,11 +1,10 @@
 package Dao;
 
-import Model.OrderModel;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
 
-public class OrderDao{
+public class OrderDAO {
 
     public static boolean createOrder(Connection conn, int itemId, String itemName, int itemCount, double price, String employeeName) throws SQLException {
         String query = "INSERT INTO orders (item_id, item_name, quantity, price, employee_name) VALUES (?, ?, ?, ?, ?)";
@@ -34,13 +33,5 @@ public class OrderDao{
         PreparedStatement ps = conn.prepareStatement(query);
         ps.setInt(1, itemId);
         return ps.executeUpdate() > 0;
-    }
-
-    public boolean updateOrder(OrderModel order) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
-    }
-
-    public boolean deleteOrder(int orderId) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
 }

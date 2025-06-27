@@ -5,41 +5,32 @@
         <group>
             <file>file:/Users/uttu/NetBeansProjects/RestaurantManagementSystem_Group6_C37C/src/View/SignIn.java</file>
             <file>file:/Users/uttu/NetBeansProjects/RestaurantManagementSystem_Group6_C37C/src/RestaurantManagementSystem/RestaurantManagementSystem.java</file>
-            <file>file:/Users/uttu/NetBeansProjects/RestaurantManagementSystem_Group6_C37C/src/View/Bill.java</file>
             <file>file:/Users/uttu/NetBeansProjects/RestaurantManagementSystem_Group6_C37C/src/Database/DBConnection.java</file>
             <file>file:/Users/uttu/NetBeansProjects/RestaurantManagementSystem_Group6_C37C/src/Database/MySqlConnection.java</file>
             <file>file:/Users/uttu/NetBeansProjects/RestaurantManagementSystem_Group6_C37C/src/View/EmployeeDashboard.java</file>
-            <file>file:/Users/uttu/NetBeansProjects/RestaurantManagementSystem_Group6_C37C/src/Dao/OrderDao.java</file>
-            <file>file:/Users/uttu/NetBeansProjects/RestaurantManagementSystem_Group6_C37C/src/View/OrderFrame.java</file>
-            <file>file:/Users/uttu/NetBeansProjects/RestaurantManagementSystem_Group6_C37C/src/Controller/BillController.java</file>
-            <file>file:/Users/uttu/NetBeansProjects/RestaurantManagementSystem_Group6_C37C/src/Controller/AdminDashboardController.java</file>
-            <file>file:/Users/uttu/NetBeansProjects/RestaurantManagementSystem_Group6_C37C/src/Controller/OrderController.java</file>
             <file>file:/Users/uttu/NetBeansProjects/RestaurantManagementSystem_Group6_C37C/src/Controller/EDashboardController.java</file>
             <file>file:/Users/uttu/NetBeansProjects/RestaurantManagementSystem_Group6_C37C/src/Controller/ESignInController.java</file>
-            <file>file:/Users/uttu/NetBeansProjects/RestaurantManagementSystem_Group6_C37C/src/View/EmployeeDetailView.java</file>
-            <file>file:/Users/uttu/NetBeansProjects/RestaurantManagementSystem_Group6_C37C/src/View/EventManagement.java</file>
-            <file>file:/Users/uttu/NetBeansProjects/RestaurantManagementSystem_Group6_C37C/src/Dao/EDashboardDao.java</file>
-            <file>file:/Users/uttu/NetBeansProjects/RestaurantManagementSystem_Group6_C37C/src/Controller/EmployeeController.java</file>
-            <file>file:/Users/uttu/NetBeansProjects/RestaurantManagementSystem_Group6_C37C/src/Controller/EventController.java</file>
-            <file>file:/Users/uttu/NetBeansProjects/RestaurantManagementSystem_Group6_C37C/src/Controller/MenuController.java</file>
             <file>file:/Users/uttu/NetBeansProjects/RestaurantManagementSystem_Group6_C37C/src/Controller/AuthController.java</file>
-            <file>file:/Users/uttu/NetBeansProjects/RestaurantManagementSystem_Group6_C37C/src/Controller/DatabaseConnection.java</file>
-            <file>file:/Users/uttu/NetBeansProjects/RestaurantManagementSystem_Group6_C37C/src/Controller/NextForm.java</file>
-            <file>file:/Users/uttu/NetBeansProjects/RestaurantManagementSystem_Group6_C37C/src/Dao/MenuDao.java</file>
             <file>file:/Users/uttu/NetBeansProjects/RestaurantManagementSystem_Group6_C37C/src/View/AdminDashboard.java</file>
-            <file>file:/Users/uttu/NetBeansProjects/RestaurantManagementSystem_Group6_C37C/src/Dao/AdminDashboardDao.java</file>
-            <file>file:/Users/uttu/NetBeansProjects/RestaurantManagementSystem_Group6_C37C/src/Controller/OrderFrameController.java</file>
-            <file>file:/Users/uttu/NetBeansProjects/RestaurantManagementSystem_Group6_C37C/src/Controller/ReservationController.java</file>
             <file>file:/Users/uttu/NetBeansProjects/RestaurantManagementSystem_Group6_C37C/src/Controller/SignInController.java</file>
             <file>file:/Users/uttu/NetBeansProjects/RestaurantManagementSystem_Group6_C37C/src/Controller/SignUpController.java</file>
             <file>file:/Users/uttu/NetBeansProjects/RestaurantManagementSystem_Group6_C37C/src/Dao/AuthDao.java</file>
             <file>file:/Users/uttu/NetBeansProjects/RestaurantManagementSystem_Group6_C37C/src/View/SignUpp.java</file>
-            <file>file:/Users/uttu/NetBeansProjects/RestaurantManagementSystem_Group6_C37C/src/View/ManageMenu.java</file>
-            <file>file:/Users/uttu/NetBeansProjects/RestaurantManagementSystem_Group6_C37C/src/Model/MenuItemModel.java</file>
-            <file>file:/Users/uttu/NetBeansProjects/RestaurantManagementSystem_Group6_C37C/src/Model/OrderModel.java</file>
             <file>file:/Users/uttu/NetBeansProjects/RestaurantManagementSystem_Group6_C37C/src/View/NewPassword.java</file>
             <file>file:/Users/uttu/NetBeansProjects/RestaurantManagementSystem_Group6_C37C/src/View/ForgotPassword.java</file>
-            <file>file:/Users/uttu/NetBeansProjects/RestaurantManagementSystem_Group6_C37C/src/View/Reservation.java</file>
+            <file>file:/Users/uttu/NetBeansProjects/RestaurantManagementSystem_Group6_C37C/src/Dao/RevenueDao.java</file>
+            <file>file:/Users/uttu/NetBeansProjects/RestaurantManagementSystem_Group6_C37C/src/Controller/OrderController.java</file>
+            <file>file:/Users/uttu/NetBeansProjects/RestaurantManagementSystem_Group6_C37C/src/Dao/OrderDao.java</file>
+            <file>file:/Users/uttu/NetBeansProjects/RestaurantManagementSystem_Group6_C37C/src/Dao/EmployeeDAO.java</file>
+            <file>file:/Users/uttu/NetBeansProjects/RestaurantManagementSystem_Group6_C37C/src/Controller/EmployeeController.java</file>
+            <file>file:/Users/uttu/NetBeansProjects/RestaurantManagementSystem_Group6_C37C/src/Dao/EDashboardDao.java</file>
+            <file>file:/Users/uttu/NetBeansProjects/RestaurantManagementSystem_Group6_C37C/src/Dao/AdminDashboardDao.java</file>
+            <file>file:/Users/uttu/NetBeansProjects/RestaurantManagementSystem_Group6_C37C/src/Controller/AdminDashboardController.java</file>
+            <file>file:/Users/uttu/NetBeansProjects/RestaurantManagementSystem_Group6_C37C/src/Dao/MenuDAO.java</file>
+            <file>file:/Users/uttu/NetBeansProjects/RestaurantManagementSystem_Group6_C37C/src/Controller/MenuController.java</file>
+            <file>file:/Users/uttu/NetBeansProjects/RestaurantManagementSystem_Group6_C37C/src/View/ManageMenu.java</file>
+            <file>file:/Users/uttu/NetBeansProjects/RestaurantManagementSystem_Group6_C37C/src/Model/MenuItemModel.java</file>
+            <file>file:/Users/uttu/NetBeansProjects/RestaurantManagementSystem_Group6_C37C/src/View/EmployeeSignIn.java</file>
         </group>
     </open-files>
 </project-private>

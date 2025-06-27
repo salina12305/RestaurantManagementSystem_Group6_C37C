@@ -11,28 +11,27 @@ import java.io.File;
 import java.sql.Date;
 
 public class EmployeeController {
-    private JTextField txtID, txtName, txtGender, txtStatus, txtRating, txtRole,
-            txtShift, txtDepartment, txtJoinedDate, txtDOB, txtAddress,
+    private JTextField txtID, txtName, txtGender, txtStatus, txtDOB, txtRole,
+            txtShift, txtDepartment, txtJoinedDate, txtAddress,
             txtEmail, txtPhoneNumber;
     private JLabel lblProfileImage;
     private String imagePath;
 
     public EmployeeController(
         JTextField txtID, JTextField txtName, JTextField txtGender, JTextField txtStatus,
-        JTextField txtRating, JTextField txtRole, JTextField txtShift, JTextField txtDepartment,
-        JTextField txtJoinedDate, JTextField txtDOB, JTextField txtAddress, JTextField txtEmail,
+        JTextField txtDOB, JTextField txtRole, JTextField txtShift, JTextField txtDepartment,
+        JTextField txtJoinedDate,  JTextField txtAddress, JTextField txtEmail,
         JTextField txtPhoneNumber, JLabel lblProfileImage
     ) {
         this.txtID = txtID;
         this.txtName = txtName;
         this.txtGender = txtGender;
         this.txtStatus = txtStatus;
-        this.txtRating = txtRating;
+          this.txtDOB = txtDOB;
         this.txtRole = txtRole;
         this.txtShift = txtShift;
         this.txtDepartment = txtDepartment;
         this.txtJoinedDate = txtJoinedDate;
-        this.txtDOB = txtDOB;
         this.txtAddress = txtAddress;
         this.txtEmail = txtEmail;
         this.txtPhoneNumber = txtPhoneNumber;
@@ -106,12 +105,11 @@ public class EmployeeController {
         txtName.setText(emp.getName());
         txtGender.setText(emp.getGender());
         txtStatus.setText(emp.getStatus());
-        txtRating.setText(String.valueOf(emp.getRating()));
+        txtDOB.setText(emp.getDOB().toString());
         txtRole.setText(emp.getRole());
         txtShift.setText(emp.getShift());
         txtDepartment.setText(emp.getDepartment());
         txtJoinedDate.setText(emp.getJoinDate().toString());
-        txtDOB.setText(emp.getDob().toString());
         txtAddress.setText(emp.getAddress());
         txtEmail.setText(emp.getEmail());
         txtPhoneNumber.setText(emp.getPhone());
@@ -122,7 +120,6 @@ public class EmployeeController {
 
     private Employee getFormData(boolean includeId) {
         int id = includeId ? Integer.parseInt(txtID.getText()) : 0;
-        double rating = Double.parseDouble(txtRating.getText());
         Date joinDate = Date.valueOf(txtJoinedDate.getText());
         Date dob = Date.valueOf(txtDOB.getText());
 
@@ -131,12 +128,11 @@ public class EmployeeController {
                 txtName.getText(),
                 txtGender.getText(),
                 txtStatus.getText(),
-                rating,
+                dob,
                 txtRole.getText(),
                 txtShift.getText(),
                 txtDepartment.getText(),
-                joinDate,
-                dob,
+                joinDate,      
                 txtAddress.getText(),
                 txtEmail.getText(),
                 txtPhoneNumber.getText(),

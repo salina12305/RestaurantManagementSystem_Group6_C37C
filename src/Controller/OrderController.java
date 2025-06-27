@@ -47,7 +47,7 @@ public class OrderController {
 
             // Save Order
             OrderModel order = new OrderModel(orderId, itemName, noOfItem, price, customerName, employeeName);
-            order.createOrder(order);
+             orderDao.createOrder(order);
 
             //  Generate and save corresponding Bill
             double amount = price * noOfItem;

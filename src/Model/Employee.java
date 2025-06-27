@@ -13,26 +13,24 @@ import java.sql.Date;
 public class Employee {
     private int empId;
     private String name, gender, status, role, shift, department;
-    private double rating;
     private Date joinDate;
     private Date dob;
     private String address, email, phone;
     private String imagePath;
 
     // Full constructor
-    public Employee(int empId, String name, String gender, String status, double rating, String role,
-                    String shift, String department, Date joinDate, Date dob, String address,
+    public Employee(int empId, String name, String gender, String status, Date dob, String role,
+                    String shift, String department, Date joinDate,String address,
                     String email, String phone, String imagePath) {
         this.empId = empId;
         this.name = name;
         this.gender = gender;
         this.status = status;
-        this.rating = rating;
+        this.dob = dob;
         this.role = role;
         this.shift = shift;
         this.department = department;
         this.joinDate = joinDate;
-        this.dob = dob;
         this.address = address;
         this.email = email;
         this.phone = phone;
@@ -40,10 +38,10 @@ public class Employee {
     }
 
     // For new employee without ID
-    public Employee(String name, String gender, String status, double rating, String role,
-                    String shift, String department, Date joinDate, Date dob, String address,
+    public Employee(String name, String gender, String status, Date dob, String role,
+                    String shift, String department, Date joinDate, String address,
                     String email, String phone, String imagePath) {
-        this(0, name, gender, status, rating, role, shift, department, joinDate, dob, address, email, phone, imagePath);
+        this(0, name, gender, status, dob, role, shift, department, joinDate, address, email, phone, imagePath);
     }
 
     // Getters
@@ -51,12 +49,11 @@ public class Employee {
     public String getName() { return name; }
     public String getGender() { return gender; }
     public String getStatus() { return status; }
-    public double getRating() { return rating; }
+    public Date getDOB() { return dob; }
     public String getRole() { return role; }
     public String getShift() { return shift; }
     public String getDepartment() { return department; }
     public Date getJoinDate() { return joinDate; }
-    public Date getDob() { return dob; }
     public String getAddress() { return address; }
     public String getEmail() { return email; }
     public String getPhone() { return phone; }
@@ -67,12 +64,11 @@ public class Employee {
     public void setName(String name) { this.name = name; }
     public void setGender(String gender) { this.gender = gender; }
     public void setStatus(String status) { this.status = status; }
-    public void setRating(double rating) { this.rating = rating; }
+    public void setRating(Date dob ) { this.dob = dob; }
     public void setRole(String role) { this.role = role; }
     public void setShift(String shift) { this.shift = shift; }
     public void setDepartment(String department) { this.department = department; }
     public void setJoinDate(Date joinDate) { this.joinDate = joinDate; }
-    public void setDob(Date dob) { this.dob = dob; }
     public void setAddress(String address) { this.address = address; }
     public void setEmail(String email) { this.email = email; }
     public void setPhone(String phone) { this.phone = phone; }

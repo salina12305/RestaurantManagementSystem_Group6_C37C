@@ -17,8 +17,8 @@ public class EmployeeDAO {
     MySqlConnection mysql = new MySqlConnection();
 
     public boolean addEmployee(Employee emp) {
-        String sql = "INSERT INTO employees (name, gender, status, rating, role, shift, department, join_date, dob, address, email, phone, imagePath) " +
-                     "VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+        String sql = "INSERT INTO employees (name, gender, status, dob, role, shift, department, join_date, address, email, phone, imagePath) " +
+                     "VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
 
         try (Connection conn = mysql.openConnection();
              PreparedStatement stmt = conn.prepareStatement(sql)) {
@@ -26,16 +26,15 @@ public class EmployeeDAO {
             stmt.setString(1, emp.getName());
             stmt.setString(2, emp.getGender());
             stmt.setString(3, emp.getStatus());
-            stmt.setDouble(4, emp.getRating());
+            stmt.setDate(4, emp.getDOB());
             stmt.setString(5, emp.getRole());
             stmt.setString(6, emp.getShift());
             stmt.setString(7, emp.getDepartment());
             stmt.setDate(8, emp.getJoinDate());
-            stmt.setDate(9, emp.getDob());
-            stmt.setString(10, emp.getAddress());
-            stmt.setString(11, emp.getEmail());
-            stmt.setString(12, emp.getPhone());
-            stmt.setString(13, emp.getImagePath());
+            stmt.setString(9, emp.getAddress());
+            stmt.setString(10, emp.getEmail());
+            stmt.setString(11, emp.getPhone());
+            stmt.setString(12, emp.getImagePath());
 
             return stmt.executeUpdate() > 0;
 
@@ -86,7 +85,7 @@ public class EmployeeDAO {
     }
 
     public boolean updateEmployee(Employee emp) {
-        String sql = "UPDATE employees SET name=?, gender=?, status=?, rating=?, role=?, shift=?, department=?, join_date=?, dob=?, address=?, email=?, phone=?, imagePath=? WHERE emp_id=?";
+        String sql = "UPDATE employees SET name=?, gender=?, status=?, dob=?, role=?, shift=?, department=?, join_date=?, address=?, email=?, phone=?, imagePath=? WHERE emp_id=?";
 
         try (Connection conn = mysql.openConnection();
              PreparedStatement stmt = conn.prepareStatement(sql)) {
@@ -94,17 +93,16 @@ public class EmployeeDAO {
             stmt.setString(1, emp.getName());
             stmt.setString(2, emp.getGender());
             stmt.setString(3, emp.getStatus());
-            stmt.setDouble(4, emp.getRating());
+            stmt.setDate(4, emp.getDOB());
             stmt.setString(5, emp.getRole());
             stmt.setString(6, emp.getShift());
             stmt.setString(7, emp.getDepartment());
             stmt.setDate(8, emp.getJoinDate());
-            stmt.setDate(9, emp.getDob());
-            stmt.setString(10, emp.getAddress());
-            stmt.setString(11, emp.getEmail());
-            stmt.setString(12, emp.getPhone());
-            stmt.setString(13, emp.getImagePath());
-            stmt.setInt(14, emp.getEmpId());
+            stmt.setString(9, emp.getAddress());
+            stmt.setString(10, emp.getEmail());
+            stmt.setString(11, emp.getPhone());
+            stmt.setString(12, emp.getImagePath());
+            stmt.setInt(13, emp.getEmpId());
 
             return stmt.executeUpdate() > 0;
 
@@ -135,12 +133,11 @@ public class EmployeeDAO {
                 rs.getString("name"),
                 rs.getString("gender"),
                 rs.getString("status"),
-                rs.getDouble("rating"),
+                rs.getDate("dob"),
                 rs.getString("role"),
                 rs.getString("shift"),
                 rs.getString("department"),
                 rs.getDate("join_date"),
-                rs.getDate("dob"),
                 rs.getString("address"),
                 rs.getString("email"),
                 rs.getString("phone"),

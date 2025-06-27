@@ -6,29 +6,19 @@ import javax.swing.JFrame;
 import Controller.AdminDashboardController;
 import javax.swing.JPanel;
 
-
-
 public class AdminDashboard extends javax.swing.JFrame {
 
     public AdminDashboard() {
         initComponents();
 
-AdminDashboardController.applyHoverEffect(DashboardButton);
-AdminDashboardController.applyHoverEffect(OrderButton);
-AdminDashboardController.applyHoverEffect(EmployeeButton);
+AdminDashboardController.applyHoverEffect(DashboardBtn);
+AdminDashboardController.applyHoverEffect(Employeebtn);
 AdminDashboardController.applyHoverEffect(RefreshButton);
 AdminDashboardController.applyHoverEffect(MinimizeButton);
 AdminDashboardController.applyHoverEffect(ExitButton);
-AdminDashboardController.applyHoverEffect(LogoutButton);
+AdminDashboardController.applyHoverEffect(LogoutButton2);
 
-
-
-AdminDashboardController.loadRevenueChartFromDB(revenueChartPanel);
-
-
-
-
-        
+AdminDashboardController.loadRevenueChartFromDB(revenueChartPanel);        
 }
     /**
      * This method is called from within the constructor to initialize the form.
@@ -39,20 +29,12 @@ AdminDashboardController.loadRevenueChartFromDB(revenueChartPanel);
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        SidePanel = new javax.swing.JPanel();
-        Logo1 = new javax.swing.JLabel();
-        DashboardButton = new javax.swing.JButton();
-        OrderButton = new javax.swing.JButton();
-        EmployeeButton = new javax.swing.JButton();
-        LogoutButton = new javax.swing.JButton();
-        Slogan = new javax.swing.JLabel();
-        jSeparator1 = new javax.swing.JSeparator();
         TopBarPanel = new javax.swing.JPanel();
         Logo2 = new javax.swing.JLabel();
-        RevenueText = new javax.swing.JLabel();
         MinimizeButton = new javax.swing.JButton();
         ExitButton = new javax.swing.JButton();
         RefreshButton = new javax.swing.JButton();
+        jLabel7 = new javax.swing.JLabel();
         DashboardCenterPanel = new javax.swing.JPanel();
         RevenuePanel = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
@@ -75,6 +57,13 @@ AdminDashboardController.loadRevenueChartFromDB(revenueChartPanel);
         CustomerReview2 = new javax.swing.JLabel();
         Customer3 = new javax.swing.JLabel();
         revenueChartPanel = new javax.swing.JPanel();
+        SidePanel2 = new javax.swing.JPanel();
+        Logo3 = new javax.swing.JLabel();
+        DashboardBtn = new javax.swing.JButton();
+        LogoutButton2 = new javax.swing.JButton();
+        Slogan2 = new javax.swing.JLabel();
+        jSeparator5 = new javax.swing.JSeparator();
+        Employeebtn = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(255, 243, 224));
@@ -85,88 +74,14 @@ AdminDashboardController.loadRevenueChartFromDB(revenueChartPanel);
         });
         getContentPane().setLayout(null);
 
-        SidePanel.setBackground(new java.awt.Color(255, 243, 224));
-        SidePanel.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        SidePanel.setLayout(null);
-
-        Logo1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/Screenshot_2025-05-22_222007-removebg-preview (1).png"))); // NOI18N
-        Logo1.setText("jLabel1");
-        SidePanel.add(Logo1);
-        Logo1.setBounds(30, 10, 136, 110);
-
-        DashboardButton.setBackground(new java.awt.Color(255, 243, 224));
-        DashboardButton.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        DashboardButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/dashboard.png"))); // NOI18N
-        DashboardButton.setText("Dashboard");
-        DashboardButton.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        DashboardButton.setIconTextGap(10);
-        SidePanel.add(DashboardButton);
-        DashboardButton.setBounds(20, 190, 160, 40);
-
-        OrderButton.setBackground(new java.awt.Color(255, 243, 224));
-        OrderButton.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        OrderButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/order.png"))); // NOI18N
-        OrderButton.setText("Order");
-        OrderButton.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        OrderButton.setIconTextGap(10);
-        SidePanel.add(OrderButton);
-        OrderButton.setBounds(20, 240, 160, 40);
-
-        EmployeeButton.setBackground(new java.awt.Color(255, 243, 224));
-        EmployeeButton.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        EmployeeButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/employee.png"))); // NOI18N
-        EmployeeButton.setText("Employee");
-        EmployeeButton.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        EmployeeButton.setIconTextGap(10);
-        EmployeeButton.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                EmployeeButtonActionPerformed(evt);
-            }
-        });
-        SidePanel.add(EmployeeButton);
-        EmployeeButton.setBounds(20, 290, 160, 40);
-
-        LogoutButton.setBackground(new java.awt.Color(255, 243, 224));
-        LogoutButton.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        LogoutButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/logout.png"))); // NOI18N
-        LogoutButton.setText("Logout");
-        LogoutButton.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        LogoutButton.setIconTextGap(10);
-        LogoutButton.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                LogoutButtonActionPerformed(evt);
-            }
-        });
-        SidePanel.add(LogoutButton);
-        LogoutButton.setBounds(20, 540, 160, 40);
-
-        Slogan.setFont(new java.awt.Font("Segoe UI", 2, 12)); // NOI18N
-        Slogan.setText("7 people serving since 11 AM");
-        Slogan.setToolTipText("");
-        SidePanel.add(Slogan);
-        Slogan.setBounds(10, 110, 180, 20);
-
-        jSeparator1.setBackground(new java.awt.Color(0, 0, 0));
-        jSeparator1.setForeground(new java.awt.Color(0, 0, 0));
-        SidePanel.add(jSeparator1);
-        jSeparator1.setBounds(0, 130, 200, 3);
-
-        getContentPane().add(SidePanel);
-        SidePanel.setBounds(0, 0, 200, 600);
-
         TopBarPanel.setBackground(new java.awt.Color(255, 243, 224));
         TopBarPanel.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         TopBarPanel.setLayout(null);
 
-        Logo2.setFont(new java.awt.Font("Segoe UI Variable", 1, 36)); // NOI18N
+        Logo2.setFont(new java.awt.Font("Jaini Purva", 3, 48)); // NOI18N
         Logo2.setText("7 ~ 11");
         TopBarPanel.add(Logo2);
-        Logo2.setBounds(10, 30, 130, 40);
-
-        RevenueText.setFont(new java.awt.Font("Segoe UI", 2, 14)); // NOI18N
-        RevenueText.setText("Overall revenue illustration of last 7 days");
-        TopBarPanel.add(RevenueText);
-        RevenueText.setBounds(10, 80, 300, 20);
+        Logo2.setBounds(270, 30, 140, 40);
 
         MinimizeButton.setBackground(new java.awt.Color(255, 243, 224));
         MinimizeButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/minimize-sign.png"))); // NOI18N
@@ -217,6 +132,11 @@ AdminDashboardController.loadRevenueChartFromDB(revenueChartPanel);
         });
         TopBarPanel.add(RefreshButton);
         RefreshButton.setBounds(705, 10, 30, 20);
+
+        jLabel7.setFont(new java.awt.Font("Times New Roman", 1, 24)); // NOI18N
+        jLabel7.setText("View your Dashboard");
+        TopBarPanel.add(jLabel7);
+        jLabel7.setBounds(180, 80, 300, 50);
 
         getContentPane().add(TopBarPanel);
         TopBarPanel.setBounds(200, 0, 800, 160);
@@ -445,23 +365,64 @@ AdminDashboardController.loadRevenueChartFromDB(revenueChartPanel);
         getContentPane().add(DashboardCenterPanel);
         DashboardCenterPanel.setBounds(200, 160, 800, 440);
 
+        SidePanel2.setBackground(new java.awt.Color(255, 243, 224));
+        SidePanel2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        SidePanel2.setLayout(null);
+
+        Logo3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/Screenshot_2025-05-22_222007-removebg-preview (1).png"))); // NOI18N
+        Logo3.setText("jLabel1");
+        SidePanel2.add(Logo3);
+        Logo3.setBounds(30, 0, 136, 110);
+
+        DashboardBtn.setBackground(new java.awt.Color(255, 243, 224));
+        DashboardBtn.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        DashboardBtn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/dashboard.png"))); // NOI18N
+        DashboardBtn.setText("Dashboard");
+        DashboardBtn.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        DashboardBtn.setIconTextGap(10);
+        SidePanel2.add(DashboardBtn);
+        DashboardBtn.setBounds(20, 190, 160, 40);
+
+        LogoutButton2.setBackground(new java.awt.Color(255, 243, 224));
+        LogoutButton2.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        LogoutButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/logout.png"))); // NOI18N
+        LogoutButton2.setText("Logout");
+        LogoutButton2.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        LogoutButton2.setIconTextGap(10);
+        SidePanel2.add(LogoutButton2);
+        LogoutButton2.setBounds(20, 540, 160, 40);
+
+        Slogan2.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
+        Slogan2.setText("7 people serving since 11 AM");
+        Slogan2.setToolTipText("");
+        SidePanel2.add(Slogan2);
+        Slogan2.setBounds(10, 100, 180, 20);
+
+        jSeparator5.setBackground(new java.awt.Color(0, 0, 0));
+        jSeparator5.setForeground(new java.awt.Color(0, 0, 0));
+        SidePanel2.add(jSeparator5);
+        jSeparator5.setBounds(0, 120, 200, 20);
+
+        Employeebtn.setBackground(new java.awt.Color(255, 243, 224));
+        Employeebtn.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        Employeebtn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/employee.png"))); // NOI18N
+        Employeebtn.setText("Manage Employee");
+        Employeebtn.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        Employeebtn.setIconTextGap(10);
+        SidePanel2.add(Employeebtn);
+        Employeebtn.setBounds(20, 250, 160, 40);
+
+        getContentPane().add(SidePanel2);
+        SidePanel2.setBounds(0, -2, 200, 600);
+
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
-    private void EmployeeButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EmployeeButtonActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_EmployeeButtonActionPerformed
-
-    private void LogoutButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_LogoutButtonActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_LogoutButtonActionPerformed
 
     private void MinimizeButtonMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_MinimizeButtonMouseEntered
         // TODO add your handling code here:
         MinimizeButton.setBackground(Color.LIGHT_GRAY);
-MinimizeButton.setOpaque(true);
-
-        
+        MinimizeButton.setOpaque(true);
+      
     }//GEN-LAST:event_MinimizeButtonMouseEntered
 
     private void ExitButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ExitButtonActionPerformed
@@ -480,21 +441,21 @@ MinimizeButton.setOpaque(true);
     private void ExitButtonMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ExitButtonMouseEntered
         // TODO add your handling code here:
         ExitButton.setBackground(Color.RED);
-ExitButton.setOpaque(true);
+        ExitButton.setOpaque(true);
 
     }//GEN-LAST:event_ExitButtonMouseEntered
 
     private void ExitButtonMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ExitButtonMouseExited
         // TODO add your handling code here:
         ExitButton.setBackground(new Color(255, 255, 255)); // or your top bar color
-ExitButton.setOpaque(false);
+        ExitButton.setOpaque(false);
 
     }//GEN-LAST:event_ExitButtonMouseExited
 
     private void MinimizeButtonMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_MinimizeButtonMouseExited
         // TODO add your handling code here:
         MinimizeButton.setBackground(new Color(255, 255, 255)); // or your top bar color
-MinimizeButton.setOpaque(false);
+        MinimizeButton.setOpaque(false);
 
     }//GEN-LAST:event_MinimizeButtonMouseExited
 
@@ -546,27 +507,25 @@ MinimizeButton.setOpaque(false);
     private javax.swing.JLabel CustomerReview1;
     private javax.swing.JLabel CustomerReview2;
     private javax.swing.JLabel CustomerReview3;
-    private javax.swing.JButton DashboardButton;
+    private javax.swing.JButton DashboardBtn;
     private javax.swing.JPanel DashboardCenterPanel;
-    private javax.swing.JButton EmployeeButton;
     private javax.swing.JPanel EmployeePanel;
+    private javax.swing.JButton Employeebtn;
     private javax.swing.JButton ExitButton;
-    private javax.swing.JLabel Logo1;
     private javax.swing.JLabel Logo2;
-    private javax.swing.JButton LogoutButton;
+    private javax.swing.JLabel Logo3;
+    private javax.swing.JButton LogoutButton2;
     private javax.swing.JButton MinimizeButton;
-    private javax.swing.JButton OrderButton;
     private javax.swing.JPanel OrderPanel;
     private javax.swing.JButton RefreshButton;
     private javax.swing.JPanel RevenuePanel;
-    private javax.swing.JLabel RevenueText;
     private javax.swing.JLabel Review;
     private javax.swing.JPanel Review1;
     private javax.swing.JPanel Review2;
     private javax.swing.JPanel Review3;
     private javax.swing.JPanel ReviewPanel;
-    private javax.swing.JPanel SidePanel;
-    private javax.swing.JLabel Slogan;
+    private javax.swing.JPanel SidePanel2;
+    private javax.swing.JLabel Slogan2;
     private javax.swing.JPanel TopBarPanel;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
@@ -574,7 +533,8 @@ MinimizeButton.setOpaque(false);
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
-    private javax.swing.JSeparator jSeparator1;
+    private javax.swing.JLabel jLabel7;
+    private javax.swing.JSeparator jSeparator5;
     private javax.swing.JPanel revenueChartPanel;
     // End of variables declaration//GEN-END:variables
 

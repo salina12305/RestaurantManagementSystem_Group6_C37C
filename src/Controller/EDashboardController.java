@@ -197,6 +197,25 @@ EmployeeDashboard dashboard = new EmployeeDashboard();
     });
 }
     
+//    public class SomeOtherController {
+//    private JFrame currentFrame; // your current frame
+//
+//    public SomeOtherController(JFrame currentFrame) {
+//        this.currentFrame = currentFrame;
+//    }
+//
+//    class OpenManageMenuListener implements ActionListener {
+//        @Override
+//        public void actionPerformed(ActionEvent e) {
+//            ManageMenu manageMenu = new ManageMenu();
+//            new MenuController(manageMenu);  // attach listeners
+//            manageMenu.setVisible(true);
+//            currentFrame.dispose();  // close current window if needed
+//        }
+//    }
+//}
+
+    
 // class ReservationListener implements ActionListener {
 //    private JFrame currentFrame;
 //

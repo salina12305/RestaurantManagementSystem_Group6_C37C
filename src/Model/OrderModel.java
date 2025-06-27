@@ -56,7 +56,7 @@ public class OrderModel {
         this.employeeName = employeeName; 
     }
 
-    public void createOrder(OrderModel order) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
-    }
+//    public void createOrder(OrderModel order) {
+//        throw new UnsupportedOperationException("Not supported yet."); 
+//    }
 }

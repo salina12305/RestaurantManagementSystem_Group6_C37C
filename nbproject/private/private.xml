@@ -20,7 +20,8 @@
             <file>file:/Users/uttu/NetBeansProjects/RestaurantManagementSystem_Group6_C37C/src/View/ForgotPassword.java</file>
             <file>file:/Users/uttu/NetBeansProjects/RestaurantManagementSystem_Group6_C37C/src/Dao/RevenueDao.java</file>
             <file>file:/Users/uttu/NetBeansProjects/RestaurantManagementSystem_Group6_C37C/src/View/EmployeeSignIn.java</file>
-            <file>file:/Users/uttu/NetBeansProjects/RestaurantManagementSystem_Group6_C37C/src/Controller/OrderController.java</file>
+            <file>file:/Users/uttu/NetBeansProjects/RestaurantManagementSystem_Group6_C37C/src/Dao/UserDao.java</file>
+            <file>file:/Users/uttu/NetBeansProjects/RestaurantManagementSystem_Group6_C37C/src/View/EmployeeDetailView.java</file>
         </group>
     </open-files>
 </project-private>

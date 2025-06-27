@@ -20,8 +20,8 @@ private EmployeeController Controller;
 public EmployeeDetailView() {
         initComponents();
 Controller = new EmployeeController(
-    txtID, txtName, txtGender, txtStatus, txtRating, txtRole, txtShift,
-    txtDepartment, txtJoinedDate, txtDob, txtAddress, txtEmail, txtPhoneNumber, lblProfileImage
+    txtID, txtName, txtGender, txtStatus, txtDOBdate, txtRole, txtShift,
+    txtDepartment, txtJoinedDate, txtAddress, txtEmail, txtPhoneNumber, lblProfileImage
 );
 
 
@@ -58,24 +58,16 @@ public boolean isValidDate(String dateStr) {
     private void initComponents() {
 
         jLabel2 = new javax.swing.JLabel();
-        SideBarPanel = new javax.swing.JPanel();
-        Logo1 = new javax.swing.JLabel();
-        Slogan = new javax.swing.JLabel();
-        DashboardButton = new javax.swing.JButton();
-        OrderButton = new javax.swing.JButton();
-        EmployeeButton = new javax.swing.JButton();
-        LogoutButton = new javax.swing.JButton();
         TopBarPanel = new javax.swing.JPanel();
         Logo2 = new javax.swing.JLabel();
-        RevenueText = new javax.swing.JLabel();
-        GradientBar = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
         CenterPanel = new javax.swing.JPanel();
         lblProfileImage = new javax.swing.JLabel();
         NameLbl = new javax.swing.JLabel();
         IDlbl = new javax.swing.JLabel();
         GenderLbl = new javax.swing.JLabel();
         StatusLbl = new javax.swing.JLabel();
-        RatingLbl = new javax.swing.JLabel();
+        DOBLbl = new javax.swing.JLabel();
         PersonalDetailsPanel = new javax.swing.JPanel();
         PersonalDetails = new javax.swing.JLabel();
         Address = new javax.swing.JLabel();
@@ -96,18 +88,35 @@ public boolean isValidDate(String dateStr) {
         txtShift = new javax.swing.JTextField();
         txtDepartment = new javax.swing.JTextField();
         txtJoinedDate = new javax.swing.JTextField();
-        jScrollPane1 = new javax.swing.JScrollPane();
-        jTextArea1 = new javax.swing.JTextArea();
         txtName = new javax.swing.JTextField();
         txtID = new javax.swing.JTextField();
         txtGender = new javax.swing.JTextField();
         txtStatus = new javax.swing.JTextField();
-        txtRating = new javax.swing.JTextField();
+        txtDOBdate = new javax.swing.JTextField();
         btnDelete = new javax.swing.JButton();
         btnAdd = new javax.swing.JButton();
         btnEdit = new javax.swing.JButton();
         btnSearch = new javax.swing.JButton();
         btnBrowseImage = new javax.swing.JButton();
+        SidePanel2 = new javax.swing.JPanel();
+        Logo3 = new javax.swing.JLabel();
+        DashboardBtn = new javax.swing.JButton();
+        OrderButton2 = new javax.swing.JButton();
+        BillButton2 = new javax.swing.JButton();
+        LogoutButton2 = new javax.swing.JButton();
+        Slogan2 = new javax.swing.JLabel();
+        reservationbtn1 = new javax.swing.JButton();
+        jSeparator5 = new javax.swing.JSeparator();
+        eventbtn1 = new javax.swing.JButton();
+        reservationbtn4 = new javax.swing.JButton();
+        Menubtn4 = new javax.swing.JButton();
+        SidePanel3 = new javax.swing.JPanel();
+        Logo4 = new javax.swing.JLabel();
+        DashboardBtn1 = new javax.swing.JButton();
+        LogoutButton3 = new javax.swing.JButton();
+        Slogan3 = new javax.swing.JLabel();
+        jSeparator6 = new javax.swing.JSeparator();
+        Menubtn5 = new javax.swing.JButton();
 
         jLabel2.setText("jLabel2");
 
@@ -115,89 +124,19 @@ public boolean isValidDate(String dateStr) {
         setSize(new java.awt.Dimension(1000, 600));
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        SideBarPanel.setBackground(new java.awt.Color(255, 243, 224));
-        SideBarPanel.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        SideBarPanel.setLayout(null);
-
-        Logo1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/Screenshot_2025-05-22_222007-removebg-preview (1).png"))); // NOI18N
-        SideBarPanel.add(Logo1);
-        Logo1.setBounds(31, 17, 120, 120);
-
-        Slogan.setFont(new java.awt.Font("Segoe UI", 2, 12)); // NOI18N
-        Slogan.setText("7 People Serving since 11 AM");
-        SideBarPanel.add(Slogan);
-        Slogan.setBounds(20, 140, 151, 15);
-
-        DashboardButton.setBackground(new java.awt.Color(255, 243, 224));
-        DashboardButton.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        DashboardButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/dashboard.png"))); // NOI18N
-        DashboardButton.setText("Dashboard");
-        DashboardButton.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        DashboardButton.setIconTextGap(10);
-        DashboardButton.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                DashboardButtonActionPerformed(evt);
-            }
-        });
-        SideBarPanel.add(DashboardButton);
-        DashboardButton.setBounds(20, 190, 160, 40);
-
-        OrderButton.setBackground(new java.awt.Color(255, 243, 224));
-        OrderButton.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        OrderButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/order.png"))); // NOI18N
-        OrderButton.setText("Order");
-        OrderButton.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        OrderButton.setIconTextGap(10);
-        OrderButton.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                OrderButtonActionPerformed(evt);
-            }
-        });
-        SideBarPanel.add(OrderButton);
-        OrderButton.setBounds(20, 240, 160, 40);
-
-        EmployeeButton.setBackground(new java.awt.Color(255, 243, 224));
-        EmployeeButton.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        EmployeeButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/employee.png"))); // NOI18N
-        EmployeeButton.setText("Employee");
-        EmployeeButton.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        EmployeeButton.setIconTextGap(10);
-        EmployeeButton.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                EmployeeButtonActionPerformed(evt);
-            }
-        });
-        SideBarPanel.add(EmployeeButton);
-        EmployeeButton.setBounds(20, 290, 160, 40);
-
-        LogoutButton.setBackground(new java.awt.Color(255, 243, 224));
-        LogoutButton.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        LogoutButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/logout.png"))); // NOI18N
-        LogoutButton.setText("Logout");
-        LogoutButton.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        LogoutButton.setIconTextGap(10);
-        SideBarPanel.add(LogoutButton);
-        LogoutButton.setBounds(20, 540, 160, 40);
-
-        getContentPane().add(SideBarPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 200, 600));
-
         TopBarPanel.setBackground(new java.awt.Color(255, 243, 224));
         TopBarPanel.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         TopBarPanel.setLayout(null);
 
-        Logo2.setFont(new java.awt.Font("Segoe UI Variable", 1, 36)); // NOI18N
+        Logo2.setFont(new java.awt.Font("Jaini Purva", 3, 48)); // NOI18N
         Logo2.setText("7 ~ 11");
         TopBarPanel.add(Logo2);
-        Logo2.setBounds(20, 20, 150, 40);
+        Logo2.setBounds(300, 20, 150, 40);
 
-        RevenueText.setFont(new java.awt.Font("Segoe UI", 2, 14)); // NOI18N
-        RevenueText.setText("Overall revenue illustration of last 7 days");
-        TopBarPanel.add(RevenueText);
-        RevenueText.setBounds(20, 70, 320, 20);
-
-        GradientBar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/GradientBar.png"))); // NOI18N
-        TopBarPanel.add(GradientBar);
-        GradientBar.setBounds(10, 90, 750, 70);
+        jLabel3.setFont(new java.awt.Font("Times New Roman", 1, 24)); // NOI18N
+        jLabel3.setText("Add your Member Here");
+        TopBarPanel.add(jLabel3);
+        jLabel3.setBounds(210, 70, 310, 50);
 
         getContentPane().add(TopBarPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 0, 800, 160));
 
@@ -226,9 +165,9 @@ public boolean isValidDate(String dateStr) {
         StatusLbl.setText("Status:");
         CenterPanel.add(StatusLbl, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 230, 50, 20));
 
-        RatingLbl.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        RatingLbl.setText("Rating:");
-        CenterPanel.add(RatingLbl, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 260, 50, -1));
+        DOBLbl.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        DOBLbl.setText("DOB");
+        CenterPanel.add(DOBLbl, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 260, 50, -1));
 
         PersonalDetailsPanel.setBackground(new java.awt.Color(255, 243, 224));
         PersonalDetailsPanel.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
@@ -237,7 +176,7 @@ public boolean isValidDate(String dateStr) {
         PersonalDetails.setFont(new java.awt.Font("Segoe UI", 3, 14)); // NOI18N
         PersonalDetails.setText("Personal Details:");
         PersonalDetailsPanel.add(PersonalDetails);
-        PersonalDetails.setBounds(10, 10, 120, 17);
+        PersonalDetails.setBounds(10, 10, 140, 17);
 
         Address.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/location.png"))); // NOI18N
         PersonalDetailsPanel.add(Address);
@@ -269,6 +208,11 @@ public boolean isValidDate(String dateStr) {
         txtDob.setBounds(50, 70, 150, 23);
 
         txtEmail.setBackground(new java.awt.Color(255, 243, 224));
+        txtEmail.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtEmailActionPerformed(evt);
+            }
+        });
         PersonalDetailsPanel.add(txtEmail);
         txtEmail.setBounds(280, 40, 140, 23);
 
@@ -276,7 +220,7 @@ public boolean isValidDate(String dateStr) {
         PersonalDetailsPanel.add(txtPhoneNumber);
         txtPhoneNumber.setBounds(280, 70, 140, 23);
 
-        CenterPanel.add(PersonalDetailsPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 310, 470, 110));
+        CenterPanel.add(PersonalDetailsPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 320, 470, 110));
 
         JobDetailsPanel.setBackground(new java.awt.Color(255, 243, 224));
         JobDetailsPanel.setLayout(null);
@@ -325,12 +269,6 @@ public boolean isValidDate(String dateStr) {
 
         CenterPanel.add(JobDetailsPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 20, 290, 280));
 
-        jTextArea1.setColumns(20);
-        jTextArea1.setRows(5);
-        jScrollPane1.setViewportView(jTextArea1);
-
-        CenterPanel.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 380, 150, 30));
-
         txtName.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtNameActionPerformed(evt);
@@ -346,7 +284,7 @@ public boolean isValidDate(String dateStr) {
         CenterPanel.add(txtID, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 170, 190, -1));
         CenterPanel.add(txtGender, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 200, 190, -1));
         CenterPanel.add(txtStatus, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 230, 190, -1));
-        CenterPanel.add(txtRating, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 260, 190, -1));
+        CenterPanel.add(txtDOBdate, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 260, 190, -1));
 
         btnDelete.setBackground(new java.awt.Color(255, 243, 224));
         btnDelete.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
@@ -385,20 +323,156 @@ public boolean isValidDate(String dateStr) {
 
         getContentPane().add(CenterPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 160, 800, 440));
 
+        SidePanel2.setBackground(new java.awt.Color(255, 243, 224));
+        SidePanel2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        SidePanel2.setLayout(null);
+
+        Logo3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/Screenshot_2025-05-22_222007-removebg-preview (1).png"))); // NOI18N
+        Logo3.setText("jLabel1");
+        SidePanel2.add(Logo3);
+        Logo3.setBounds(30, 0, 136, 110);
+
+        DashboardBtn.setBackground(new java.awt.Color(255, 243, 224));
+        DashboardBtn.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        DashboardBtn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/dashboard.png"))); // NOI18N
+        DashboardBtn.setText("Dashboard");
+        DashboardBtn.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        DashboardBtn.setIconTextGap(10);
+        SidePanel2.add(DashboardBtn);
+        DashboardBtn.setBounds(20, 190, 160, 40);
+
+        OrderButton2.setBackground(new java.awt.Color(255, 243, 224));
+        OrderButton2.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        OrderButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/order.png"))); // NOI18N
+        OrderButton2.setText("Order");
+        OrderButton2.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        OrderButton2.setIconTextGap(10);
+        OrderButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                OrderButton2ActionPerformed(evt);
+            }
+        });
+        SidePanel2.add(OrderButton2);
+        OrderButton2.setBounds(20, 390, 160, 40);
+
+        BillButton2.setBackground(new java.awt.Color(255, 243, 224));
+        BillButton2.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        BillButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/order.png"))); // NOI18N
+        BillButton2.setText("Bill");
+        BillButton2.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        BillButton2.setIconTextGap(10);
+        SidePanel2.add(BillButton2);
+        BillButton2.setBounds(20, 440, 160, 40);
+
+        LogoutButton2.setBackground(new java.awt.Color(255, 243, 224));
+        LogoutButton2.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        LogoutButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/logout.png"))); // NOI18N
+        LogoutButton2.setText("Logout");
+        LogoutButton2.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        LogoutButton2.setIconTextGap(10);
+        SidePanel2.add(LogoutButton2);
+        LogoutButton2.setBounds(20, 540, 160, 40);
+
+        Slogan2.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
+        Slogan2.setText("7 people serving since 11 AM");
+        Slogan2.setToolTipText("");
+        SidePanel2.add(Slogan2);
+        Slogan2.setBounds(10, 100, 180, 20);
+
+        reservationbtn1.setBackground(new java.awt.Color(255, 243, 224));
+        reservationbtn1.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        reservationbtn1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/order.png"))); // NOI18N
+        reservationbtn1.setText("Reservation");
+        reservationbtn1.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        reservationbtn1.setIconTextGap(10);
+        SidePanel2.add(reservationbtn1);
+        reservationbtn1.setBounds(20, 240, 160, 40);
+
+        jSeparator5.setBackground(new java.awt.Color(0, 0, 0));
+        jSeparator5.setForeground(new java.awt.Color(0, 0, 0));
+        SidePanel2.add(jSeparator5);
+        jSeparator5.setBounds(0, 120, 200, 20);
+
+        eventbtn1.setBackground(new java.awt.Color(255, 243, 224));
+        eventbtn1.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        eventbtn1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/order.png"))); // NOI18N
+        eventbtn1.setText("Event Booking");
+        eventbtn1.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        eventbtn1.setIconTextGap(10);
+        SidePanel2.add(eventbtn1);
+        eventbtn1.setBounds(20, 290, 160, 40);
+
+        reservationbtn4.setBackground(new java.awt.Color(255, 243, 224));
+        reservationbtn4.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        reservationbtn4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/order.png"))); // NOI18N
+        reservationbtn4.setText("Reservation");
+        reservationbtn4.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        reservationbtn4.setIconTextGap(10);
+        SidePanel2.add(reservationbtn4);
+        reservationbtn4.setBounds(20, 240, 160, 40);
+
+        Menubtn4.setBackground(new java.awt.Color(255, 243, 224));
+        Menubtn4.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        Menubtn4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/order.png"))); // NOI18N
+        Menubtn4.setText("Manage Menu");
+        Menubtn4.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        Menubtn4.setIconTextGap(10);
+        SidePanel2.add(Menubtn4);
+        Menubtn4.setBounds(20, 340, 160, 40);
+
+        getContentPane().add(SidePanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
+
+        SidePanel3.setBackground(new java.awt.Color(255, 243, 224));
+        SidePanel3.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        SidePanel3.setLayout(null);
+
+        Logo4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/Screenshot_2025-05-22_222007-removebg-preview (1).png"))); // NOI18N
+        Logo4.setText("jLabel1");
+        SidePanel3.add(Logo4);
+        Logo4.setBounds(30, 0, 136, 110);
+
+        DashboardBtn1.setBackground(new java.awt.Color(255, 243, 224));
+        DashboardBtn1.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        DashboardBtn1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/dashboard.png"))); // NOI18N
+        DashboardBtn1.setText("Dashboard");
+        DashboardBtn1.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        DashboardBtn1.setIconTextGap(10);
+        SidePanel3.add(DashboardBtn1);
+        DashboardBtn1.setBounds(20, 190, 160, 40);
+
+        LogoutButton3.setBackground(new java.awt.Color(255, 243, 224));
+        LogoutButton3.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        LogoutButton3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/logout.png"))); // NOI18N
+        LogoutButton3.setText("Logout");
+        LogoutButton3.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        LogoutButton3.setIconTextGap(10);
+        SidePanel3.add(LogoutButton3);
+        LogoutButton3.setBounds(20, 540, 160, 40);
+
+        Slogan3.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
+        Slogan3.setText("7 people serving since 11 AM");
+        Slogan3.setToolTipText("");
+        SidePanel3.add(Slogan3);
+        Slogan3.setBounds(10, 100, 180, 20);
+
+        jSeparator6.setBackground(new java.awt.Color(0, 0, 0));
+        jSeparator6.setForeground(new java.awt.Color(0, 0, 0));
+        SidePanel3.add(jSeparator6);
+        jSeparator6.setBounds(0, 120, 200, 20);
+
+        Menubtn5.setBackground(new java.awt.Color(255, 243, 224));
+        Menubtn5.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        Menubtn5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/employee.png"))); // NOI18N
+        Menubtn5.setText("Manage Employee");
+        Menubtn5.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        Menubtn5.setIconTextGap(10);
+        SidePanel3.add(Menubtn5);
+        Menubtn5.setBounds(20, 260, 160, 40);
+
+        getContentPane().add(SidePanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 200, 600));
+
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
-    private void OrderButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_OrderButtonActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_OrderButtonActionPerformed
-
-    private void EmployeeButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EmployeeButtonActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_EmployeeButtonActionPerformed
-
-    private void DashboardButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DashboardButtonActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_DashboardButtonActionPerformed
 
     private void txtIDActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtIDActionPerformed
         // TODO add your handling code here:
@@ -415,6 +489,14 @@ public boolean isValidDate(String dateStr) {
     private void btnBrowseImageActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBrowseImageActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_btnBrowseImageActionPerformed
+
+    private void txtEmailActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtEmailActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtEmailActionPerformed
+
+    private void OrderButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_OrderButton2ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_OrderButton2ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -454,30 +536,35 @@ public boolean isValidDate(String dateStr) {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel Address;
+    private javax.swing.JButton BillButton2;
     private javax.swing.JPanel CenterPanel;
     private javax.swing.JLabel DOB;
-    private javax.swing.JButton DashboardButton;
+    private javax.swing.JLabel DOBLbl;
+    private javax.swing.JButton DashboardBtn;
+    private javax.swing.JButton DashboardBtn1;
     private javax.swing.JLabel DepartmentLbl;
     private javax.swing.JLabel Email;
-    private javax.swing.JButton EmployeeButton;
     private javax.swing.JLabel GenderLbl;
-    private javax.swing.JLabel GradientBar;
     private javax.swing.JLabel IDlbl;
     private javax.swing.JPanel JobDetailsPanel;
     private javax.swing.JLabel JoinedLbl;
-    private javax.swing.JLabel Logo1;
     private javax.swing.JLabel Logo2;
-    private javax.swing.JButton LogoutButton;
+    private javax.swing.JLabel Logo3;
+    private javax.swing.JLabel Logo4;
+    private javax.swing.JButton LogoutButton2;
+    private javax.swing.JButton LogoutButton3;
+    private javax.swing.JButton Menubtn4;
+    private javax.swing.JButton Menubtn5;
     private javax.swing.JLabel NameLbl;
-    private javax.swing.JButton OrderButton;
+    private javax.swing.JButton OrderButton2;
     private javax.swing.JLabel PersonalDetails;
     private javax.swing.JPanel PersonalDetailsPanel;
     private javax.swing.JLabel PhoneNo;
-    private javax.swing.JLabel RatingLbl;
-    private javax.swing.JLabel RevenueText;
     private javax.swing.JLabel RoleLbl;
-    private javax.swing.JPanel SideBarPanel;
-    private javax.swing.JLabel Slogan;
+    private javax.swing.JPanel SidePanel2;
+    private javax.swing.JPanel SidePanel3;
+    private javax.swing.JLabel Slogan2;
+    private javax.swing.JLabel Slogan3;
     private javax.swing.JLabel StatusLbl;
     private javax.swing.JPanel TopBarPanel;
     private javax.swing.JLabel WorkLbl;
@@ -486,12 +573,17 @@ public boolean isValidDate(String dateStr) {
     private javax.swing.JButton btnDelete;
     private javax.swing.JButton btnEdit;
     private javax.swing.JButton btnSearch;
+    private javax.swing.JButton eventbtn1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
-    private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTextArea jTextArea1;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JSeparator jSeparator5;
+    private javax.swing.JSeparator jSeparator6;
     private javax.swing.JLabel lblProfileImage;
+    private javax.swing.JButton reservationbtn1;
+    private javax.swing.JButton reservationbtn4;
     private javax.swing.JTextField txtAddress;
+    private javax.swing.JTextField txtDOBdate;
     private javax.swing.JTextField txtDepartment;
     private javax.swing.JTextField txtDob;
     private javax.swing.JTextField txtEmail;
@@ -500,7 +592,6 @@ public boolean isValidDate(String dateStr) {
     private javax.swing.JTextField txtJoinedDate;
     private javax.swing.JTextField txtName;
     private javax.swing.JTextField txtPhoneNumber;
-    private javax.swing.JTextField txtRating;
     private javax.swing.JTextField txtRole;
     private javax.swing.JTextField txtShift;
     private javax.swing.JTextField txtStatus;

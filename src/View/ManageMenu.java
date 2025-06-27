@@ -4,8 +4,9 @@
  */
 package View;
 
-import Dao.MenuDao;
-import Model.MenuItem;
+import Dao.MenuDAO;
+import Model.MenuItemModel;
+
 import javax.swing.JOptionPane;
 
 /**
@@ -411,10 +412,10 @@ public class ManageMenu extends javax.swing.JFrame {
             double priceVal = Double.parseDouble(priceText);
 
             // Create MenuItem object
-            MenuItem item = new MenuItem(itemName, quantity, priceVal, employeeName);
+            MenuItemModel item = new MenuItemModel(itemName, quantity, priceVal, employeeName);
 
             // Save to database
-            MenuDao dao = new MenuDao();
+            MenuDAO dao = new MenuDAO();
             boolean success = dao.createMenuItem(item);
 
             if (success) {

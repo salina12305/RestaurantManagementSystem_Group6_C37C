@@ -13,7 +13,7 @@ import Model.Employee;
 
 import java.sql.*;
 
-public class EmployeeDao {
+public class EmployeeDAO {
     MySqlConnection mysql = new MySqlConnection();
 
     public boolean addEmployee(Employee emp) {

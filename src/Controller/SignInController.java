@@ -52,20 +52,24 @@ public class SignInController {
                     // Use role from database
                     String role = signInUser.getRole();
                     if ("admin".equalsIgnoreCase(role)) {
+                        System.out.println("Creating AdminDashboard...");
                         AdminDashboard dashboard = new AdminDashboard();
-                        dashboard.setVisible(true);
-
+                        System.out.println("Creating AdminDashboardController...");
+                        AdminDashboardController dashboardView = new AdminDashboardController(dashboard);
+                        
+System.out.println("Opening dashboard...");
+                        dashboardView.open();
+                        close();
 
                     } else {
                         JOptionPane.showMessageDialog(userView, "Unknown role. Contact admin.");
                         return;
                     }
-
-                    close();
                 }
 
             } catch (Exception ex) {
-                System.out.println("Login error: " + ex.getMessage());
+                 ex.printStackTrace();
+//                System.out.println("Login error: " + ex.getMessage());
                 JOptionPane.showMessageDialog(userView, "An error occurred during login.");
             }
         }

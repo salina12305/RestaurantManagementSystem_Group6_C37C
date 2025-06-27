@@ -7,17 +7,17 @@ import Database.*;
 
 public class RestaurantManagementSystem {
     public static void main(String[] args) {
-          System.out.println("Hello, world!"); 
-    }
+//          System.out.println("Hello, world!"); 
+//    }
 
 //      EmployeeSignIn esignInForm = new EmployeeSignIn();
 //     ESignInController esignInController = new ESignInController(esignInForm);
 //     esignInController.open(); 
 //    } 
-//EmployeeSignIn esignInForm = new EmployeeSignIn();
-//ESignInController esignInController = new ESignInController(esignInForm);
-//esignInController.open();
-//    }
+EmployeeSignIn esignInForm = new EmployeeSignIn();
+ESignInController esignInController = new ESignInController(esignInForm);
+esignInController.open();
+    }
 //        // TODO code application logic here
 //        Database db= new MySqlConnection();
 //        if(db.openConnection()!=null){

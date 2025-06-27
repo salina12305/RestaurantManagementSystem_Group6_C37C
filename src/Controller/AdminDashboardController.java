@@ -1,6 +1,9 @@
 
 package Controller;
 
+import Dao.AdminDashboardDao;
+import Database.MySqlConnection;
+import View.AdminDashboard;
 import java.awt.Color;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
@@ -29,6 +32,12 @@ import java.awt.*;
 import java.awt.geom.Ellipse2D;
 
 public class AdminDashboardController {
+
+//    public static void loadRevenueChartFromDB(JPanel revenueChartPanel) {
+//        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+//    }
+    private AdminDashboard view;
+    
     
     public static void loadRevenueChart(JPanel panel, JFrame frame) {
     DefaultCategoryDataset dataset = new DefaultCategoryDataset();
@@ -44,6 +53,7 @@ public class AdminDashboardController {
     panel.add(chartPanel, BorderLayout.CENTER);
     panel.validate();
 }
+      
 
 
     public static void applyHoverEffect(JButton button) {
@@ -62,11 +72,26 @@ public class AdminDashboardController {
             }
         });
     }
+     MySqlConnection mysql = new MySqlConnection();
+     private final AdminDashboardDao dashboardDao = new AdminDashboardDao(); 
+    private final AdminDashboard dashboardView;
+
+    public AdminDashboardController(AdminDashboard view) {
+        this.dashboardView=view;
+        dashboardView.setExtendedState(JFrame.MAXIMIZED_BOTH);
+        AdminDashboardDao.loadRevenueChartFromDB(view.getRevenueChartPanel());
+      
+//        view.addLogoutListener(new LogoutListener(view));
+//        view.addOrderListener(new OrderListener());
+//        view.addBillListener(new BillListener());
+
+       
+    }
 
     public static void loadRevenueChartFromDB(JPanel revenueChartPanel) {
     DefaultCategoryDataset dataset = new DefaultCategoryDataset();
 
-    try (Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/restaurant", "root", "qwerty1234")) {
+    try (Connection conn = DriverManager.getConnection("jdbc:mysql://127.0.0.1:3306/restaurant", "root", "12345678")) {
 
         String sql = "SELECT MONTH(order_date) AS month, SUM(total_amount) AS total " +
                      "FROM orders GROUP BY MONTH(order_date) ORDER BY MONTH(order_date)";
@@ -119,7 +144,7 @@ public class AdminDashboardController {
     revenueChartPanel.repaint();
 }
 
-
+    
     public static void applyHoverEffect(JPanel ReviewPanel) {
         throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
@@ -127,4 +152,8 @@ public class AdminDashboardController {
     public static void applyHoverEffect(JLabel jLabel1) {
         throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
+
+
+    void open() {
+dashboardView.setVisible(true);    }
 }

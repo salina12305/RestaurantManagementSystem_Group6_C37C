@@ -4,6 +4,7 @@ import java.awt.Color;
 import javax.swing.JFrame;
 
 import Controller.AdminDashboardController;
+import javax.swing.JPanel;
 
 
 
@@ -576,6 +577,12 @@ MinimizeButton.setOpaque(false);
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JPanel revenueChartPanel;
     // End of variables declaration//GEN-END:variables
+
+ 
+
+    public JPanel getRevenueChartPanel() {
+         return revenueChartPanel;
+    }
 
 }
 

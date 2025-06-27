@@ -2,7 +2,7 @@
 package Controller;
 
 
-import Dao.EmployeeDao;
+import Dao.EmployeeDAO;
 import Model.Employee;
 
 import javax.swing.*;
@@ -45,9 +45,9 @@ public class EmployeeController {
 
         try {
             if (keyword.matches("\\d+")) {
-                emp = new EmployeeDao().getEmployeeById(Integer.parseInt(keyword));
+                emp = new EmployeeDAO().getEmployeeById(Integer.parseInt(keyword));
             } else {
-                emp = new EmployeeDao().getEmployeeByName(keyword);
+                emp = new EmployeeDAO().getEmployeeByName(keyword);
             }
 
             if (emp != null) {
@@ -64,7 +64,7 @@ public class EmployeeController {
     public void saveEmployee() {
         try {
             Employee emp = getFormData(false);
-            boolean success = new EmployeeDao().addEmployee(emp);
+            boolean success = new EmployeeDAO().addEmployee(emp);
             JOptionPane.showMessageDialog(null, success ? "Employee added!" : "Failed to add.");
         } catch (Exception e) {
             JOptionPane.showMessageDialog(null, "Error saving employee: " + e.getMessage());
@@ -74,7 +74,7 @@ public class EmployeeController {
     public void updateEmployee() {
         try {
             Employee emp = getFormData(true);
-            boolean success = new EmployeeDao().updateEmployee(emp);
+            boolean success = new EmployeeDAO().updateEmployee(emp);
             JOptionPane.showMessageDialog(null, success ? "Employee updated!" : "Update failed.");
         } catch (Exception e) {
             JOptionPane.showMessageDialog(null, "Error updating employee: " + e.getMessage());
@@ -84,7 +84,7 @@ public class EmployeeController {
     public void deleteEmployee() {
         try {
             int id = Integer.parseInt(txtID.getText());
-            boolean success = new EmployeeDao().deleteEmployee(id);
+            boolean success = new EmployeeDAO().deleteEmployee(id);
             JOptionPane.showMessageDialog(null, success ? "Employee deleted!" : "Delete failed.");
         } catch (NumberFormatException e) {
             JOptionPane.showMessageDialog(null, "Please enter a valid ID.");

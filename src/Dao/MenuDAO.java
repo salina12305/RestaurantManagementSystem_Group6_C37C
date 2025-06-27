@@ -3,10 +3,11 @@ package Dao;
 import Model.MenuItemModel;
 //import Database.DBConnection;
 import Database.MySqlConnection;
+import java.awt.MenuItem;
 import java.sql.*;
 import java.util.ArrayList;
 
-public class MenuDao {
+public class MenuDAO {
 
     public static boolean createMenu(Connection conn, int itemId, String name, int itemCount, double itemPrice, String empName) {
         throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
@@ -17,7 +18,7 @@ public class MenuDao {
     }
     private Connection connection;
     
-    public MenuDao() {
+    public MenuDAO() {
         MySqlConnection mysql = new MySqlConnection();
         
         createTableIfNotExists();
@@ -106,5 +107,9 @@ public class MenuDao {
             e.printStackTrace();
             return new MenuItemModel[0];
         }
+    }
+
+    public boolean createMenuItem(MenuItem item) {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
 } 

@@ -5,7 +5,7 @@
 package Controller;
 
 
-import Dao.MenuDao;
+import Dao.MenuDAO;
 //import Database.DBConnection;
 import java.sql.Connection;
 import java.awt.HeadlessException;
@@ -33,7 +33,7 @@ public class MenuController {
 //            Connection conn = (Connection) mysql.getConnection();
             Connection conn = mysql.openConnection();
 
-            boolean success = MenuDao.createMenu((java.sql.Connection) conn, itemId, name, itemCount, itemPrice, empName);
+            boolean success = MenuDAO.createMenu((java.sql.Connection) conn, itemId, name, itemCount, itemPrice, empName);
             if (success) {
                 JOptionPane.showMessageDialog(null, "Order created successfully!");
                 new NextForm().setVisible(true);  // replace with your actual next interface
@@ -76,7 +76,7 @@ public class MenuController {
 //            Connection conn = (Connection) DBConnection.getConnection();
                Connection conn = mysql.openConnection();
 
-            boolean success = MenuDao.deleteMenu((java.sql.Connection) conn, itemId);
+            boolean success = MenuDAO.deleteMenu((java.sql.Connection) conn, itemId);
             if (success) {
                 JOptionPane.showMessageDialog(null, "Order deleted successfully!");
                 new NextForm().setVisible(true);

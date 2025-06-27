@@ -19,18 +19,8 @@
             <file>file:/Users/uttu/NetBeansProjects/RestaurantManagementSystem_Group6_C37C/src/View/NewPassword.java</file>
             <file>file:/Users/uttu/NetBeansProjects/RestaurantManagementSystem_Group6_C37C/src/View/ForgotPassword.java</file>
             <file>file:/Users/uttu/NetBeansProjects/RestaurantManagementSystem_Group6_C37C/src/Dao/RevenueDao.java</file>
-            <file>file:/Users/uttu/NetBeansProjects/RestaurantManagementSystem_Group6_C37C/src/Controller/OrderController.java</file>
-            <file>file:/Users/uttu/NetBeansProjects/RestaurantManagementSystem_Group6_C37C/src/Dao/OrderDao.java</file>
-            <file>file:/Users/uttu/NetBeansProjects/RestaurantManagementSystem_Group6_C37C/src/Dao/EmployeeDAO.java</file>
-            <file>file:/Users/uttu/NetBeansProjects/RestaurantManagementSystem_Group6_C37C/src/Controller/EmployeeController.java</file>
-            <file>file:/Users/uttu/NetBeansProjects/RestaurantManagementSystem_Group6_C37C/src/Dao/EDashboardDao.java</file>
-            <file>file:/Users/uttu/NetBeansProjects/RestaurantManagementSystem_Group6_C37C/src/Dao/AdminDashboardDao.java</file>
-            <file>file:/Users/uttu/NetBeansProjects/RestaurantManagementSystem_Group6_C37C/src/Controller/AdminDashboardController.java</file>
-            <file>file:/Users/uttu/NetBeansProjects/RestaurantManagementSystem_Group6_C37C/src/Dao/MenuDAO.java</file>
-            <file>file:/Users/uttu/NetBeansProjects/RestaurantManagementSystem_Group6_C37C/src/Controller/MenuController.java</file>
-            <file>file:/Users/uttu/NetBeansProjects/RestaurantManagementSystem_Group6_C37C/src/View/ManageMenu.java</file>
-            <file>file:/Users/uttu/NetBeansProjects/RestaurantManagementSystem_Group6_C37C/src/Model/MenuItemModel.java</file>
             <file>file:/Users/uttu/NetBeansProjects/RestaurantManagementSystem_Group6_C37C/src/View/EmployeeSignIn.java</file>
+            <file>file:/Users/uttu/NetBeansProjects/RestaurantManagementSystem_Group6_C37C/src/Controller/OrderController.java</file>
         </group>
     </open-files>
 </project-private>

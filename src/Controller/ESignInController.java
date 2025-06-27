@@ -75,13 +75,10 @@ public class ESignInController {
                     System.out.println("Logged-in role: " + role);
 
                     if ("employee".equalsIgnoreCase(role)) {
-<<<<<<< HEAD
+
                         EmployeeDashboard dashboard = new EmployeeDashboard();
                         dashboard.setVisible(true);
-                   
-=======
-                        EmployeeDashboard dash = new EmployeeDashboard();
-                        dash.setVisible(true);
+
 //                        ESignInController control = new ESignInController(dash);
 //                        control.open();
 //                        EmployeeDashboard dashboards = new EmployeeDashboard();
@@ -91,7 +88,7 @@ public class ESignInController {
 //                    } else if ("admin".equalsIgnoreCase(role)) {
 //                        AdminDashboard dashboard = new AdminDashboard();
 //                        dashboard.setVisible(true);
->>>>>>> reservation_availability
+
                     } else {
                         JOptionPane.showMessageDialog(userView, "Unknown role");
                         return;

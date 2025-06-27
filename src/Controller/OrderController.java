@@ -47,7 +47,7 @@ public class OrderController {
 
             // Save Order
             OrderModel order = new OrderModel(orderId, itemName, noOfItem, price, customerName, employeeName);
-            orderDao.createOrder(order);
+            order.createOrder(order);
 
             //  Generate and save corresponding Bill
             double amount = price * noOfItem;
@@ -166,8 +166,8 @@ public class OrderController {
             System.out.println("Dashboard button clicked"); 
             EmployeeDashboard dashboardView = new EmployeeDashboard();
             dashboardView.setVisible(true);
-            EDashboardController control = new EDashboardController(dashboardView);
-            control.open();
+            
+//            control.open();
             new EDashboardController(dashboardView);
             dashboardView.setVisible(true);
             

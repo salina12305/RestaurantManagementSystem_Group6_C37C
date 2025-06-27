@@ -14,16 +14,10 @@ public class MySqlConnection implements Database {
     public Connection openConnection() {
          try{
             String username="root";
-<<<<<<< HEAD
             String password="12345678";
             String database="Restaurant";
 
-            String password="@alexmaharjan03";
-            String database="Java";
-=======
-            String password="qwerty1234";
-            String database="restaurant";
->>>>>>> Employeemanagement
+  
             Connection connection;
             
             connection= DriverManager.getConnection(

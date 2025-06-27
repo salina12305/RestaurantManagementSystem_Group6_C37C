@@ -126,7 +126,7 @@ public boolean isValidDate(String dateStr) {
         Slogan.setFont(new java.awt.Font("Segoe UI", 2, 12)); // NOI18N
         Slogan.setText("7 People Serving since 11 AM");
         SideBarPanel.add(Slogan);
-        Slogan.setBounds(20, 140, 151, 16);
+        Slogan.setBounds(20, 140, 151, 15);
 
         DashboardButton.setBackground(new java.awt.Color(255, 243, 224));
         DashboardButton.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
@@ -188,12 +188,12 @@ public boolean isValidDate(String dateStr) {
         Logo2.setFont(new java.awt.Font("Segoe UI Variable", 1, 36)); // NOI18N
         Logo2.setText("7 ~ 11");
         TopBarPanel.add(Logo2);
-        Logo2.setBounds(20, 20, 100, 40);
+        Logo2.setBounds(20, 20, 150, 40);
 
         RevenueText.setFont(new java.awt.Font("Segoe UI", 2, 14)); // NOI18N
         RevenueText.setText("Overall revenue illustration of last 7 days");
         TopBarPanel.add(RevenueText);
-        RevenueText.setBounds(20, 70, 270, 20);
+        RevenueText.setBounds(20, 70, 320, 20);
 
         GradientBar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/GradientBar.png"))); // NOI18N
         TopBarPanel.add(GradientBar);
@@ -237,7 +237,7 @@ public boolean isValidDate(String dateStr) {
         PersonalDetails.setFont(new java.awt.Font("Segoe UI", 3, 14)); // NOI18N
         PersonalDetails.setText("Personal Details:");
         PersonalDetailsPanel.add(PersonalDetails);
-        PersonalDetails.setBounds(10, 10, 120, 20);
+        PersonalDetails.setBounds(10, 10, 120, 17);
 
         Address.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/location.png"))); // NOI18N
         PersonalDetailsPanel.add(Address);
@@ -262,19 +262,19 @@ public boolean isValidDate(String dateStr) {
             }
         });
         PersonalDetailsPanel.add(txtAddress);
-        txtAddress.setBounds(50, 40, 150, 22);
+        txtAddress.setBounds(50, 40, 150, 23);
 
         txtDob.setBackground(new java.awt.Color(255, 243, 224));
         PersonalDetailsPanel.add(txtDob);
-        txtDob.setBounds(50, 70, 150, 22);
+        txtDob.setBounds(50, 70, 150, 23);
 
         txtEmail.setBackground(new java.awt.Color(255, 243, 224));
         PersonalDetailsPanel.add(txtEmail);
-        txtEmail.setBounds(280, 40, 140, 22);
+        txtEmail.setBounds(280, 40, 140, 23);
 
         txtPhoneNumber.setBackground(new java.awt.Color(255, 243, 224));
         PersonalDetailsPanel.add(txtPhoneNumber);
-        txtPhoneNumber.setBounds(280, 70, 140, 22);
+        txtPhoneNumber.setBounds(280, 70, 140, 23);
 
         CenterPanel.add(PersonalDetailsPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 310, 470, 110));
 

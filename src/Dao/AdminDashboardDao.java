@@ -26,7 +26,7 @@ public class AdminDashboardDao {
 
         String url = "";
         String user = "root";
-        String password = "qwerty1234";
+        String password = "12345678";
 
         String query = "SELECT MONTH(order_date) AS month, SUM(total_amount) AS revenue " +
                        "FROM orders GROUP BY MONTH(order_date)";

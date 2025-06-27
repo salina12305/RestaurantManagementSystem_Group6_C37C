@@ -3,7 +3,7 @@ package View;
 import java.awt.Color;
 import javax.swing.JFrame;
 
-import controller.AdminDashboardController;
+import Controller.AdminDashboardController;
 
 
 

@@ -1,13 +1,13 @@
 package Model;
 
-public class MenuItem {
+public class MenuItemModel {
     private String itemId;
     private String itemName;
     private int quantity;
     private double price;
     private String employeeName;
     
-    public MenuItem(String itemName, int quantity, double price, String employeeName) {
+    public MenuItemModel(String itemName, int quantity, double price, String employeeName) {
         this.itemName = itemName;
         this.quantity = quantity;
         this.price = price;

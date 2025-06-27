@@ -1,5 +1,5 @@
 
-package controller;
+package Controller;
 
 import java.awt.Color;
 import java.awt.event.MouseAdapter;

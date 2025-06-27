@@ -1,14 +1,8 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
+
 package Controller;
 
-/**
- *
- * @author Nitro
- */
-import Dao.EmployeeDAO;
+
+import Dao.EmployeeDao;
 import Model.Employee;
 
 import javax.swing.*;
@@ -51,9 +45,9 @@ public class EmployeeController {
 
         try {
             if (keyword.matches("\\d+")) {
-                emp = new EmployeeDAO().getEmployeeById(Integer.parseInt(keyword));
+                emp = new EmployeeDao().getEmployeeById(Integer.parseInt(keyword));
             } else {
-                emp = new EmployeeDAO().getEmployeeByName(keyword);
+                emp = new EmployeeDao().getEmployeeByName(keyword);
             }
 
             if (emp != null) {
@@ -70,7 +64,7 @@ public class EmployeeController {
     public void saveEmployee() {
         try {
             Employee emp = getFormData(false);
-            boolean success = new EmployeeDAO().addEmployee(emp);
+            boolean success = new EmployeeDao().addEmployee(emp);
             JOptionPane.showMessageDialog(null, success ? "Employee added!" : "Failed to add.");
         } catch (Exception e) {
             JOptionPane.showMessageDialog(null, "Error saving employee: " + e.getMessage());
@@ -80,7 +74,7 @@ public class EmployeeController {
     public void updateEmployee() {
         try {
             Employee emp = getFormData(true);
-            boolean success = new EmployeeDAO().updateEmployee(emp);
+            boolean success = new EmployeeDao().updateEmployee(emp);
             JOptionPane.showMessageDialog(null, success ? "Employee updated!" : "Update failed.");
         } catch (Exception e) {
             JOptionPane.showMessageDialog(null, "Error updating employee: " + e.getMessage());
@@ -90,7 +84,7 @@ public class EmployeeController {
     public void deleteEmployee() {
         try {
             int id = Integer.parseInt(txtID.getText());
-            boolean success = new EmployeeDAO().deleteEmployee(id);
+            boolean success = new EmployeeDao().deleteEmployee(id);
             JOptionPane.showMessageDialog(null, success ? "Employee deleted!" : "Delete failed.");
         } catch (NumberFormatException e) {
             JOptionPane.showMessageDialog(null, "Please enter a valid ID.");

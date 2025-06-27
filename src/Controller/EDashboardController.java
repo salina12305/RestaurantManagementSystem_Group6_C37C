@@ -46,9 +46,7 @@ import java.awt.event.ActionListener;
 
 
 public class EDashboardController {
-    
-<<<<<<< HEAD
-=======
+
     public static void loadRevenueChart(JPanel panel, JFrame frame) {
     DefaultCategoryDataset dataset = new DefaultCategoryDataset();
 
@@ -64,15 +62,15 @@ public class EDashboardController {
     panel.add(chartPanel, BorderLayout.CENTER);
     panel.validate();
 }
-     private void close() {
-         
-        }
-     private void open(){
-         
-     }
+//     private void close() {
+//         
+//        }
+//     private void open(){
+//         
+//     }
      
 
->>>>>>> reservation_availability
+
 
     MySqlConnection mysql = new MySqlConnection();
 //    private EmployeeDashboard dashboardView;
@@ -144,7 +142,7 @@ EmployeeDashboard dashboard = new EmployeeDashboard();
     public void setupBillListener(EmployeeDashboard view) {
         view.addBillListener(new BillListener());
     }
-<<<<<<< HEAD
+
      
     class BillListener implements ActionListener {
         @Override
@@ -162,11 +160,11 @@ EmployeeDashboard dashboard = new EmployeeDashboard();
         
     }   
     
-=======
 
-    public void setupLogoutListener(EmployeeDashboard view) {
-    view.addLogoutListener(new LogoutListener(view));
-}
+
+//    public void setupLogoutListener(EmployeeDashboard view) {
+//    view.addLogoutListener(new LogoutListener(view));
+//}
     
     class LogoutListener implements ActionListener {
     private JFrame currentFrame;
@@ -215,7 +213,5 @@ EmployeeDashboard dashboard = new EmployeeDashboard();
 //    }
 
 
-
->>>>>>> reservation_availability
 }
 

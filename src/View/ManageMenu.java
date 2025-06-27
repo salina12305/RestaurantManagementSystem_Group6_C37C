@@ -4,7 +4,7 @@
  */
 package View;
 
-import Dao.MenuDAO;
+import Dao.MenuDao;
 import Model.MenuItem;
 import javax.swing.JOptionPane;
 
@@ -213,8 +213,6 @@ public class ManageMenu extends javax.swing.JFrame {
                 .addGap(45, 45, 45))
         );
 
-        jLabel35.setIcon(new javax.swing.ImageIcon("C:\\Users\\aiden\\Downloads\\icons8-notification-32.png")); // NOI18N
-
         jLabel34.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
         jLabel34.setText("The Menu Behind the Magic");
 
@@ -234,17 +232,14 @@ public class ManageMenu extends javax.swing.JFrame {
         Dashboardbutton.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
 
         Managebutton.setBackground(new java.awt.Color(255, 243, 224));
-        Managebutton.setIcon(new javax.swing.ImageIcon("C:\\Users\\aiden\\Downloads\\icons8-database-24.png")); // NOI18N
         Managebutton.setText("Manage Menu");
         Managebutton.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
 
         Pricebutton.setBackground(new java.awt.Color(255, 243, 224));
-        Pricebutton.setIcon(new javax.swing.ImageIcon("C:\\Users\\aiden\\Downloads\\icons8-inbox-32.png")); // NOI18N
         Pricebutton.setText("Order");
         Pricebutton.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
 
         Billbutton.setBackground(new java.awt.Color(255, 243, 224));
-        Billbutton.setIcon(new javax.swing.ImageIcon("C:\\Users\\aiden\\Downloads\\icons8-file-invoice-32.png")); // NOI18N
         Billbutton.setText("Bill");
         Billbutton.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
 
@@ -306,19 +301,17 @@ public class ManageMenu extends javax.swing.JFrame {
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
+                .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, 163, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, 163, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addGap(182, 182, 182)
-                                .addComponent(jLabel34))
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addGap(59, 59, 59)
-                                .addComponent(jPanel8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                        .addGap(182, 182, 182)
+                        .addComponent(jLabel34))
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(405, 405, 405)
-                        .addComponent(jLabel10, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(59, 59, 59)
+                        .addComponent(jPanel8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(198, 198, 198)
+                        .addComponent(jLabel10, javax.swing.GroupLayout.PREFERRED_SIZE, 137, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 25, Short.MAX_VALUE)
                 .addComponent(jLabel35)
                 .addGap(39, 39, 39))
@@ -421,7 +414,7 @@ public class ManageMenu extends javax.swing.JFrame {
             MenuItem item = new MenuItem(itemName, quantity, priceVal, employeeName);
 
             // Save to database
-            MenuDAO dao = new MenuDAO();
+            MenuDao dao = new MenuDao();
             boolean success = dao.createMenuItem(item);
 
             if (success) {

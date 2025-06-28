@@ -166,34 +166,39 @@ public class ResetPass extends javax.swing.JFrame {
 
     private void password1FocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_password1FocusGained
         // TODO add your handling code here:
-         if (password1.getText().equals("")){
-            password1.setText("");
-            password1.setForeground(Color.BLACK);
+        String pwd1 = new String(password1.getPassword());
+        if (pwd1.equals("")) {
+         password1.setText("");
+         password1.setForeground(Color.BLACK);
         }
     }//GEN-LAST:event_password1FocusGained
 
     private void password1FocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_password1FocusLost
         // TODO add your handling code here:
-        if (password1.getText().isEmpty()){
-            password1.setText("");
-            password1.setForeground(Color.GRAY);
-        }
+         String pwd1 = new String(password1.getPassword());
+    if (pwd1.isEmpty()) {
+        password1.setText("");
+        password1.setForeground(Color.GRAY);
+    }
     }//GEN-LAST:event_password1FocusLost
 
     private void password2FocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_password2FocusGained
         // TODO add your handling code here:
-       if (password2.getText().equals("")){
-            password2.setText("");
-            password2.setForeground(Color.BLACK);
-        } 
+        String pwd2 = new String(password2.getPassword());
+    if (pwd2.equals("")) {
+        password2.setText("");
+        password2.setForeground(Color.BLACK);
+    }
     }//GEN-LAST:event_password2FocusGained
 
     private void password2FocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_password2FocusLost
         // TODO add your handling code here:
-        if (password2.getText().isEmpty()){
-            password2.setText("");
-            password2.setForeground(Color.GRAY);
-        }
+        String pwd2 = new String(password2.getPassword());
+    if (pwd2.isEmpty()) {
+        password2.setText("");
+        password2.setForeground(Color.GRAY);
+    }
+        
     }//GEN-LAST:event_password2FocusLost
 
     /**

@@ -32,13 +32,13 @@ public class EmployeeDashboard extends javax.swing.JFrame {
     private void initComponents() {
 
         DashboardCenterPanel = new javax.swing.JPanel();
-        jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         jSeparator4 = new javax.swing.JSeparator();
         jLabel4 = new javax.swing.JLabel();
         revenueChartPanel = new javax.swing.JPanel();
         jPanel1 = new javax.swing.JPanel();
+        jLabel5 = new javax.swing.JLabel();
         SidePanel = new javax.swing.JPanel();
         Logo1 = new javax.swing.JLabel();
         eventbtn = new javax.swing.JButton();
@@ -57,13 +57,8 @@ public class EmployeeDashboard extends javax.swing.JFrame {
         DashboardCenterPanel.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         DashboardCenterPanel.setLayout(null);
 
-        jLabel1.setFont(new java.awt.Font("Jaini Purva", 3, 48)); // NOI18N
-        jLabel1.setText("7~");
-        DashboardCenterPanel.add(jLabel1);
-        jLabel1.setBounds(250, 50, 70, 50);
-
         jLabel2.setFont(new java.awt.Font("Times New Roman", 1, 24)); // NOI18N
-        jLabel2.setText("Behind Every Great Meal is a Great Team\n");
+        jLabel2.setText("Behind Every Great Meal is a Great Team ");
         DashboardCenterPanel.add(jLabel2);
         jLabel2.setBounds(100, 90, 460, 50);
 
@@ -103,6 +98,11 @@ public class EmployeeDashboard extends javax.swing.JFrame {
 
         DashboardCenterPanel.add(jPanel1);
         jPanel1.setBounds(500, 210, 200, 360);
+
+        jLabel5.setFont(new java.awt.Font("Jaini Purva", 3, 36)); // NOI18N
+        jLabel5.setText("7~11");
+        DashboardCenterPanel.add(jLabel5);
+        jLabel5.setBounds(310, 50, 59, 47);
 
         SidePanel.setBackground(new java.awt.Color(255, 243, 224));
         SidePanel.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
@@ -313,10 +313,10 @@ public class EmployeeDashboard extends javax.swing.JFrame {
     private javax.swing.JPanel SidePanel;
     private javax.swing.JLabel Slogan;
     private javax.swing.JButton eventbtn;
-    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JSeparator jSeparator3;
     private javax.swing.JSeparator jSeparator4;

@@ -40,7 +40,6 @@ public class Bill extends javax.swing.JFrame {
         reservationbtn1 = new javax.swing.JButton();
         Menubtn2 = new javax.swing.JButton();
         DashboardCenterPanel = new javax.swing.JPanel();
-        jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jSeparator4 = new javax.swing.JSeparator();
         jLabel4 = new javax.swing.JLabel();
@@ -50,6 +49,7 @@ public class Bill extends javax.swing.JFrame {
         searchbtn = new javax.swing.JButton();
         customername1 = new javax.swing.JTextField();
         generatebillbtn1 = new javax.swing.JButton();
+        jLabel5 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -169,11 +169,6 @@ public class Bill extends javax.swing.JFrame {
         DashboardCenterPanel.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         DashboardCenterPanel.setLayout(null);
 
-        jLabel1.setFont(new java.awt.Font("Jaini Purva", 3, 48)); // NOI18N
-        jLabel1.setText("7 ~ 11");
-        DashboardCenterPanel.add(jLabel1);
-        jLabel1.setBounds(280, 50, 180, 50);
-
         jLabel2.setFont(new java.awt.Font("Times New Roman", 1, 24)); // NOI18N
         jLabel2.setText("From Table to Total — Just for You");
         DashboardCenterPanel.add(jLabel2);
@@ -225,6 +220,11 @@ public class Bill extends javax.swing.JFrame {
         DashboardCenterPanel.add(generatebillbtn1);
         generatebillbtn1.setBounds(270, 570, 170, 27);
 
+        jLabel5.setFont(new java.awt.Font("Jaini Purva", 3, 36)); // NOI18N
+        jLabel5.setText("7~11");
+        DashboardCenterPanel.add(jLabel5);
+        jLabel5.setBounds(270, 40, 59, 47);
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -236,8 +236,10 @@ public class Bill extends javax.swing.JFrame {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(SidePanel, javax.swing.GroupLayout.PREFERRED_SIZE, 628, javax.swing.GroupLayout.PREFERRED_SIZE)
-            .addComponent(DashboardCenterPanel, javax.swing.GroupLayout.PREFERRED_SIZE, 630, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(DashboardCenterPanel, javax.swing.GroupLayout.PREFERRED_SIZE, 630, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
+            .addComponent(SidePanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         pack();
@@ -311,10 +313,10 @@ public class Bill extends javax.swing.JFrame {
     private javax.swing.JTextField customername1;
     private javax.swing.JButton eventbtn;
     private javax.swing.JButton generatebillbtn1;
-    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JSeparator jSeparator3;
     private javax.swing.JSeparator jSeparator4;

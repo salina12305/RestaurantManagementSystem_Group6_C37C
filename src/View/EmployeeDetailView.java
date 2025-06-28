@@ -4,32 +4,39 @@
  */
 package View;
 import Controller.EmployeeController;
+import java.awt.event.ActionListener;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import javax.swing.JLabel;
+import javax.swing.JTextField;
 
 /**
  *
  * @author Nitro
  */
 public class EmployeeDetailView extends javax.swing.JFrame {
-private EmployeeController Controller;
+private EmployeeController employeeController;
     /**
      * Creates new form EmployeeForm
      */
 
 public EmployeeDetailView() {
         initComponents();
-Controller = new EmployeeController(
+//        EmployeeController = new EmployeeController(this);
+        employeeController = new EmployeeController(this);
+        setVisible(true);
+       
+        employeeController = new EmployeeController(
     txtID, txtName, txtGender, txtStatus, txtDOBdate, txtRole, txtShift,
     txtDepartment, txtJoinedDate, txtAddress, txtEmail, txtPhoneNumber, lblProfileImage
 );
 
 
-btnSearch.addActionListener(e -> Controller.loadEmployee());
-btnAdd.addActionListener(e -> Controller.saveEmployee());
-btnEdit.addActionListener(e -> Controller.updateEmployee());
-btnDelete.addActionListener(e -> Controller.deleteEmployee());
-btnBrowseImage.addActionListener(e -> Controller.chooseProfileImage());
+btnSearch.addActionListener(e -> employeeController.loadEmployee());
+btnAdd.addActionListener(e -> employeeController.saveEmployee());
+btnEdit.addActionListener(e -> employeeController.updateEmployee());
+btnDelete.addActionListener(e -> employeeController.deleteEmployee());
+btnBrowseImage.addActionListener(e -> employeeController.chooseProfileImage());
 
 
 
@@ -59,8 +66,8 @@ public boolean isValidDate(String dateStr) {
 
         jLabel2 = new javax.swing.JLabel();
         TopBarPanel = new javax.swing.JPanel();
-        Logo2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
         CenterPanel = new javax.swing.JPanel();
         lblProfileImage = new javax.swing.JLabel();
         NameLbl = new javax.swing.JLabel();
@@ -116,7 +123,7 @@ public boolean isValidDate(String dateStr) {
         LogoutButton3 = new javax.swing.JButton();
         Slogan3 = new javax.swing.JLabel();
         jSeparator6 = new javax.swing.JSeparator();
-        Menubtn5 = new javax.swing.JButton();
+        employeebtn = new javax.swing.JButton();
 
         jLabel2.setText("jLabel2");
 
@@ -128,15 +135,15 @@ public boolean isValidDate(String dateStr) {
         TopBarPanel.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         TopBarPanel.setLayout(null);
 
-        Logo2.setFont(new java.awt.Font("Jaini Purva", 3, 48)); // NOI18N
-        Logo2.setText("7 ~ 11");
-        TopBarPanel.add(Logo2);
-        Logo2.setBounds(300, 20, 150, 40);
-
         jLabel3.setFont(new java.awt.Font("Times New Roman", 1, 24)); // NOI18N
         jLabel3.setText("Add your Member Here");
         TopBarPanel.add(jLabel3);
         jLabel3.setBounds(210, 70, 310, 50);
+
+        jLabel4.setFont(new java.awt.Font("Jaini Purva", 3, 36)); // NOI18N
+        jLabel4.setText("7~11");
+        TopBarPanel.add(jLabel4);
+        jLabel4.setBounds(300, 20, 59, 47);
 
         getContentPane().add(TopBarPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 0, 800, 160));
 
@@ -460,14 +467,14 @@ public boolean isValidDate(String dateStr) {
         SidePanel3.add(jSeparator6);
         jSeparator6.setBounds(0, 120, 200, 20);
 
-        Menubtn5.setBackground(new java.awt.Color(255, 243, 224));
-        Menubtn5.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        Menubtn5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/employee.png"))); // NOI18N
-        Menubtn5.setText("Manage Employee");
-        Menubtn5.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        Menubtn5.setIconTextGap(10);
-        SidePanel3.add(Menubtn5);
-        Menubtn5.setBounds(20, 260, 160, 40);
+        employeebtn.setBackground(new java.awt.Color(255, 243, 224));
+        employeebtn.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        employeebtn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/employee.png"))); // NOI18N
+        employeebtn.setText("Manage Employee");
+        employeebtn.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        employeebtn.setIconTextGap(10);
+        SidePanel3.add(employeebtn);
+        employeebtn.setBounds(20, 250, 160, 40);
 
         getContentPane().add(SidePanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 200, 600));
 
@@ -548,13 +555,11 @@ public boolean isValidDate(String dateStr) {
     private javax.swing.JLabel IDlbl;
     private javax.swing.JPanel JobDetailsPanel;
     private javax.swing.JLabel JoinedLbl;
-    private javax.swing.JLabel Logo2;
     private javax.swing.JLabel Logo3;
     private javax.swing.JLabel Logo4;
     private javax.swing.JButton LogoutButton2;
     private javax.swing.JButton LogoutButton3;
     private javax.swing.JButton Menubtn4;
-    private javax.swing.JButton Menubtn5;
     private javax.swing.JLabel NameLbl;
     private javax.swing.JButton OrderButton2;
     private javax.swing.JLabel PersonalDetails;
@@ -573,10 +578,12 @@ public boolean isValidDate(String dateStr) {
     private javax.swing.JButton btnDelete;
     private javax.swing.JButton btnEdit;
     private javax.swing.JButton btnSearch;
+    private javax.swing.JButton employeebtn;
     private javax.swing.JButton eventbtn1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
     private javax.swing.JSeparator jSeparator5;
     private javax.swing.JSeparator jSeparator6;
     private javax.swing.JLabel lblProfileImage;
@@ -596,4 +603,53 @@ public boolean isValidDate(String dateStr) {
     private javax.swing.JTextField txtShift;
     private javax.swing.JTextField txtStatus;
     // End of variables declaration//GEN-END:variables
+
+public JTextField getTxtID() {
+    return txtID;
+}
+public JTextField getTxtName() {
+    return txtName; 
+}
+public JTextField getTxtGender() { 
+    return txtGender; 
+}
+public JTextField getTxtStatus() { 
+    return txtStatus; 
+}
+public JTextField getTxtDOBdate() { 
+    return txtDOBdate; 
+}
+public JTextField getTxtRole() { 
+    return txtRole; }
+public JTextField getTxtShift() { return txtShift; 
+}
+public JTextField getTxtDepartment() { 
+    return txtDepartment; 
+}
+public JTextField getTxtJoinedDate() { 
+    return txtJoinedDate; 
+}
+public JTextField getTxtAddress() { 
+    return txtAddress; 
+}
+public JTextField getTxtEmail() { 
+    return txtEmail; 
+}
+public JTextField getTxtPhoneNumber() {
+    return txtPhoneNumber; }
+
+public JLabel getLblProfileImage() { 
+    return lblProfileImage; 
+}
+
+public void addAdminDashboardListener(ActionListener listener){
+    DashboardBtn1.addActionListener(listener);
+}
+public void addEmployeeDetailListener(ActionListener listener){
+    employeebtn.addActionListener(listener);
+}
+public void addLogoutListener(ActionListener listener){
+    LogoutButton2.addActionListener(listener);
+    LogoutButton3.addActionListener(listener);
+}
 }

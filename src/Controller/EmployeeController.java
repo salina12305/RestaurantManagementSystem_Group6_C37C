@@ -2,20 +2,33 @@
 package Controller;
 
 
+import Dao.AdminDashboardDao;
 import Dao.EmployeeDAO;
+import Database.MySqlConnection;
 import Model.Employee;
+import View.AdminDashboard;
+import View.EmployeeDetailView;
+import View.SignIn;
 
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.io.File;
 import java.sql.Date;
 
 public class EmployeeController {
-    private JTextField txtID, txtName, txtGender, txtStatus, txtDOB, txtRole,
+    MySqlConnection mysql = new MySqlConnection();
+    
+    private final EmployeeDAO employeeDao = new EmployeeDAO();
+    private EmployeeDetailView employeeView;
+    
+    private JTextField txtID, txtName, txtGender, txtStatus, txtDOBdate, txtRole,
             txtShift, txtDepartment, txtJoinedDate, txtAddress,
             txtEmail, txtPhoneNumber;
     private JLabel lblProfileImage;
     private String imagePath;
+    private Employee currentFrame;
 
     public EmployeeController(
         JTextField txtID, JTextField txtName, JTextField txtGender, JTextField txtStatus,
@@ -27,7 +40,7 @@ public class EmployeeController {
         this.txtName = txtName;
         this.txtGender = txtGender;
         this.txtStatus = txtStatus;
-          this.txtDOB = txtDOB;
+          this.txtDOBdate = txtDOB;
         this.txtRole = txtRole;
         this.txtShift = txtShift;
         this.txtDepartment = txtDepartment;
@@ -37,6 +50,21 @@ public class EmployeeController {
         this.txtPhoneNumber = txtPhoneNumber;
         this.lblProfileImage = lblProfileImage;
     }
+
+    public EmployeeController(EmployeeDetailView view) {
+    this(
+        view.getTxtID(), view.getTxtName(), view.getTxtGender(), view.getTxtStatus(),
+        view.getTxtDOBdate(), view.getTxtRole(), view.getTxtShift(), view.getTxtDepartment(),
+        view.getTxtJoinedDate(), view.getTxtAddress(), view.getTxtEmail(),
+        view.getTxtPhoneNumber(), view.getLblProfileImage()
+    );
+ 
+        this.employeeView = view; 
+        view.addLogoutListener(new LogoutListener(view));
+        employeeView.addAdminDashboardListener(new AdminDashboardListener());
+
+    }
+    
 
     public void loadEmployee() {
         String keyword = txtID.getText().trim();
@@ -105,7 +133,7 @@ public class EmployeeController {
         txtName.setText(emp.getName());
         txtGender.setText(emp.getGender());
         txtStatus.setText(emp.getStatus());
-        txtDOB.setText(emp.getDOB().toString());
+        txtDOBdate.setText(emp.getDOB().toString());
         txtRole.setText(emp.getRole());
         txtShift.setText(emp.getShift());
         txtDepartment.setText(emp.getDepartment());
@@ -121,7 +149,7 @@ public class EmployeeController {
     private Employee getFormData(boolean includeId) {
         int id = includeId ? Integer.parseInt(txtID.getText()) : 0;
         Date joinDate = Date.valueOf(txtJoinedDate.getText());
-        Date dob = Date.valueOf(txtDOB.getText());
+        Date dob = Date.valueOf(txtDOBdate.getText());
 
         return new Employee(
                 id,
@@ -145,6 +173,49 @@ public class EmployeeController {
             ImageIcon icon = new ImageIcon(path);
             Image img = icon.getImage().getScaledInstance(lblProfileImage.getWidth(), lblProfileImage.getHeight(), Image.SCALE_SMOOTH);
             lblProfileImage.setIcon(new ImageIcon(img));
+        }
+    }
+        
+     public void setupLogoutListener(Employee view) {
+         this.currentFrame = view;
+    }
+
+    class LogoutListener implements ActionListener {
+        private JFrame currentFrame;
+
+        public LogoutListener(JFrame frame) {
+            this.currentFrame = frame;
+        }
+
+
+        @Override
+        public void actionPerformed(ActionEvent e) {
+            System.out.println("Logout button clicked");
+            int confirm = JOptionPane.showConfirmDialog(null,
+                    "Are you sure you want to logout?",
+                    "Logout Confirmation",
+                    JOptionPane.YES_NO_OPTION);
+
+            if (confirm == JOptionPane.YES_OPTION) {
+                currentFrame.dispose(); // Close dashboard
+                new SignIn().setVisible(true); 
+            }
+        }
+    }
+    
+   public void setupAdminDashboardListener(EmployeeDetailView view) {
+    view.addAdminDashboardListener(new AdminDashboardListener());
+}
+     
+    class AdminDashboardListener implements ActionListener {
+        @Override
+        public void actionPerformed(ActionEvent e) {
+            System.out.println("Dashboard button clicked"); 
+            AdminDashboard dashboardView = new AdminDashboard();
+            new AdminDashboardController(dashboardView);
+            dashboardView.setVisible(true);
+            
+            if (employeeView != null) employeeView.dispose();
         }
     }
 }

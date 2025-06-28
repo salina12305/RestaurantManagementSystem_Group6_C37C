@@ -4,12 +4,15 @@ import java.awt.Color;
 import javax.swing.JFrame;
 
 import Controller.AdminDashboardController;
+import java.awt.event.ActionListener;
 import javax.swing.JPanel;
 
 public class AdminDashboard extends javax.swing.JFrame {
 
     public AdminDashboard() {
         initComponents();
+        AdminDashboardController controller = new AdminDashboardController(this);
+        setVisible(true);
 
 AdminDashboardController.applyHoverEffect(DashboardBtn);
 AdminDashboardController.applyHoverEffect(Employeebtn);
@@ -30,11 +33,11 @@ AdminDashboardController.loadRevenueChartFromDB(revenueChartPanel);
     private void initComponents() {
 
         TopBarPanel = new javax.swing.JPanel();
-        Logo2 = new javax.swing.JLabel();
         MinimizeButton = new javax.swing.JButton();
         ExitButton = new javax.swing.JButton();
         RefreshButton = new javax.swing.JButton();
         jLabel7 = new javax.swing.JLabel();
+        jLabel8 = new javax.swing.JLabel();
         DashboardCenterPanel = new javax.swing.JPanel();
         RevenuePanel = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
@@ -77,11 +80,6 @@ AdminDashboardController.loadRevenueChartFromDB(revenueChartPanel);
         TopBarPanel.setBackground(new java.awt.Color(255, 243, 224));
         TopBarPanel.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         TopBarPanel.setLayout(null);
-
-        Logo2.setFont(new java.awt.Font("Jaini Purva", 3, 48)); // NOI18N
-        Logo2.setText("7 ~ 11");
-        TopBarPanel.add(Logo2);
-        Logo2.setBounds(270, 30, 140, 40);
 
         MinimizeButton.setBackground(new java.awt.Color(255, 243, 224));
         MinimizeButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/minimize-sign.png"))); // NOI18N
@@ -136,7 +134,12 @@ AdminDashboardController.loadRevenueChartFromDB(revenueChartPanel);
         jLabel7.setFont(new java.awt.Font("Times New Roman", 1, 24)); // NOI18N
         jLabel7.setText("View your Dashboard");
         TopBarPanel.add(jLabel7);
-        jLabel7.setBounds(180, 80, 300, 50);
+        jLabel7.setBounds(230, 80, 300, 50);
+
+        jLabel8.setFont(new java.awt.Font("Jaini Purva", 3, 36)); // NOI18N
+        jLabel8.setText("7~11");
+        TopBarPanel.add(jLabel8);
+        jLabel8.setBounds(310, 30, 59, 47);
 
         getContentPane().add(TopBarPanel);
         TopBarPanel.setBounds(200, 0, 800, 160);
@@ -512,7 +515,6 @@ AdminDashboardController.loadRevenueChartFromDB(revenueChartPanel);
     private javax.swing.JPanel EmployeePanel;
     private javax.swing.JButton Employeebtn;
     private javax.swing.JButton ExitButton;
-    private javax.swing.JLabel Logo2;
     private javax.swing.JLabel Logo3;
     private javax.swing.JButton LogoutButton2;
     private javax.swing.JButton MinimizeButton;
@@ -534,12 +536,21 @@ AdminDashboardController.loadRevenueChartFromDB(revenueChartPanel);
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
     private javax.swing.JSeparator jSeparator5;
     private javax.swing.JPanel revenueChartPanel;
     // End of variables declaration//GEN-END:variables
 
  
-
+public void addLogoutListener(ActionListener listener){
+    LogoutButton2.addActionListener(listener);
+}
+public void addEmployeeDetailListener(ActionListener listener) {
+    Employeebtn.addActionListener(listener);
+}
+public void addAdminDashboardListener(ActionListener listener) {
+    DashboardBtn.addActionListener(listener);
+}
     public JPanel getRevenueChartPanel() {
          return revenueChartPanel;
     }

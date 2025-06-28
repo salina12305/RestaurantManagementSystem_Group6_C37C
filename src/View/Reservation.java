@@ -4,8 +4,8 @@
  */
 package View;
 
-import Controller.EDashboardController;
 import java.awt.event.ActionListener;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -14,12 +14,10 @@ import java.awt.event.ActionListener;
 public class Reservation extends javax.swing.JFrame {
 
     /**
-     * Creates new form BookingEvents
+     * Creates new form Reservation
      */
     public Reservation() {
         initComponents();
-//        EDashboardController controller = new EDashboardController();
-//        controller.setupLogoutListener(this);
     }
 
     /**
@@ -31,12 +29,27 @@ public class Reservation extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        DashboardCenterPanel = new javax.swing.JPanel();
-        jLabel1 = new javax.swing.JLabel();
+        SidePanel2 = new javax.swing.JPanel();
+        Logo3 = new javax.swing.JLabel();
+        DashboardBtn = new javax.swing.JButton();
+        OrderButton2 = new javax.swing.JButton();
+        BillButton2 = new javax.swing.JButton();
+        LogoutButton2 = new javax.swing.JButton();
+        Slogan2 = new javax.swing.JLabel();
+        reservationbtn1 = new javax.swing.JButton();
+        jSeparator5 = new javax.swing.JSeparator();
+        eventbtn1 = new javax.swing.JButton();
+        reservationbtn4 = new javax.swing.JButton();
+        Menubtn4 = new javax.swing.JButton();
+        jPanel1 = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
-        jSeparator4 = new javax.swing.JSeparator();
-        jLabel4 = new javax.swing.JLabel();
+        jSeparator6 = new javax.swing.JSeparator();
+        jLabel1 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
+        jSeparator7 = new javax.swing.JSeparator();
+        jLabel4 = new javax.swing.JLabel();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        jTable1 = new javax.swing.JTable();
         jLabel5 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
@@ -49,158 +62,130 @@ public class Reservation extends javax.swing.JFrame {
         jLabel14 = new javax.swing.JLabel();
         jLabel15 = new javax.swing.JLabel();
         jLabel16 = new javax.swing.JLabel();
-        jLabel17 = new javax.swing.JLabel();
-        jLabel18 = new javax.swing.JLabel();
-        jLabel19 = new javax.swing.JLabel();
-        jLabel20 = new javax.swing.JLabel();
-        jLabel21 = new javax.swing.JLabel();
-        jLabel22 = new javax.swing.JLabel();
-        jLabel23 = new javax.swing.JLabel();
-        jLabel24 = new javax.swing.JLabel();
-        jLabel25 = new javax.swing.JLabel();
-        jSeparator5 = new javax.swing.JSeparator();
-        jLabel26 = new javax.swing.JLabel();
-        jScrollPane2 = new javax.swing.JScrollPane();
-        jTable2 = new javax.swing.JTable();
-        SidePanel = new javax.swing.JPanel();
-        Logo1 = new javax.swing.JLabel();
-        DashboardButton = new javax.swing.JButton();
-        OrderButton = new javax.swing.JButton();
-        BillButton = new javax.swing.JButton();
-        LogoutButton = new javax.swing.JButton();
-        Slogan = new javax.swing.JLabel();
-        Eventsbtn = new javax.swing.JButton();
-        jSeparator3 = new javax.swing.JSeparator();
-        Menubtn2 = new javax.swing.JButton();
-        Reservationbtn1 = new javax.swing.JButton();
+        jTextField1 = new javax.swing.JTextField();
+        jTextField2 = new javax.swing.JTextField();
+        jTextField3 = new javax.swing.JTextField();
+        jTextField4 = new javax.swing.JTextField();
+        jTextField5 = new javax.swing.JTextField();
+        jTextField6 = new javax.swing.JTextField();
+        jTextField7 = new javax.swing.JTextField();
+        jTextField8 = new javax.swing.JTextField();
+        jTextField9 = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        DashboardCenterPanel.setBackground(new java.awt.Color(253, 253, 242));
-        DashboardCenterPanel.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        DashboardCenterPanel.setLayout(null);
+        SidePanel2.setBackground(new java.awt.Color(255, 243, 224));
+        SidePanel2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        SidePanel2.setLayout(null);
 
-        jLabel1.setFont(new java.awt.Font("Jaini Purva", 3, 48)); // NOI18N
-        jLabel1.setText("7 ~ 11");
-        DashboardCenterPanel.add(jLabel1);
-        jLabel1.setBounds(300, 20, 100, 50);
+        Logo3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/Screenshot_2025-05-22_222007-removebg-preview (1).png"))); // NOI18N
+        Logo3.setText("jLabel1");
+        SidePanel2.add(Logo3);
+        Logo3.setBounds(30, 0, 136, 110);
+
+        DashboardBtn.setBackground(new java.awt.Color(255, 243, 224));
+        DashboardBtn.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        DashboardBtn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/dashboard.png"))); // NOI18N
+        DashboardBtn.setText("Dashboard");
+        DashboardBtn.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        DashboardBtn.setIconTextGap(10);
+        SidePanel2.add(DashboardBtn);
+        DashboardBtn.setBounds(20, 190, 160, 40);
+
+        OrderButton2.setBackground(new java.awt.Color(255, 243, 224));
+        OrderButton2.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        OrderButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/order.png"))); // NOI18N
+        OrderButton2.setText("Order");
+        OrderButton2.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        OrderButton2.setIconTextGap(10);
+        OrderButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                OrderButton2ActionPerformed(evt);
+            }
+        });
+        SidePanel2.add(OrderButton2);
+        OrderButton2.setBounds(20, 390, 160, 40);
+
+        BillButton2.setBackground(new java.awt.Color(255, 243, 224));
+        BillButton2.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        BillButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/order.png"))); // NOI18N
+        BillButton2.setText("Bill");
+        BillButton2.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        BillButton2.setIconTextGap(10);
+        SidePanel2.add(BillButton2);
+        BillButton2.setBounds(20, 440, 160, 40);
+
+        LogoutButton2.setBackground(new java.awt.Color(255, 243, 224));
+        LogoutButton2.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        LogoutButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/logout.png"))); // NOI18N
+        LogoutButton2.setText("Logout");
+        LogoutButton2.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        LogoutButton2.setIconTextGap(10);
+        SidePanel2.add(LogoutButton2);
+        LogoutButton2.setBounds(20, 540, 160, 40);
+
+        Slogan2.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
+        Slogan2.setText("7 people serving since 11 AM");
+        Slogan2.setToolTipText("");
+        SidePanel2.add(Slogan2);
+        Slogan2.setBounds(10, 100, 180, 20);
+
+        reservationbtn1.setBackground(new java.awt.Color(255, 243, 224));
+        reservationbtn1.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        reservationbtn1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/order.png"))); // NOI18N
+        reservationbtn1.setText("Reservation");
+        reservationbtn1.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        reservationbtn1.setIconTextGap(10);
+        SidePanel2.add(reservationbtn1);
+        reservationbtn1.setBounds(20, 240, 160, 40);
+
+        jSeparator5.setBackground(new java.awt.Color(0, 0, 0));
+        jSeparator5.setForeground(new java.awt.Color(0, 0, 0));
+        SidePanel2.add(jSeparator5);
+        jSeparator5.setBounds(0, 120, 200, 20);
+
+        eventbtn1.setBackground(new java.awt.Color(255, 243, 224));
+        eventbtn1.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        eventbtn1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/order.png"))); // NOI18N
+        eventbtn1.setText("Event Booking");
+        eventbtn1.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        eventbtn1.setIconTextGap(10);
+        SidePanel2.add(eventbtn1);
+        eventbtn1.setBounds(20, 290, 160, 40);
+
+        reservationbtn4.setBackground(new java.awt.Color(255, 243, 224));
+        reservationbtn4.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        reservationbtn4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/order.png"))); // NOI18N
+        reservationbtn4.setText("Reservation");
+        reservationbtn4.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        reservationbtn4.setIconTextGap(10);
+        SidePanel2.add(reservationbtn4);
+        reservationbtn4.setBounds(20, 240, 160, 40);
+
+        Menubtn4.setBackground(new java.awt.Color(255, 243, 224));
+        Menubtn4.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        Menubtn4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/order.png"))); // NOI18N
+        Menubtn4.setText("Manage Menu");
+        Menubtn4.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        Menubtn4.setIconTextGap(10);
+        SidePanel2.add(Menubtn4);
+        Menubtn4.setBounds(20, 340, 160, 40);
+
+        jPanel1.setBackground(new java.awt.Color(253, 253, 242));
 
         jLabel2.setFont(new java.awt.Font("Times New Roman", 1, 24)); // NOI18N
-        jLabel2.setText("Book the Moment. Leave the Magic to Us");
-        DashboardCenterPanel.add(jLabel2);
-        jLabel2.setBounds(130, 70, 460, 50);
-        DashboardCenterPanel.add(jSeparator4);
-        jSeparator4.setBounds(30, 350, 670, 10);
-        DashboardCenterPanel.add(jLabel4);
-        jLabel4.setBounds(660, 10, 30, 30);
+        jLabel2.setText("Book the Moment, Leave the Magic to Us");
 
-        jLabel3.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
-        jLabel3.setText("Staff on Duty");
-        DashboardCenterPanel.add(jLabel3);
-        jLabel3.setBounds(30, 360, 170, 17);
+        jLabel1.setFont(new java.awt.Font("Jaini Purva", 3, 36)); // NOI18N
+        jLabel1.setText("7~11");
 
-        jLabel5.setFont(new java.awt.Font("Times New Roman", 1, 24)); // NOI18N
-        jLabel5.setText("Floor 1");
-        DashboardCenterPanel.add(jLabel5);
-        jLabel5.setBounds(50, 180, 80, 29);
+        jLabel3.setFont(new java.awt.Font("Mukta", 1, 14)); // NOI18N
+        jLabel3.setText("Room Status by Floor");
 
-        jLabel6.setFont(new java.awt.Font("Times New Roman", 1, 24)); // NOI18N
-        jLabel6.setText("Floor 2");
-        DashboardCenterPanel.add(jLabel6);
-        jLabel6.setBounds(290, 180, 80, 29);
+        jLabel4.setFont(new java.awt.Font("Mukta", 1, 14)); // NOI18N
+        jLabel4.setText("Staff on Duty");
 
-        jLabel7.setFont(new java.awt.Font("Times New Roman", 1, 24)); // NOI18N
-        jLabel7.setText("Floor 3");
-        DashboardCenterPanel.add(jLabel7);
-        jLabel7.setBounds(520, 180, 80, 29);
-
-        jLabel8.setFont(new java.awt.Font("Helvetica Neue", 1, 13)); // NOI18N
-        jLabel8.setText("1");
-        DashboardCenterPanel.add(jLabel8);
-        jLabel8.setBounds(30, 230, 20, 30);
-
-        jLabel9.setFont(new java.awt.Font("Helvetica Neue", 1, 13)); // NOI18N
-        jLabel9.setText("2");
-        DashboardCenterPanel.add(jLabel9);
-        jLabel9.setBounds(280, 230, 10, 30);
-
-        jLabel10.setFont(new java.awt.Font("Helvetica Neue", 1, 13)); // NOI18N
-        jLabel10.setText("3");
-        DashboardCenterPanel.add(jLabel10);
-        jLabel10.setBounds(510, 230, 10, 20);
-
-        jLabel11.setFont(new java.awt.Font("Helvetica Neue", 1, 13)); // NOI18N
-        jLabel11.setText("4");
-        DashboardCenterPanel.add(jLabel11);
-        jLabel11.setBounds(30, 280, 10, 17);
-
-        jLabel12.setFont(new java.awt.Font("Helvetica Neue", 1, 13)); // NOI18N
-        jLabel12.setText("7");
-        DashboardCenterPanel.add(jLabel12);
-        jLabel12.setBounds(30, 320, 10, 17);
-
-        jLabel13.setFont(new java.awt.Font("Helvetica Neue", 1, 13)); // NOI18N
-        jLabel13.setText("5");
-        DashboardCenterPanel.add(jLabel13);
-        jLabel13.setBounds(280, 280, 10, 17);
-
-        jLabel14.setFont(new java.awt.Font("Helvetica Neue", 1, 13)); // NOI18N
-        jLabel14.setText("8");
-        DashboardCenterPanel.add(jLabel14);
-        jLabel14.setBounds(280, 320, 10, 20);
-
-        jLabel15.setFont(new java.awt.Font("Helvetica Neue", 1, 13)); // NOI18N
-        jLabel15.setText("6");
-        DashboardCenterPanel.add(jLabel15);
-        jLabel15.setBounds(510, 280, 10, 17);
-
-        jLabel16.setFont(new java.awt.Font("Helvetica Neue", 1, 13)); // NOI18N
-        jLabel16.setText("9");
-        DashboardCenterPanel.add(jLabel16);
-        jLabel16.setBounds(510, 320, 10, 17);
-        DashboardCenterPanel.add(jLabel17);
-        jLabel17.setBounds(80, 230, 120, 30);
-
-        jLabel18.setText("jLabel18");
-        DashboardCenterPanel.add(jLabel18);
-        jLabel18.setBounds(80, 280, 49, 17);
-
-        jLabel19.setText("jLabel19");
-        DashboardCenterPanel.add(jLabel19);
-        jLabel19.setBounds(80, 320, 49, 17);
-
-        jLabel20.setText("jLabel20");
-        DashboardCenterPanel.add(jLabel20);
-        jLabel20.setBounds(330, 230, 49, 20);
-
-        jLabel21.setText("jLabel21");
-        DashboardCenterPanel.add(jLabel21);
-        jLabel21.setBounds(330, 280, 49, 17);
-
-        jLabel22.setText("jLabel22");
-        DashboardCenterPanel.add(jLabel22);
-        jLabel22.setBounds(330, 320, 49, 17);
-
-        jLabel23.setText("jLabel23");
-        DashboardCenterPanel.add(jLabel23);
-        jLabel23.setBounds(560, 230, 49, 17);
-
-        jLabel24.setText("jLabel24");
-        DashboardCenterPanel.add(jLabel24);
-        jLabel24.setBounds(560, 280, 49, 17);
-
-        jLabel25.setText("jLabel25");
-        DashboardCenterPanel.add(jLabel25);
-        jLabel25.setBounds(560, 320, 49, 17);
-        DashboardCenterPanel.add(jSeparator5);
-        jSeparator5.setBounds(30, 160, 660, 10);
-
-        jLabel26.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
-        jLabel26.setText("Room Status by Floor");
-        DashboardCenterPanel.add(jLabel26);
-        jLabel26.setBounds(30, 130, 170, 17);
-
-        jTable2.setModel(new javax.swing.table.DefaultTableModel(
+        jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null},
                 {null, null, null},
@@ -208,150 +193,210 @@ public class Reservation extends javax.swing.JFrame {
                 {null, null, null}
             },
             new String [] {
-                "Floors", "Assigned Staff", "Date"
+                "Floors", "Assigned Staffs", "Date"
             }
         ));
-        jScrollPane2.setViewportView(jTable2);
+        jScrollPane1.setViewportView(jTable1);
 
-        DashboardCenterPanel.add(jScrollPane2);
-        jScrollPane2.setBounds(100, 410, 390, 180);
+        jLabel5.setFont(new java.awt.Font("InaiMathi", 1, 14)); // NOI18N
+        jLabel5.setText("Floor 3");
 
-        SidePanel.setBackground(new java.awt.Color(255, 243, 224));
-        SidePanel.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        SidePanel.setLayout(null);
+        jLabel6.setFont(new java.awt.Font("InaiMathi", 1, 14)); // NOI18N
+        jLabel6.setText("Floor 1");
 
-        Logo1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/logo.png"))); // NOI18N
-        SidePanel.add(Logo1);
-        Logo1.setBounds(30, 10, 136, 110);
+        jLabel7.setFont(new java.awt.Font("InaiMathi", 1, 14)); // NOI18N
+        jLabel7.setText("Floor 2");
 
-        DashboardButton.setBackground(new java.awt.Color(255, 243, 224));
-        DashboardButton.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        DashboardButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/dashboard.png"))); // NOI18N
-        DashboardButton.setText("Dashboard");
-        DashboardButton.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        DashboardButton.setIconTextGap(10);
-        DashboardButton.addActionListener(new java.awt.event.ActionListener() {
+        jLabel8.setText("1");
+
+        jLabel9.setText("2");
+
+        jLabel10.setText("3");
+
+        jLabel11.setText("4");
+
+        jLabel12.setText("5");
+
+        jLabel13.setText("6");
+
+        jLabel14.setText("7");
+
+        jLabel15.setText("8");
+
+        jLabel16.setText("9");
+
+        jTextField2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                DashboardButtonActionPerformed(evt);
+                jTextField2ActionPerformed(evt);
             }
         });
-        SidePanel.add(DashboardButton);
-        DashboardButton.setBounds(20, 190, 160, 40);
 
-        OrderButton.setBackground(new java.awt.Color(255, 243, 224));
-        OrderButton.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        OrderButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/order.png"))); // NOI18N
-        OrderButton.setText("Order");
-        OrderButton.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        OrderButton.setIconTextGap(10);
-        OrderButton.addActionListener(new java.awt.event.ActionListener() {
+        jTextField7.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                OrderButtonActionPerformed(evt);
+                jTextField7ActionPerformed(evt);
             }
         });
-        SidePanel.add(OrderButton);
-        OrderButton.setBounds(20, 390, 160, 40);
 
-        BillButton.setBackground(new java.awt.Color(255, 243, 224));
-        BillButton.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        BillButton.setText("Bill");
-        BillButton.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        BillButton.setIconTextGap(10);
-        BillButton.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                BillButtonActionPerformed(evt);
-            }
-        });
-        SidePanel.add(BillButton);
-        BillButton.setBounds(20, 440, 160, 40);
-
-        LogoutButton.setBackground(new java.awt.Color(255, 243, 224));
-        LogoutButton.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        LogoutButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/logout.png"))); // NOI18N
-        LogoutButton.setText("Logout");
-        LogoutButton.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        LogoutButton.setIconTextGap(10);
-        LogoutButton.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                LogoutButtonActionPerformed(evt);
-            }
-        });
-        SidePanel.add(LogoutButton);
-        LogoutButton.setBounds(20, 540, 160, 40);
-
-        Slogan.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
-        Slogan.setText("7 people serving since 11 AM");
-        Slogan.setToolTipText("");
-        SidePanel.add(Slogan);
-        Slogan.setBounds(10, 110, 180, 20);
-
-        Eventsbtn.setBackground(new java.awt.Color(255, 243, 224));
-        Eventsbtn.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        Eventsbtn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/order.png"))); // NOI18N
-        Eventsbtn.setText("Event Manage");
-        Eventsbtn.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        Eventsbtn.setIconTextGap(10);
-        SidePanel.add(Eventsbtn);
-        Eventsbtn.setBounds(20, 290, 160, 40);
-
-        jSeparator3.setBackground(new java.awt.Color(0, 0, 0));
-        jSeparator3.setForeground(new java.awt.Color(0, 0, 0));
-        SidePanel.add(jSeparator3);
-        jSeparator3.setBounds(0, 130, 200, 10);
-
-        Menubtn2.setBackground(new java.awt.Color(255, 243, 224));
-        Menubtn2.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        Menubtn2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/order.png"))); // NOI18N
-        Menubtn2.setText("Manage Menu");
-        Menubtn2.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        Menubtn2.setIconTextGap(10);
-        SidePanel.add(Menubtn2);
-        Menubtn2.setBounds(20, 340, 160, 40);
-
-        Reservationbtn1.setBackground(new java.awt.Color(255, 243, 224));
-        Reservationbtn1.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        Reservationbtn1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/order.png"))); // NOI18N
-        Reservationbtn1.setText("Reservation");
-        Reservationbtn1.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        Reservationbtn1.setIconTextGap(10);
-        SidePanel.add(Reservationbtn1);
-        Reservationbtn1.setBounds(20, 240, 160, 40);
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(180, 180, 180)
+                        .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 501, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(349, 349, 349)
+                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 122, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(130, 130, 130)
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 440, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(39, 39, 39)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addGap(12, 12, 12)
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabel9)
+                                    .addComponent(jLabel8)
+                                    .addComponent(jLabel10))
+                                .addGap(18, 18, 18)
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                        .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGap(71, 71, 71)
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(jPanel1Layout.createSequentialGroup()
+                                        .addComponent(jLabel12)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                        .addComponent(jTextField5, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addGroup(jPanel1Layout.createSequentialGroup()
+                                        .addComponent(jLabel13)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(jTextField6, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addGroup(jPanel1Layout.createSequentialGroup()
+                                        .addComponent(jLabel11)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                        .addComponent(jTextField4, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 72, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGap(73, 73, 73)
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(jPanel1Layout.createSequentialGroup()
+                                        .addComponent(jLabel14)
+                                        .addGap(18, 18, 18)
+                                        .addComponent(jTextField7, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 72, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addGroup(jPanel1Layout.createSequentialGroup()
+                                        .addComponent(jLabel15)
+                                        .addGap(18, 18, 18)
+                                        .addComponent(jTextField8, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addGroup(jPanel1Layout.createSequentialGroup()
+                                        .addComponent(jLabel16)
+                                        .addGap(18, 18, 18)
+                                        .addComponent(jTextField9, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                            .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 137, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 137, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jSeparator7, javax.swing.GroupLayout.DEFAULT_SIZE, 661, Short.MAX_VALUE)
+                            .addComponent(jSeparator6))))
+                .addContainerGap(42, Short.MAX_VALUE))
+            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jPanel1Layout.createSequentialGroup()
+                    .addGap(49, 49, 49)
+                    .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 72, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addContainerGap(621, Short.MAX_VALUE)))
+        );
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(9, 9, 9)
+                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(23, 23, 23)
+                .addComponent(jLabel3)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jSeparator6, javax.swing.GroupLayout.PREFERRED_SIZE, 3, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel7)
+                    .addComponent(jLabel5))
+                .addGap(31, 31, 31)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel8)
+                    .addComponent(jLabel11)
+                    .addComponent(jLabel14)
+                    .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jTextField4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jTextField7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(31, 31, 31)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel9)
+                    .addComponent(jLabel12)
+                    .addComponent(jLabel15)
+                    .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jTextField5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jTextField8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel10)
+                            .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel13)
+                            .addComponent(jTextField6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(35, 35, 35))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(40, 40, 40)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(jTextField9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel16))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 29, Short.MAX_VALUE)))
+                .addComponent(jLabel4)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jSeparator7, javax.swing.GroupLayout.PREFERRED_SIZE, 14, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 148, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(15, 15, 15))
+            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jPanel1Layout.createSequentialGroup()
+                    .addGap(179, 179, 179)
+                    .addComponent(jLabel6)
+                    .addContainerGap(424, Short.MAX_VALUE)))
+        );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(SidePanel, javax.swing.GroupLayout.DEFAULT_SIZE, 184, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(SidePanel2, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(DashboardCenterPanel, javax.swing.GroupLayout.PREFERRED_SIZE, 740, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(DashboardCenterPanel, javax.swing.GroupLayout.PREFERRED_SIZE, 630, javax.swing.GroupLayout.PREFERRED_SIZE)
-            .addComponent(SidePanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(SidePanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void DashboardButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DashboardButtonActionPerformed
+    private void OrderButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_OrderButton2ActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_DashboardButtonActionPerformed
+    }//GEN-LAST:event_OrderButton2ActionPerformed
 
-    private void OrderButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_OrderButtonActionPerformed
+    private void jTextField2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField2ActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_OrderButtonActionPerformed
+    }//GEN-LAST:event_jTextField2ActionPerformed
 
-    private void BillButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BillButtonActionPerformed
+    private void jTextField7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField7ActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_BillButtonActionPerformed
-
-    private void LogoutButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_LogoutButtonActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_LogoutButtonActionPerformed
+    }//GEN-LAST:event_jTextField7ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -379,7 +424,6 @@ public class Reservation extends javax.swing.JFrame {
             java.util.logging.Logger.getLogger(Reservation.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
-        //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
@@ -390,17 +434,15 @@ public class Reservation extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton BillButton;
-    private javax.swing.JButton DashboardButton;
-    private javax.swing.JPanel DashboardCenterPanel;
-    private javax.swing.JButton Eventsbtn;
-    private javax.swing.JLabel Logo1;
-    private javax.swing.JButton LogoutButton;
-    private javax.swing.JButton Menubtn2;
-    private javax.swing.JButton OrderButton;
-    private javax.swing.JButton Reservationbtn1;
-    private javax.swing.JPanel SidePanel;
-    private javax.swing.JLabel Slogan;
+    private javax.swing.JButton BillButton2;
+    private javax.swing.JButton DashboardBtn;
+    private javax.swing.JLabel Logo3;
+    private javax.swing.JButton LogoutButton2;
+    private javax.swing.JButton Menubtn4;
+    private javax.swing.JButton OrderButton2;
+    private javax.swing.JPanel SidePanel2;
+    private javax.swing.JLabel Slogan2;
+    private javax.swing.JButton eventbtn1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
@@ -409,17 +451,7 @@ public class Reservation extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel15;
     private javax.swing.JLabel jLabel16;
-    private javax.swing.JLabel jLabel17;
-    private javax.swing.JLabel jLabel18;
-    private javax.swing.JLabel jLabel19;
     private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel20;
-    private javax.swing.JLabel jLabel21;
-    private javax.swing.JLabel jLabel22;
-    private javax.swing.JLabel jLabel23;
-    private javax.swing.JLabel jLabel24;
-    private javax.swing.JLabel jLabel25;
-    private javax.swing.JLabel jLabel26;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
@@ -427,32 +459,55 @@ public class Reservation extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
-    private javax.swing.JScrollPane jScrollPane2;
-    private javax.swing.JSeparator jSeparator3;
-    private javax.swing.JSeparator jSeparator4;
+    private javax.swing.JPanel jPanel1;
+    private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JSeparator jSeparator5;
-    private javax.swing.JTable jTable2;
+    private javax.swing.JSeparator jSeparator6;
+    private javax.swing.JSeparator jSeparator7;
+    private javax.swing.JTable jTable1;
+    private javax.swing.JTextField jTextField1;
+    private javax.swing.JTextField jTextField2;
+    private javax.swing.JTextField jTextField3;
+    private javax.swing.JTextField jTextField4;
+    private javax.swing.JTextField jTextField5;
+    private javax.swing.JTextField jTextField6;
+    private javax.swing.JTextField jTextField7;
+    private javax.swing.JTextField jTextField8;
+    private javax.swing.JTextField jTextField9;
+    private javax.swing.JButton reservationbtn1;
+    private javax.swing.JButton reservationbtn4;
     // End of variables declaration//GEN-END:variables
 
-public void addDashboardListener(ActionListener listener) {
-        DashboardButton.addActionListener(listener);
-    }
-public void addReservationListener(ActionListener listener) {
-        Reservationbtn1.addActionListener(listener);
-    }
-public void addEventListener(ActionListener listener) {
-        Eventsbtn.addActionListener(listener);
-    }
-public void addMenuListener(ActionListener listener) {
-        Menubtn2.addActionListener(listener);
-    }
-public void addOrderListener(ActionListener listener) {
-        OrderButton.addActionListener(listener);
-    }
-public void addBillListener(ActionListener listener) {
-        BillButton.addActionListener(listener);
-    }
+public javax.swing.JTable getBillTable() {
+    return jTable1; 
+}
+
+
+public void showMessage(String message) {
+    JOptionPane.showMessageDialog(this, message);
+    
+}
 public void addLogoutListener(ActionListener listener) {
-        LogoutButton.addActionListener(listener);
-    }
+    LogoutButton2.addActionListener(listener); 
+}
+
+public void addOrderListener(ActionListener listener){
+    OrderButton2.addActionListener(listener);
+}
+public void addMenuListener(ActionListener listener){
+    Menubtn4.addActionListener(listener); 
+}
+public void addDashboardListener(ActionListener listener){
+    DashboardBtn.addActionListener(listener); 
+}
+public void addBillListener(ActionListener listener){
+    System.out.println("Bill button clicked");
+    BillButton2.addActionListener(listener);
+}
+public void addReservationListener(ActionListener listener){
+     reservationbtn1.addActionListener(listener);
+}
+public void addEventListener(ActionListener listener){
+    eventbtn1.addActionListener(listener);
+}
 }

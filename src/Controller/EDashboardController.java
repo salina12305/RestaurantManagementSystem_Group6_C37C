@@ -99,7 +99,7 @@ public class EDashboardController {
     }
 
     void open() {
-EmployeeDashboard dashboard = new EmployeeDashboard();
+    EmployeeDashboard dashboard = new EmployeeDashboard();
     dashboard.setVisible(true);    }
 
     class LogoutListener implements ActionListener {

@@ -8,6 +8,7 @@ package Model;
  *
  * @author Nitro
  */
+import Controller.EmployeeController;
 import java.sql.Date;
 
 public class Employee {
@@ -73,5 +74,8 @@ public class Employee {
     public void setEmail(String email) { this.email = email; }
     public void setPhone(String phone) { this.phone = phone; }
     public void setImagePath(String imagePath) { this.imagePath = imagePath; }
+
+
+
 }
 

@@ -3,19 +3,16 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/Lenovo1/RestaurantManagementSystem_Group6_C37C/src/Database/MySqlConnection.java</file>
-            <file>file:/C:/Users/Lenovo1/RestaurantManagementSystem_Group6_C37C/src/View/Bill.java</file>
-            <file>file:/C:/Users/Lenovo1/RestaurantManagementSystem_Group6_C37C/src/Model/Bill.java</file>
-            <file>file:/C:/Users/Lenovo1/RestaurantManagementSystem_Group6_C37C/src/Dao/UserDao.java</file>
-            <file>file:/C:/Users/Lenovo1/RestaurantManagementSystem_Group6_C37C/src/Database/Database.java</file>
-            <file>file:/C:/Users/Lenovo1/RestaurantManagementSystem_Group6_C37C/src/Database/DBConnection.java</file>
-            <file>file:/C:/Users/Lenovo1/RestaurantManagementSystem_Group6_C37C/src/RestaurantManagementSystem/RestaurantManagementSystem.java</file>
-            <file>file:/C:/Users/Lenovo1/RestaurantManagementSystem_Group6_C37C/src/View/SignIn.java</file>
-            <file>file:/C:/Users/Lenovo1/RestaurantManagementSystem_Group6_C37C/src/View/temp.java</file>
-            <file>file:/C:/Users/Lenovo1/RestaurantManagementSystem_Group6_C37C/src/Dao/BillDao.java</file>
-            <file>file:/C:/Users/Lenovo1/RestaurantManagementSystem_Group6_C37C/src/View/AdminDashboard.java</file>
-            <file>file:/C:/Users/Lenovo1/RestaurantManagementSystem_Group6_C37C/src/Controller/BillController.java</file>
-            <file>file:/C:/Users/Lenovo1/RestaurantManagementSystem_Group6_C37C/src/Controller/LogoutController.java</file>
+            <file>file:/C:/Users/Nitro/RestaurantManagementSystem_Group6_C37C/src/View/Bill.java</file>
+            <file>file:/C:/Users/Nitro/RestaurantManagementSystem_Group6_C37C/src/View/AdminDashboard.java</file>
+            <file>file:/C:/Users/Nitro/RestaurantManagementSystem_Group6_C37C/src/Controller/BillController.java</file>
+            <file>file:/C:/Users/Nitro/RestaurantManagementSystem_Group6_C37C/src/Dao/BillDao.java</file>
+            <file>file:/C:/Users/Nitro/RestaurantManagementSystem_Group6_C37C/src/Model/Bill.java</file>
+            <file>file:/C:/Users/Nitro/RestaurantManagementSystem_Group6_C37C/src/Model/CustomerOrder.java</file>
+            <file>file:/C:/Users/Nitro/RestaurantManagementSystem_Group6_C37C/src/Dao/CustomerOrderDao.java</file>
+            <file>file:/C:/Users/Nitro/RestaurantManagementSystem_Group6_C37C/src/Database/Database.java</file>
+            <file>file:/C:/Users/Nitro/RestaurantManagementSystem_Group6_C37C/src/Database/MySqlConnection.java</file>
+            <file>file:/C:/Users/Nitro/RestaurantManagementSystem_Group6_C37C/src/Database/DBConnection.java</file>
         </group>
     </open-files>
 </project-private>

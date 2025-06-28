@@ -1,7 +1,9 @@
 package View;
 
 import java.awt.event.ActionListener;
+import javax.swing.JButton;
 import javax.swing.JOptionPane;
+import javax.swing.JTextField;
 
 /**
  *
@@ -37,26 +39,37 @@ public class Bill extends javax.swing.JFrame {
         jLabel2 = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
         jLabel10 = new javax.swing.JLabel();
-        Slogan2 = new javax.swing.JLabel();
         Logo2 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
         item = new javax.swing.JTable();
-        jname = new javax.swing.JTextField();
+        CustomerNameField = new javax.swing.JTextField();
         jLabel12 = new javax.swing.JLabel();
         jLabel13 = new javax.swing.JLabel();
-        generateBillButton = new javax.swing.JButton();
+        saveBillButton = new javax.swing.JButton();
         exitbtn = new javax.swing.JButton();
+        generateBillButton = new javax.swing.JButton();
+        jPanel3 = new javax.swing.JPanel();
+        Slogan2 = new javax.swing.JLabel();
+        Logo3 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setMinimumSize(new java.awt.Dimension(1000, 600));
+        setSize(new java.awt.Dimension(1000, 600));
+        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jPanel1.setBackground(new java.awt.Color(255, 225, 176));
-        jPanel1.setPreferredSize(new java.awt.Dimension(375, 1024));
+        jPanel1.setMinimumSize(new java.awt.Dimension(200, 600));
+        jPanel1.setPreferredSize(new java.awt.Dimension(200, 600));
+        jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(135, 259, -1, -1));
 
-        Slogan1.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        Slogan1.setFont(new java.awt.Font("Segoe UI", 2, 12)); // NOI18N
         Slogan1.setText("7 People Serving since 11 AM");
+        jPanel1.add(Slogan1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 140, 180, 20));
 
         Logo1.setMaximumSize(new java.awt.Dimension(196, 197));
         Logo1.setMinimumSize(new java.awt.Dimension(196, 197));
+        jPanel1.add(Logo1, new org.netbeans.lib.awtextra.AbsoluteConstraints(226, 6, 179, 162));
 
         Dashboardbutton.setBackground(new java.awt.Color(255, 243, 224));
         Dashboardbutton.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
@@ -68,6 +81,7 @@ public class Bill extends javax.swing.JFrame {
                 DashboardbuttonActionPerformed(evt);
             }
         });
+        jPanel1.add(Dashboardbutton, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 190, 160, 40));
 
         jButton3.setBackground(new java.awt.Color(255, 243, 224));
         jButton3.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
@@ -78,17 +92,20 @@ public class Bill extends javax.swing.JFrame {
                 jButton3ActionPerformed(evt);
             }
         });
+        jPanel1.add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 240, 160, 40));
 
         Orderbutton.setBackground(new java.awt.Color(255, 243, 224));
         Orderbutton.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         Orderbutton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/order.png"))); // NOI18N
         Orderbutton.setText("Order");
         Orderbutton.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        Orderbutton.setIconTextGap(10);
         Orderbutton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 OrderbuttonActionPerformed(evt);
             }
         });
+        jPanel1.add(Orderbutton, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 290, 160, 40));
 
         jbill.setBackground(new java.awt.Color(255, 243, 224));
         jbill.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
@@ -99,79 +116,32 @@ public class Bill extends javax.swing.JFrame {
                 jbillActionPerformed(evt);
             }
         });
+        jPanel1.add(jbill, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 340, 160, 40));
 
         logoutbtn.setBackground(new java.awt.Color(255, 243, 224));
         logoutbtn.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        logoutbtn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/logout.png"))); // NOI18N
         logoutbtn.setText("Logout");
         logoutbtn.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        logoutbtn.setIconTextGap(10);
         logoutbtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 logoutbtnActionPerformed(evt);
             }
         });
+        jPanel1.add(logoutbtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 520, 160, 40));
 
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/Screenshot_2025-05-22_222007-removebg-preview (1).png"))); // NOI18N
         jLabel2.setText("jLabel2");
+        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 20, 136, 120));
 
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(135, 135, 135)
-                        .addComponent(jLabel1))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(86, 86, 86)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(Slogan1)
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addGap(96, 96, 96)
-                                .addComponent(jLabel2)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(Logo1, javax.swing.GroupLayout.PREFERRED_SIZE, 179, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(99, 99, 99)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(logoutbtn, javax.swing.GroupLayout.PREFERRED_SIZE, 219, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                .addComponent(jButton3, javax.swing.GroupLayout.DEFAULT_SIZE, 214, Short.MAX_VALUE)
-                                .addComponent(jbill, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(Orderbutton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(Dashboardbutton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(Logo1, javax.swing.GroupLayout.PREFERRED_SIZE, 162, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                        .addComponent(jLabel2)
-                        .addGap(69, 69, 69)))
-                .addComponent(Slogan1)
-                .addGap(53, 53, 53)
-                .addComponent(jLabel1)
-                .addGap(18, 18, 18)
-                .addComponent(Dashboardbutton, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(48, 48, 48)
-                .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(Orderbutton, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(44, 44, 44)
-                .addComponent(jbill, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 236, Short.MAX_VALUE)
-                .addComponent(logoutbtn, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(97, 97, 97))
-        );
+        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 0, 200, 600));
 
         jPanel2.setBackground(new java.awt.Color(255, 239, 213));
         jPanel2.setPreferredSize(new java.awt.Dimension(1086, 967));
-
-        Slogan2.setText("From Table to Total — Just for You");
+        jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        jPanel2.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(1250, 236, -1, -1));
+        jPanel2.add(Logo2, new org.netbeans.lib.awtextra.AbsoluteConstraints(209, 0, -1, -1));
 
         item.setBackground(new java.awt.Color(255, 239, 213));
         item.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
@@ -199,106 +169,59 @@ public class Bill extends javax.swing.JFrame {
         item.setShowGrid(true);
         jScrollPane1.setViewportView(item);
 
-        jname.setBackground(new java.awt.Color(204, 204, 255));
-        jname.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        jname.addActionListener(new java.awt.event.ActionListener() {
+        jPanel2.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 60, 770, 240));
+
+        CustomerNameField.setBackground(new java.awt.Color(204, 204, 255));
+        CustomerNameField.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        CustomerNameField.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jnameActionPerformed(evt);
+                CustomerNameFieldActionPerformed(evt);
             }
         });
+        jPanel2.add(CustomerNameField, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 10, 230, 30));
 
-        jLabel12.setText("Customer name");
+        jLabel12.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        jLabel12.setText("Customer name:");
+        jPanel2.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 20, 120, -1));
+        jPanel2.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(72, 115, -1, -1));
 
-        generateBillButton.setBackground(new java.awt.Color(204, 204, 204));
-        generateBillButton.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        generateBillButton.setText("Generate Billl");
-        generateBillButton.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        saveBillButton.setBackground(new java.awt.Color(204, 204, 204));
+        saveBillButton.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        saveBillButton.setText("Save Bill");
+        saveBillButton.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        jPanel2.add(saveBillButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 310, 140, 40));
 
         exitbtn.setBackground(new java.awt.Color(204, 204, 204));
         exitbtn.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         exitbtn.setText("Exit");
         exitbtn.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        jPanel2.add(exitbtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 360, 140, 40));
 
-        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
-        jPanel2.setLayout(jPanel2Layout);
-        jPanel2Layout.setHorizontalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addGap(209, 209, 209)
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(Slogan2)
-                            .addComponent(Logo2)))
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addGap(1250, 1250, 1250)
-                        .addComponent(jLabel10))
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addGap(26, 26, 26)
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel2Layout.createSequentialGroup()
-                                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabel12)
-                                    .addGroup(jPanel2Layout.createSequentialGroup()
-                                        .addGap(46, 46, 46)
-                                        .addComponent(jLabel13)))
-                                .addGap(35, 35, 35)
-                                .addComponent(jname, javax.swing.GroupLayout.PREFERRED_SIZE, 123, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(jPanel2Layout.createSequentialGroup()
-                                .addGap(6, 6, 6)
-                                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 556, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addGap(102, 102, 102)
-                        .addComponent(generateBillButton, javax.swing.GroupLayout.PREFERRED_SIZE, 136, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(193, 193, 193)
-                        .addComponent(exitbtn, javax.swing.GroupLayout.PREFERRED_SIZE, 116, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
-        jPanel2Layout.setVerticalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel2Layout.createSequentialGroup()
-                .addContainerGap(236, Short.MAX_VALUE)
-                .addComponent(jLabel10)
-                .addGap(720, 720, 720))
-            .addGroup(jPanel2Layout.createSequentialGroup()
-                .addComponent(Logo2)
-                .addGap(18, 18, 18)
-                .addComponent(Slogan2)
-                .addGap(43, 43, 43)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel12)
-                    .addComponent(jname, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jLabel13)
-                .addGap(71, 71, 71)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 346, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(54, 54, 54)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(generateBillButton, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(exitbtn, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
+        generateBillButton.setBackground(new java.awt.Color(204, 204, 204));
+        generateBillButton.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        generateBillButton.setText("Generate Billl");
+        generateBillButton.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        generateBillButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                generateBillButtonActionPerformed(evt);
+            }
+        });
+        jPanel2.add(generateBillButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 310, 140, 40));
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 373, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, 956, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(12, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGap(0, 6, Short.MAX_VALUE)
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 962, javax.swing.GroupLayout.PREFERRED_SIZE))
-        );
+        getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 160, 800, 440));
+
+        jPanel3.setBackground(new java.awt.Color(255, 243, 224));
+        jPanel3.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        Slogan2.setFont(new java.awt.Font("Segoe UI", 3, 18)); // NOI18N
+        Slogan2.setText("From Table to Total — Just for You");
+        jPanel3.add(Slogan2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 90, 370, 50));
+
+        Logo3.setFont(new java.awt.Font("Segoe UI Variable", 1, 36)); // NOI18N
+        Logo3.setText("7 ~ 11");
+        jPanel3.add(Logo3, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 30, -1, -1));
+
+        getContentPane().add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 0, 800, 160));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -315,9 +238,9 @@ public class Bill extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_logoutbtnActionPerformed
 
-    private void jnameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jnameActionPerformed
+    private void CustomerNameFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CustomerNameFieldActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jnameActionPerformed
+    }//GEN-LAST:event_CustomerNameFieldActionPerformed
 
     private void jbillActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbillActionPerformed
         // TODO add your handling code here:
@@ -326,6 +249,10 @@ public class Bill extends javax.swing.JFrame {
     private void DashboardbuttonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DashboardbuttonActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_DashboardbuttonActionPerformed
+
+    private void generateBillButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_generateBillButtonActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_generateBillButtonActionPerformed
 
     /**
      * @param args the command line arguments
@@ -363,9 +290,11 @@ public class Bill extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JTextField CustomerNameField;
     private javax.swing.JButton Dashboardbutton;
     private javax.swing.JLabel Logo1;
     private javax.swing.JLabel Logo2;
+    private javax.swing.JLabel Logo3;
     private javax.swing.JButton Orderbutton;
     private javax.swing.JLabel Slogan1;
     private javax.swing.JLabel Slogan2;
@@ -380,30 +309,28 @@ public class Bill extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel2;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
+    private javax.swing.JPanel jPanel3;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JButton jbill;
-    private javax.swing.JTextField jname;
     private javax.swing.JButton logoutbtn;
+    private javax.swing.JButton saveBillButton;
     // End of variables declaration//GEN-END:variables
 
 public void addBillListener(ActionListener listener){
-generateBillButton.addActionListener(listener);
+saveBillButton.addActionListener(listener);
 }
 public void addExitListener(ActionListener listener){
 exitbtn.addActionListener(listener);
 }
 public javax.swing.JTextField getCustomerNameField(){
-    return jname;
-}
-public javax.swing.JTextField getPhoneNumberField(){
-    return jphonenumber;
+    return CustomerNameField;
 }
 public javax.swing.JTable getBillTable() {
     return item; // replace with actual variable name
 }
 
 public void addGenerateBillListener(ActionListener listener) {
-    generateBillButton.addActionListener(listener); // replace with actual button
+    saveBillButton.addActionListener(listener); // replace with actual button
 }
 
 public void showMessage(String message) {
@@ -413,6 +340,12 @@ public void showMessage(String message) {
     exitbtn.addActionListener(listener);*/
 }
 public void addLogoutListener(ActionListener listener) {
-    logoutbtn.addActionListener(listener); // replace with actual button
+    logoutbtn.addActionListener(listener); 
+}
+public JButton getGenerateBillButton() {
+    return saveBillButton;
+}
+public void addSaveBillListener(ActionListener listener) {
+    saveBillButton.addActionListener(listener);
 }
 }

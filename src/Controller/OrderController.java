@@ -9,6 +9,9 @@ import Model.BillModel;
 import View.Bill;
 import View.EmployeeDashboard;
 import View.EmployeeSignIn;
+import View.EventBooking;
+import View.ManageMenu;
+import View.Reservation;
 import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -25,6 +28,9 @@ public class OrderController {
         orderView.addUpdateListerner(new UpdateOrderListener());
         orderView.addDeleteListerner(new DeleteOrderListener());
         orderView.addBillListener(new BillListener());
+        orderView.addMenuListener(new MenuListener());
+        orderView.addEventListener(new EventListener());
+        orderView.addReservationListener(new ReservationListener());
         orderView.addLogoutListener(new LogoutListener(orderView));
         
     }
@@ -174,6 +180,50 @@ public class OrderController {
             if (orderView != null) orderView.dispose();
         }
     }
+    
+    public void setupReservationListener(OrderFrame view) {
+        view.addReservationListener(new ReservationListener());
+    }    
+    class ReservationListener implements ActionListener {
+        @Override
+        public void actionPerformed(ActionEvent e) {
+            System.out.println("Reservation button clicked"); 
+            Reservation reservationView = new Reservation();
+            new ReservationController(reservationView);
+            reservationView.setVisible(true);
+
+            if (orderView != null) orderView.dispose();
+        }
+    }
+ 
+    public void setupEventListener(OrderFrame view) {
+        view.addEventListener(new EventListener());
+    }    
+    class EventListener implements ActionListener {
+        @Override
+        public void actionPerformed(ActionEvent e) {
+            System.out.println("EventBooking button clicked"); 
+            EventBooking eventView = new EventBooking();
+            new EventController(eventView);
+            eventView.setVisible(true);
+
+            if (orderView != null) orderView.dispose();
+        }
+    }
+    public void setupMenuListener(OrderFrame view) {
+        view.addMenuListener(new MenuListener());
+    }    
+    class MenuListener implements ActionListener {
+        @Override
+        public void actionPerformed(ActionEvent e) {
+            System.out.println("ManageMenu button clicked"); 
+            ManageMenu menuView = new ManageMenu();
+            new MenuController(menuView);
+            menuView.setVisible(true);
+
+            if (orderView != null) orderView.dispose();
+        }
+    } 
 
 //     class DashboardListener implements ActionListener {
 //        @Override

@@ -6,7 +6,10 @@ import Model.BillModel;
 import View.Bill;
 import View.EmployeeDashboard;
 import View.EmployeeSignIn;
+import View.EventBooking;
+import View.ManageMenu;
 import View.OrderFrame;
+import View.Reservation;
 import javax.swing.table.DefaultTableModel;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -24,6 +27,9 @@ public class BillController {
         view.addLogoutListener(new LogoutListener(view));
         billView.addOrderListener(new OrderListener());
         billView.addDashboardListener(new DashboardListener());
+        billView.addReservationListener(new ReservationListener());
+        billView.addEventListener(new EventListener());
+        billView.addMenuListener(new MenuListener());
     }
      void open() {
        
@@ -116,6 +122,49 @@ public class BillController {
             new EDashboardController(dashboardView);
             dashboardView.setVisible(true);
             
+            if (billView != null) billView.dispose();
+        }
+    }
+    public void setupReservationListener(Bill view) {
+        view.addReservationListener(new ReservationListener());
+    }    
+    class ReservationListener implements ActionListener {
+        @Override
+        public void actionPerformed(ActionEvent e) {
+            System.out.println("Reservation button clicked"); 
+            Reservation reservationView = new Reservation();
+            new ReservationController(reservationView);
+            reservationView.setVisible(true);
+
+            if (billView != null) billView.dispose();
+        }
+    }
+ 
+    public void setupEventListener(Bill view) {
+        view.addEventListener(new EventListener());
+    }    
+    class EventListener implements ActionListener {
+        @Override
+        public void actionPerformed(ActionEvent e) {
+            System.out.println("EventBooking button clicked"); 
+            EventBooking eventView = new EventBooking();
+            new EventController(eventView);
+            eventView.setVisible(true);
+
+            if (billView != null) billView.dispose();
+        }
+    }
+    public void setupMenuListener(Bill view) {
+        view.addMenuListener(new MenuListener());
+    }    
+    class MenuListener implements ActionListener {
+        @Override
+        public void actionPerformed(ActionEvent e) {
+            System.out.println("ManageMenu button clicked"); 
+            ManageMenu menuView = new ManageMenu();
+            new MenuController(menuView);
+            menuView.setVisible(true);
+
             if (billView != null) billView.dispose();
         }
     }

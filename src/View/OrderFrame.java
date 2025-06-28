@@ -622,7 +622,7 @@ public void addOrderListener(ActionListener listener) {
     Menubtn4.addActionListener(listener); 
 }
 public void addDashboardListener(ActionListener listener){
-    System.out.println("Dashboard clicked");
+//    System.out.println("Dashboard clicked");
     DashboardBtn.addActionListener(listener); 
 }
 public void addBillListener(ActionListener listener){
@@ -633,7 +633,7 @@ public void addReservationListener(ActionListener listener){
     reservationbtn1.addActionListener(listener);
 }
 public void addEventListener(ActionListener listener){
-    eventbtn.addActionListener(listener);
+    eventbtn1.addActionListener(listener);
 }
 
 

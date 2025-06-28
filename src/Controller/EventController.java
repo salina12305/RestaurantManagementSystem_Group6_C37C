@@ -182,23 +182,37 @@ package Controller;
 
 import Dao.EventDao;
 import Model.EventModel;
-import View.EventManagement;
-
+import View.Bill;
+import View.EmployeeDashboard;
+import View.EmployeeSignIn;
+import View.EventBooking;
+import View.ManageMenu;
+import View.OrderFrame;
+import View.Reservation;
 import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 public class EventController {
-    private final EventDao eventDao;
-    private final EventManagement eventView;
+    private final EventDao eventDao = new EventDao();
+    private final EventBooking eventView;
 
-    public EventController(EventManagement eventView) {
+    public EventController(EventBooking eventView) {
         this.eventView = eventView;
-        this.eventDao = new EventDao();
+        
 
-        this.eventView.addCreateEventListener(new CreateEventListener());
-        this.eventView.addUpdateEventListener(new UpdateEventListener());
-        this.eventView.addCancelEventListener(new CancelEventListener());
+        eventView.addCreateListerner(new CreateEventListener());
+        eventView.addUpdateListerner(new UpdateEventListener());
+        eventView.addDeleteListerner(new CancelEventListener());
+        eventView.addDashboardListener(new DashboardListener());
+        eventView.addBillListener(new BillListener());
+        eventView.addLogoutListener(new LogoutListener(eventView));
+        eventView.addReservationListener(new ReservationListener());
+        eventView.addMenuListener(new MenuListener());
+        eventView.addOrderListener(new OrderListener());
+    }
+    void open() {
+       
     }
 
     class CreateEventListener implements ActionListener {
@@ -206,8 +220,8 @@ public class EventController {
             try {
                 String customerName = eventView.getCustomerNameField().getText();
                 String event = eventView.getEventField().getText();
-                int date = Integer.parseInt(eventView.getDateField().getText());
-                String staff = eventView.getStaffAssignedField().getText();
+                java.sql.Date date = java.sql.Date.valueOf(eventView.getDateField().getText());
+                String staff = eventView.getAssignedStaffField().getText();
                 int floor = Integer.parseInt(eventView.getFloorField().getText());
 
                 EventModel model = new EventModel(customerName, event, date, staff, floor);
@@ -226,8 +240,8 @@ public class EventController {
 
                 String customerName = eventView.getCustomerNameField().getText();
                 String event = eventView.getEventField().getText();
-                int date = Integer.parseInt(eventView.getDateField().getText());
-                String staff = eventView.getStaffAssignedField().getText();
+                java.sql.Date date = java.sql.Date.valueOf(eventView.getDateField().getText());
+                String staff = eventView.getAssignedStaffField().getText();
                 int floor = Integer.parseInt(eventView.getFloorField().getText());
 
                 EventModel model = new EventModel(customerName, event, date, staff, floor);
@@ -248,7 +262,7 @@ public class EventController {
         public void actionPerformed(ActionEvent e) {
             try {
                 int eventId = Integer.parseInt(JOptionPane.showInputDialog(eventView, "Enter Event ID to cancel:"));
-                boolean deleted = eventDao.cancelEvent(eventId);
+                boolean deleted = eventDao.deleteEvent(eventId);
 
                 if (deleted) {
                     JOptionPane.showMessageDialog(eventView, "Event cancelled.");
@@ -260,4 +274,140 @@ public class EventController {
             }
         }
     }
+    public void setupBillListener(EventBooking view) {
+        view.addBillListener(new BillListener());
+    }
+     
+    class BillListener implements ActionListener {
+        @Override
+        public void actionPerformed(ActionEvent e) {
+            System.out.println("Bill button clicked"); 
+            Bill billView = new Bill();
+            new BillController(billView);
+            billView.setVisible(true);
+
+            if (eventView != null) eventView.dispose();
+        }
+    }
+
+
+    public void setupLogoutListener(EventBooking view) {
+        view.addLogoutListener(new LogoutListener(view));
+    }
+
+    class LogoutListener implements ActionListener {
+        private JFrame currentFrame;
+
+        public LogoutListener(JFrame frame) {
+            this.currentFrame = frame;
+        }
+
+        @Override
+        public void actionPerformed(ActionEvent e) {
+            System.out.println("Logout button clicked");
+            int confirm = JOptionPane.showConfirmDialog(null,
+                    "Are you sure you want to logout?",
+                    "Logout Confirmation",
+                    JOptionPane.YES_NO_OPTION);
+
+            if (confirm == JOptionPane.YES_OPTION) {
+                currentFrame.dispose(); // Close dashboard
+                new EmployeeSignIn().setVisible(true); 
+            }
+        }
+    }
+    public void setupDashboardListener(EventBooking view) {
+        view.addDashboardListener(new DashboardListener());
+    }
+     
+    class DashboardListener implements ActionListener {
+        @Override
+        public void actionPerformed(ActionEvent e) {
+            System.out.println("Dashboard button clicked"); 
+            EmployeeDashboard dashboardView = new EmployeeDashboard();
+            dashboardView.setVisible(true);
+            
+//            control.open();
+            new EDashboardController(dashboardView);
+            dashboardView.setVisible(true);
+            
+            if (eventView != null) eventView.dispose();
+        }
+    }
+    public void setupReservationListener(EventBooking view) {
+        view.addReservationListener(new ReservationListener());
+    }
+     
+    class ReservationListener implements ActionListener {
+        @Override
+        public void actionPerformed(ActionEvent e) {
+            System.out.println("Reservation button clicked"); 
+            Reservation reservationView = new Reservation();
+            reservationView.setVisible(true);
+            
+//            control.open();
+            new ReservationController(reservationView);
+            reservationView.setVisible(true);
+            
+            if (eventView != null) eventView.dispose();
+        }
+    }
+    public void setupMenuListener(EventBooking view) {
+        view.addMenuListener(new MenuListener());
+    }
+     
+    class MenuListener implements ActionListener {
+        @Override
+        public void actionPerformed(ActionEvent e) {
+            System.out.println("Menu button clicked"); 
+            ManageMenu menuView = new ManageMenu();
+            menuView.setVisible(true);
+            
+//            control.open();
+            new MenuController(menuView);
+            menuView.setVisible(true);
+            
+            if (eventView != null) eventView.dispose();
+        }
+    }
+        public void setupOrderListener(EventBooking view) {
+        view.addOrderListener(new OrderListener());
+    }
+     
+    class OrderListener implements ActionListener {
+        @Override
+        public void actionPerformed(ActionEvent e) {
+            System.out.println("OrderFrame button clicked"); 
+            OrderFrame orderView = new OrderFrame();
+            orderView.setVisible(true);
+            
+//            control.open();
+            new OrderController(orderView);
+            orderView.setVisible(true);
+            
+            if (eventView != null) eventView.dispose();
+        }
+    }
+//    public void start() {
+//        Reservation reservationView = new Reservation();
+//        ReservationController reservationController = new ReservationController(reservationView);
+//
+//        reservationView.addEventListener(e -> {
+//            reservationView.dispose(); // close current window
+//            openEventBooking();
+//        });
+//
+//        reservationView.setVisible(true);
+//    }
+//     private void openEventBooking() {
+//        EventBooking eventView = new EventBooking();
+//        EventController eventController = new EventController(eventView); // assuming it exists
+//
+//        eventView.addReservationListener(e -> {
+//            eventView.dispose(); // close event window
+//            start(); // return to reservation view
+//        });
+//
+//        eventView.setVisible(true);
+//    }
 }

@@ -14,7 +14,7 @@ public class MySqlConnection implements Database {
     public Connection openConnection() {
          try{
             String username="root";
-            String password="SonamOD$123";
+            String password="12345678";
             String database="Restaurant";
 
   

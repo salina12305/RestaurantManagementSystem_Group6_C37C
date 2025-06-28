@@ -432,6 +432,9 @@ public void addReservationListener(ActionListener listener){
 public void addEventListener(ActionListener listener){
     eventbtn1.addActionListener(listener);
 }
+public void addOrderListener(ActionListener listener){
+    OrderButton2.addActionListener(listener);
+}
 
 public javax.swing.JTextField getItemNameField() {
     return itemNameField;

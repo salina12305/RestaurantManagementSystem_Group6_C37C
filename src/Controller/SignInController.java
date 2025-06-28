@@ -57,7 +57,7 @@ public class SignInController {
                         System.out.println("Creating AdminDashboardController...");
                         AdminDashboardController dashboardView = new AdminDashboardController(dashboard);
                         
-System.out.println("Opening dashboard...");
+                        System.out.println("Opening dashboard...");
                         dashboardView.open();
                         close();
 

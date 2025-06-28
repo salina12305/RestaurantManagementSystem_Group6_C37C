@@ -1,13 +1,15 @@
 package Model;
 
+import java.sql.Date;
+
 public class EventModel {
     private String customerName;
     private String event;
-    private int date;
+    private Date date;  // Changed from int to java.sql.Date
     private String staffAssigned;
     private int floor;
 
-    public EventModel(String customerName, String event, int date, String staffAssigned, int floor) {
+    public EventModel(String customerName, String event, Date date, String staffAssigned, int floor) {
         this.customerName = customerName;
         this.event = event;
         this.date = date;
@@ -23,7 +25,7 @@ public class EventModel {
         return event;
     }
 
-    public int getDate() {
+    public Date getDate() {
         return date;
     }
 
@@ -43,7 +45,7 @@ public class EventModel {
         this.event = event;
     }
 
-    public void setDate(int date) {
+    public void setDate(Date date) {
         this.date = date;
     }
 

@@ -36,6 +36,8 @@ import java.awt.event.ActionListener;
 import java.awt.geom.Ellipse2D;
 import View.EmployeeDashboard;
 import View.EmployeeSignIn; 
+import View.EventBooking;
+import View.ManageMenu;
 import View.Reservation;
 import View.SecurityQuestion;
 import View.SignIn;
@@ -89,6 +91,9 @@ public class EDashboardController {
         view.addLogoutListener(new LogoutListener(view));
         view.addOrderListener(new OrderListener());
         view.addBillListener(new BillListener());
+        view.addReservationListener(new ReservationListener());
+        view.addEventListener(new EventListener());
+        view.addMenuListener(new MenuListener());
     }
 
     public static void loadRevenueChartFromDB(JPanel revenueChartPanel) {
@@ -156,9 +161,6 @@ public class EDashboardController {
         }
       }
     
-    private void close() {
-        
-    }   
     
 
 
@@ -188,49 +190,51 @@ public class EDashboardController {
 //}
     
     public void setupReservationListener(EmployeeDashboard view) {
-    view.addReservationListener(new ActionListener() {
+        view.addReservationListener(new ReservationListener());
+    }    
+    class ReservationListener implements ActionListener {
         @Override
         public void actionPerformed(ActionEvent e) {
+            System.out.println("Reservation button clicked"); 
             Reservation reservationView = new Reservation();
+            new ReservationController(reservationView);
             reservationView.setVisible(true);
+
+            if (dashboardView != null) dashboardView.dispose();
         }
-    });
-}
+    }
     
-//    public class SomeOtherController {
-//    private JFrame currentFrame; // your current frame
-//
-//    public SomeOtherController(JFrame currentFrame) {
-//        this.currentFrame = currentFrame;
-//    }
-//
-//    class OpenManageMenuListener implements ActionListener {
-//        @Override
-//        public void actionPerformed(ActionEvent e) {
-//            ManageMenu manageMenu = new ManageMenu();
-//            new MenuController(manageMenu);  // attach listeners
-//            manageMenu.setVisible(true);
-//            currentFrame.dispose();  // close current window if needed
-//        }
-//    }
-//}
+    private void close() {
+        
+    }
 
-    
-// class ReservationListener implements ActionListener {
-//    private JFrame currentFrame;
-//
-//    public ReservationListener(JFrame frame) {
-//        this.currentFrame = frame;
-//    }
-//        @Override
-//        public void actionPerformed(ActionEvent e) {
-//            Reservation  = new Reservation();
-//            view.setVisible(true);
-//            view.open();
-//            close();
-//        }
-//    }
+    public void setupEventListener(EmployeeDashboard view) {
+        view.addEventListener(new EventListener());
+    }    
+    class EventListener implements ActionListener {
+        @Override
+        public void actionPerformed(ActionEvent e) {
+            System.out.println("EventBooking button clicked"); 
+            EventBooking eventView = new EventBooking();
+            new EventController(eventView);
+            eventView.setVisible(true);
 
+            if (dashboardView != null) dashboardView.dispose();
+        }
+    }
+     public void setupMenuListener(EmployeeDashboard view) {
+        view.addMenuListener(new MenuListener());
+    }    
+    class MenuListener implements ActionListener {
+        @Override
+        public void actionPerformed(ActionEvent e) {
+            System.out.println("ManageMenu button clicked"); 
+            ManageMenu menuView = new ManageMenu();
+            new MenuController(menuView);
+            menuView.setVisible(true);
 
+            if (dashboardView != null) dashboardView.dispose();
+        }
+    }
 }
 

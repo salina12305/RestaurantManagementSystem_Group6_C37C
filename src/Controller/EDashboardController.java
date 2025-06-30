@@ -45,9 +45,50 @@ import View.SignUpp;
 import java.awt.event.ActionEvent;
 import javax.swing.*;
 import java.awt.event.ActionListener;
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
+import java.util.LinkedHashMap;
+import java.util.Map;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 
 public class EDashboardController {
+    
+    public static DefaultCategoryDataset getOrderCountDataset() {
+        Map<String, Integer> dateCountMap = new LinkedHashMap<>();
+        LocalDate today = LocalDate.now();
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
+    
+    for (int i = 29; i >= 0; i--) {
+            LocalDate date = today.minusDays(i);
+            dateCountMap.put(date.format(formatter), 0);
+        }
+    try (Connection conn = new MySqlConnection().openConnection()) {
+            String sql = "SELECT DATE(order_date) as date, COUNT(*) as count " +
+                         "FROM orders " +
+                         "WHERE order_date >= CURDATE() - INTERVAL 30 DAY " +
+                         "GROUP BY DATE(order_date)";
+            PreparedStatement stmt = conn.prepareStatement(sql);
+            ResultSet rs = stmt.executeQuery();
+
+            while (rs.next()) {
+                String date = rs.getString("date");
+                int count = rs.getInt("count");
+                dateCountMap.put(date, count);
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+            JOptionPane.showMessageDialog(null, "Failed to load order statistics.");
+        }
+
+        // Step 3: Create dataset for chart
+        DefaultCategoryDataset dataset = new DefaultCategoryDataset();
+        for (Map.Entry<String, Integer> entry : dateCountMap.entrySet()) {
+            dataset.addValue(entry.getValue(), "Orders", entry.getKey());
+        }
+        return dataset;
+    }
 
     public static void loadRevenueChart(JPanel panel, JFrame frame) {
     DefaultCategoryDataset dataset = new DefaultCategoryDataset();
@@ -195,12 +236,16 @@ public class EDashboardController {
     class ReservationListener implements ActionListener {
         @Override
         public void actionPerformed(ActionEvent e) {
-            System.out.println("Reservation button clicked"); 
-            Reservation reservationView = new Reservation();
-            new ReservationController(reservationView);
-            reservationView.setVisible(true);
-
-            if (dashboardView != null) dashboardView.dispose();
+            try {
+                System.out.println("Reservation button clicked");
+                Reservation reservationView = new Reservation();
+                new ReservationController(reservationView);
+                reservationView.setVisible(true);
+                
+                if (dashboardView != null) dashboardView.dispose();
+            } catch (SQLException ex) {
+                Logger.getLogger(EDashboardController.class.getName()).log(Level.SEVERE, null, ex);
+            }
         }
     }
     

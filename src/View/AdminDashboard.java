@@ -155,7 +155,6 @@ AdminDashboardController.loadRevenueChartFromDB(revenueChartPanel);
         jLabel1.setText("MonthlyRevenue");
 
         jLabel2.setFont(new java.awt.Font("Segoe UI", 2, 14)); // NOI18N
-        jLabel2.setText("Rs 70000");
 
         javax.swing.GroupLayout RevenuePanelLayout = new javax.swing.GroupLayout(RevenuePanel);
         RevenuePanel.setLayout(RevenuePanelLayout);
@@ -190,7 +189,6 @@ AdminDashboardController.loadRevenueChartFromDB(revenueChartPanel);
         jLabel3.setText("Total Orders");
 
         jLabel4.setFont(new java.awt.Font("Segoe UI", 2, 14)); // NOI18N
-        jLabel4.setText("356");
 
         javax.swing.GroupLayout OrderPanelLayout = new javax.swing.GroupLayout(OrderPanel);
         OrderPanel.setLayout(OrderPanelLayout);
@@ -223,7 +221,6 @@ AdminDashboardController.loadRevenueChartFromDB(revenueChartPanel);
         jLabel5.setText("Total Employee");
 
         jLabel6.setFont(new java.awt.Font("Segoe UI", 2, 14)); // NOI18N
-        jLabel6.setText("32");
 
         javax.swing.GroupLayout EmployeePanelLayout = new javax.swing.GroupLayout(EmployeePanel);
         EmployeePanel.setLayout(EmployeePanelLayout);
@@ -551,9 +548,22 @@ public void addEmployeeDetailListener(ActionListener listener) {
 public void addAdminDashboardListener(ActionListener listener) {
     DashboardBtn.addActionListener(listener);
 }
-    public JPanel getRevenueChartPanel() {
-         return revenueChartPanel;
-    }
+public JPanel getRevenueChartPanel() {
+    return revenueChartPanel;
+}
+//public void setRevenueText(String revenue) {
+//    jLabel2.setText(revenue);
+//}
+public void setTotalOrders(String totalOrders) {
+    jLabel4.setText(totalOrders);
+}
+public void setTotalEmployees(String total) {
+    jLabel6.setText(total);
+}
 
+
+    public void setRevenueText(String revenue) {
+    jLabel2.setText(revenue);
+    }
 }
 

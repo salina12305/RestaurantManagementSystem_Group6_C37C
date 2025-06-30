@@ -104,14 +104,14 @@ public class EventDao {
     public List<String[]> getStaffDuty() throws SQLException {
          Connection conn = mysql.openConnection();
         List<String[]> data = new ArrayList<>();
-        String sql = "SELECT floor, assigned_staffs, event_date FROM event_bookings";
+        String sql = "SELECT floor, staffAssigned, date FROM events";
         try (PreparedStatement stmt = conn.prepareStatement(sql);
              ResultSet rs = stmt.executeQuery()) {
             while (rs.next()) {
                 data.add(new String[]{
                     rs.getString("floor"),
-                    rs.getString("assigned_staffs"),
-                    rs.getString("event_date")
+                    rs.getString("staffAssigned"),
+                    rs.getString("date")
                 });
             }
         }

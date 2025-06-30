@@ -13,7 +13,10 @@ import View.Reservation;
 import javax.swing.table.DefaultTableModel;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.sql.SQLException;
 import java.util.List;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 
@@ -131,12 +134,16 @@ public class BillController {
     class ReservationListener implements ActionListener {
         @Override
         public void actionPerformed(ActionEvent e) {
-            System.out.println("Reservation button clicked"); 
-            Reservation reservationView = new Reservation();
-            new ReservationController(reservationView);
-            reservationView.setVisible(true);
-
-            if (billView != null) billView.dispose();
+            try {
+                System.out.println("Reservation button clicked");
+                Reservation reservationView = new Reservation();
+                new ReservationController(reservationView);
+                reservationView.setVisible(true);
+                
+                if (billView != null) billView.dispose();
+            } catch (SQLException ex) {
+                Logger.getLogger(BillController.class.getName()).log(Level.SEVERE, null, ex);
+            }
         }
     }
  

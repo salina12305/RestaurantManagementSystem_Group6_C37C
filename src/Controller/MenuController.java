@@ -120,6 +120,9 @@ import View.Reservation;
 import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.sql.SQLException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 public class MenuController {
     private final MenuDAO menuDao = new MenuDAO();
@@ -305,12 +308,16 @@ public class MenuController {
     class ReservationListener implements ActionListener {
         @Override
         public void actionPerformed(ActionEvent e) {
-            System.out.println("Reservation button clicked"); 
-            Reservation reservationView = new Reservation();
-            new ReservationController(reservationView);
-            reservationView.setVisible(true);
-
-            if (menuView != null) menuView.dispose();
+            try {
+                System.out.println("Reservation button clicked");
+                Reservation reservationView = new Reservation();
+                new ReservationController(reservationView);
+                reservationView.setVisible(true);
+                
+                if (menuView != null) menuView.dispose();
+            } catch (SQLException ex) {
+                Logger.getLogger(MenuController.class.getName()).log(Level.SEVERE, null, ex);
+            }
         }
     }
     public void setupEventListener(ManageMenu view) {

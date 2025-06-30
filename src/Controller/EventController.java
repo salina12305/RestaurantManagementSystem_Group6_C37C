@@ -192,6 +192,9 @@ import View.Reservation;
 import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.sql.SQLException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 public class EventController {
     private final EventDao eventDao = new EventDao();
@@ -215,23 +218,69 @@ public class EventController {
        
     }
 
+//    class CreateEventListener implements ActionListener {
+//        public void actionPerformed(ActionEvent e) {
+//            try {
+//                String customerName = eventView.getCustomerNameField().getText();
+//                String event = eventView.getEventField().getText();
+//                java.sql.Date date = java.sql.Date.valueOf(eventView.getDateField().getText());
+//                String staff = eventView.getAssignedStaffField().getText();
+//                int floor = Integer.parseInt(eventView.getFloorField().getText());
+//
+//                
+//                EventModel model = new EventModel(customerName, event, date, staff, floor);
+//                eventDao.createEvent(model);
+//                JOptionPane.showMessageDialog(eventView, "Event created successfully.");
+//            } catch (Exception ex) {
+//                JOptionPane.showMessageDialog(eventView, "Error: " + ex.getMessage());
+//            }
+//        }
+//    }
+    
     class CreateEventListener implements ActionListener {
-        public void actionPerformed(ActionEvent e) {
-            try {
-                String customerName = eventView.getCustomerNameField().getText();
-                String event = eventView.getEventField().getText();
-                java.sql.Date date = java.sql.Date.valueOf(eventView.getDateField().getText());
-                String staff = eventView.getAssignedStaffField().getText();
-                int floor = Integer.parseInt(eventView.getFloorField().getText());
+    public void actionPerformed(ActionEvent e) {
+        try {
+            String customerName = eventView.getCustomerNameField().getText();
+            String event = eventView.getEventField().getText();
+            String dateText = eventView.getDateField().getText(); 
+            String staff = eventView.getAssignedStaffField().getText();
+            String floorText = eventView.getFloorField().getText(); 
 
-                EventModel model = new EventModel(customerName, event, date, staff, floor);
-                eventDao.createEvent(model);
-                JOptionPane.showMessageDialog(eventView, "Event created successfully.");
-            } catch (Exception ex) {
-                JOptionPane.showMessageDialog(eventView, "Error: " + ex.getMessage());
+            // Validation
+            if (customerName.isEmpty() || event.isEmpty() || dateText.isEmpty() || staff.isEmpty() || floorText.isEmpty()) {
+                JOptionPane.showMessageDialog(eventView, "Please fill in all fields.");
+                return;
             }
+
+            // Date format check
+            java.sql.Date date;
+            try {
+                date = java.sql.Date.valueOf(dateText); // must be yyyy-MM-dd
+            } catch (IllegalArgumentException ex) {
+                JOptionPane.showMessageDialog(eventView, "Invalid date format. Use yyyy-MM-dd.");
+                return;
+            }
+
+            // Floor number check
+            int floor;
+            try {
+                floor = Integer.parseInt(floorText);
+            } catch (NumberFormatException ex) {
+                JOptionPane.showMessageDialog(eventView, "Floor must be a number.");
+                return;
+            }
+
+            // Valid data — Create event
+            EventModel model = new EventModel(customerName, event, date, staff, floor);
+            eventDao.createEvent(model);
+            JOptionPane.showMessageDialog(eventView, "Event created successfully.");
+
+        } catch (Exception ex) {
+            JOptionPane.showMessageDialog(eventView, "Error: " + ex.getMessage());
         }
     }
+}
+
 
     class UpdateEventListener implements ActionListener {
         public void actionPerformed(ActionEvent e) {
@@ -325,7 +374,7 @@ public class EventController {
         public void actionPerformed(ActionEvent e) {
             System.out.println("Dashboard button clicked"); 
             EmployeeDashboard dashboardView = new EmployeeDashboard();
-            dashboardView.setVisible(true);
+//            dashboardView.setVisible(true);
             
 //            control.open();
             new EDashboardController(dashboardView);
@@ -341,15 +390,16 @@ public class EventController {
     class ReservationListener implements ActionListener {
         @Override
         public void actionPerformed(ActionEvent e) {
-            System.out.println("Reservation button clicked"); 
-            Reservation reservationView = new Reservation();
-            reservationView.setVisible(true);
-            
-//            control.open();
-            new ReservationController(reservationView);
-            reservationView.setVisible(true);
-            
-            if (eventView != null) eventView.dispose();
+            try {
+                System.out.println("Reservation button clicked");
+                Reservation reservationView = new Reservation();
+                new ReservationController(reservationView);
+                reservationView.setVisible(true);
+                
+                if (eventView != null) eventView.dispose();
+            } catch (SQLException ex) {
+                Logger.getLogger(EventController.class.getName()).log(Level.SEVERE, null, ex);
+            }
         }
     }
     public void setupMenuListener(EventBooking view) {
@@ -379,7 +429,7 @@ public class EventController {
         public void actionPerformed(ActionEvent e) {
             System.out.println("OrderFrame button clicked"); 
             OrderFrame orderView = new OrderFrame();
-            orderView.setVisible(true);
+//            orderView.setVisible(true);
             
 //            control.open();
             new OrderController(orderView);

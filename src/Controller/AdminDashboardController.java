@@ -75,6 +75,10 @@ public class AdminDashboardController {
             }
         });
     }
+
+    public static void loadRevenueChartFromDB(JPanel revenueChartPanel) {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
     
 //    private final EmployeeDAO employeeDao = new EmployeeDAO();
 //    private AdminDashboard dashview;
@@ -84,18 +88,25 @@ public class AdminDashboardController {
     private final AdminDashboard dashboardView;
 
     public AdminDashboardController(AdminDashboard view) {
-        this.dashboardView=view;
-        dashboardView.setExtendedState(JFrame.MAXIMIZED_BOTH);
-        AdminDashboardDao.loadRevenueChartFromDB(view.getRevenueChartPanel());
-      
-        view.addLogoutListener(new LogoutListener(view));
-        view.addEmployeeDetailListener(new EmployeeDetailListener());
-        
-
+//        this.dashboardView=view;
+//        dashboardView.setExtendedState(JFrame.MAXIMIZED_BOTH);
+//        AdminDashboardDao.loadRevenueChartFromDB(view.getRevenueChartPanel());
+//      
+//        view.addLogoutListener(new LogoutListener(view));
+//        view.addEmployeeDetailListener(new EmployeeDetailListener());
+        this.dashboardView = view;
+    dashboardView.setExtendedState(JFrame.MAXIMIZED_BOTH);
+    loadRevenueChartFromDB(view.getRevenueChartPanel(), view);
+//    view.addLogoutListener(new LogoutListener(view));
+//    view.addEmployeeDetailListener(new EmployeeDetailListener());
+    dashboardView.setTotalOrders(String.valueOf(getTotalOrders()));
+    dashboardView.setTotalEmployees(String.valueOf(getTotalEmployees()));
+    view.addLogoutListener(new LogoutListener(view));
+    view.addEmployeeDetailListener(new EmployeeDetailListener());
        
     }
-
-    public static void loadRevenueChartFromDB(JPanel revenueChartPanel) {
+//
+//    public static void loadRevenueChartFromDB(JPanel revenueChartPanel) {
 //    DefaultCategoryDataset dataset = new DefaultCategoryDataset();
 //
 //    try (Connection conn = DriverManager.getConnection("jdbc:mysql://127.0.0.1:3306/restaurant", "root", "12345678")) {
@@ -149,7 +160,44 @@ public class AdminDashboardController {
 //    revenueChartPanel.add(chartPanel, BorderLayout.CENTER);
 //    revenueChartPanel.revalidate();
 //    revenueChartPanel.repaint();
-}
+
+    public static void loadRevenueChartFromDB(JPanel revenueChartPanel, AdminDashboard dashboard) {
+    DefaultCategoryDataset dataset = new DefaultCategoryDataset();
+    double totalRevenue = 0;
+
+    try (Connection conn = DriverManager.getConnection("jdbc:mysql://127.0.0.1:3306/restaurant", "root", "12345678")) {
+        String sql = "SELECT MONTH(order_date) AS month, SUM(total_amount) AS total FROM orders GROUP BY MONTH(order_date)";
+        PreparedStatement stmt = conn.prepareStatement(sql);
+        ResultSet rs = stmt.executeQuery();
+
+        String[] monthNames = {
+            "Jan", "Feb", "Mar", "Apr", "May", "Jun",
+            "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"
+        };
+
+        while (rs.next()) {
+            int month = rs.getInt("month");
+            double total = rs.getDouble("total");
+            totalRevenue += total;
+            dataset.addValue(total, "Revenue", monthNames[month - 1]);
+        }
+    } catch (SQLException e) {
+        e.printStackTrace();
+    }
+
+    JFreeChart chart = ChartFactory.createLineChart("Monthly Revenue", "Month", "Revenue (Rs)", dataset);
+    ChartPanel chartPanel = new ChartPanel(chart);
+    revenueChartPanel.removeAll();
+    revenueChartPanel.setLayout(new BorderLayout());
+    revenueChartPanel.add(chartPanel, BorderLayout.CENTER);
+    revenueChartPanel.revalidate();
+    revenueChartPanel.repaint();
+
+    dashboard.setRevenueText("Rs " + (int) totalRevenue);
+
+
+    
+    }
 
     
     public static void applyHoverEffect(JPanel ReviewPanel) {
@@ -203,5 +251,33 @@ public class AdminDashboardController {
 
             if (dashboardView != null) dashboardView.dispose();
         }
-      }
+    }
+    
+    public static int getTotalOrders() {
+    String sql = "SELECT COUNT(*) FROM customer_order";
+    try (Connection conn = DriverManager.getConnection("jdbc:mysql://127.0.0.1:3306/restaurant", "root", "12345678");
+         Statement stmt = conn.createStatement();
+         ResultSet rs = stmt.executeQuery(sql)) {
+        if (rs.next()) {
+            return rs.getInt(1);
+        }
+    } catch (SQLException e) {
+        e.printStackTrace();
+    }
+    return 0;
+}
+public static int getTotalEmployees() {
+    String sql = "SELECT COUNT(*) FROM employees";
+    try (Connection conn = DriverManager.getConnection("jdbc:mysql://127.0.0.1:3306/restaurant", "root", "12345678");
+         Statement stmt = conn.createStatement();
+         ResultSet rs = stmt.executeQuery(sql)) {
+        if (rs.next()) {
+            return rs.getInt(1);
+        }
+    } catch (SQLException e) {
+        e.printStackTrace();
+    }
+    return 0;
+}
+
 }

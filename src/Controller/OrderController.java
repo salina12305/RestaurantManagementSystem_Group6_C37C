@@ -15,6 +15,9 @@ import View.Reservation;
 import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.sql.SQLException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 public class OrderController {
     private final OrderDao orderDao = new OrderDao();
@@ -68,7 +71,7 @@ public class OrderController {
 
             new BillDao().saveBill(bill); // Save bill
 
-            JOptionPane.showMessageDialog(orderView, "Order and Bill created successfully!");
+            JOptionPane.showMessageDialog(orderView, "Order created successfully!");
         } catch (Exception ex) {
             ex.printStackTrace();
             JOptionPane.showMessageDialog(orderView, "Failed to create order: " + ex.getMessage());
@@ -171,7 +174,7 @@ public class OrderController {
         public void actionPerformed(ActionEvent e) {
             System.out.println("Dashboard button clicked"); 
             EmployeeDashboard dashboardView = new EmployeeDashboard();
-            dashboardView.setVisible(true);
+//            dashboardView.setVisible(true);
             
 //            control.open();
             new EDashboardController(dashboardView);
@@ -187,12 +190,16 @@ public class OrderController {
     class ReservationListener implements ActionListener {
         @Override
         public void actionPerformed(ActionEvent e) {
-            System.out.println("Reservation button clicked"); 
-            Reservation reservationView = new Reservation();
-            new ReservationController(reservationView);
-            reservationView.setVisible(true);
-
-            if (orderView != null) orderView.dispose();
+            try {
+                System.out.println("Reservation button clicked");
+                Reservation reservationView = new Reservation();
+                new ReservationController(reservationView);
+                reservationView.setVisible(true);
+                
+                if (orderView != null) orderView.dispose();
+            } catch (SQLException ex) {
+                Logger.getLogger(OrderController.class.getName()).log(Level.SEVERE, null, ex);
+            }
         }
     }
  

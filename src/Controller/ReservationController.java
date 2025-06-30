@@ -24,10 +24,10 @@ public class ReservationController {
  private final Reservation reservationView;
   private EventDao eventDao;
     
-    public ReservationController(Reservation reservationView) {
+    public ReservationController(Reservation reservationView) throws java.sql.SQLException {
           this.reservationView = reservationView; 
           this.eventDao = new EventDao();
-//          loadReservationStatus();
+          loadBookingStatus();
           
 
         reservationView.addDashboardListener(new DashboardListener());

@@ -6,7 +6,8 @@ package View;
 import java.awt.Color;
 import javax.swing.JFrame;
 
-import controller.AdminDashboardController;
+import Controller.AdminDashboardController;
+import javax.swing.JLabel;
 
 
 /**
@@ -32,6 +33,11 @@ AdminDashboardController.applyHoverEffect(LogoutButton);
 
 
 AdminDashboardController.loadRevenueChartFromDB(revenueChartPanel);
+
+// For reviews
+JLabel[] nameLabels = {Customer1, Customer2, Customer3};
+JLabel[] reviewLabels = {CustomerReview1, CustomerReview2, CustomerReview3};
+AdminDashboardController.loadRecentReviews(nameLabels, reviewLabels, this);
 
 
 
@@ -75,7 +81,7 @@ AdminDashboardController.loadRevenueChartFromDB(revenueChartPanel);
         jLabel6 = new javax.swing.JLabel();
         ReviewPanel = new javax.swing.JPanel();
         Review3 = new javax.swing.JPanel();
-        Review = new javax.swing.JLabel();
+        Customer3 = new javax.swing.JLabel();
         CustomerReview3 = new javax.swing.JLabel();
         Review1 = new javax.swing.JPanel();
         Customer1 = new javax.swing.JLabel();
@@ -83,7 +89,7 @@ AdminDashboardController.loadRevenueChartFromDB(revenueChartPanel);
         Review2 = new javax.swing.JPanel();
         Customer2 = new javax.swing.JLabel();
         CustomerReview2 = new javax.swing.JLabel();
-        Customer3 = new javax.swing.JLabel();
+        reviewSection = new javax.swing.JLabel();
         revenueChartPanel = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -349,7 +355,7 @@ AdminDashboardController.loadRevenueChartFromDB(revenueChartPanel);
 
         Review3.setBackground(new java.awt.Color(229, 216, 176));
 
-        Review.setText("Krischal Lamichhane");
+        Customer3.setText("Krischal Lamichhane");
 
         CustomerReview3.setFont(new java.awt.Font("Segoe UI", 2, 14)); // NOI18N
         CustomerReview3.setText("Polite Server");
@@ -362,7 +368,7 @@ AdminDashboardController.loadRevenueChartFromDB(revenueChartPanel);
                 .addContainerGap()
                 .addGroup(Review3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(Review3Layout.createSequentialGroup()
-                        .addComponent(Review)
+                        .addComponent(Customer3)
                         .addGap(0, 61, Short.MAX_VALUE))
                     .addComponent(CustomerReview3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap())
@@ -371,7 +377,7 @@ AdminDashboardController.loadRevenueChartFromDB(revenueChartPanel);
             Review3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(Review3Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(Review)
+                .addComponent(Customer3)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(CustomerReview3)
                 .addContainerGap(22, Short.MAX_VALUE))
@@ -447,10 +453,10 @@ AdminDashboardController.loadRevenueChartFromDB(revenueChartPanel);
         ReviewPanel.add(Review2);
         Review2.setBounds(10, 110, 180, 70);
 
-        Customer3.setFont(new java.awt.Font("Segoe UI", 2, 14)); // NOI18N
-        Customer3.setText("Recent Reviews");
-        ReviewPanel.add(Customer3);
-        Customer3.setBounds(50, 10, 109, 16);
+        reviewSection.setFont(new java.awt.Font("Segoe UI", 2, 14)); // NOI18N
+        reviewSection.setText("Recent Reviews");
+        ReviewPanel.add(reviewSection);
+        reviewSection.setBounds(50, 10, 109, 16);
 
         DashboardCenterPanel.add(ReviewPanel);
         ReviewPanel.setBounds(560, 160, 200, 270);
@@ -580,7 +586,6 @@ MinimizeButton.setOpaque(false);
     private javax.swing.JButton RefreshButton;
     private javax.swing.JPanel RevenuePanel;
     private javax.swing.JLabel RevenueText;
-    private javax.swing.JLabel Review;
     private javax.swing.JPanel Review1;
     private javax.swing.JPanel Review2;
     private javax.swing.JPanel Review3;
@@ -595,6 +600,7 @@ MinimizeButton.setOpaque(false);
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JPanel revenueChartPanel;
+    private javax.swing.JLabel reviewSection;
     // End of variables declaration//GEN-END:variables
 
 }

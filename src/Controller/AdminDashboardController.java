@@ -76,10 +76,7 @@ public class AdminDashboardController {
         });
     }
 
-    public static void loadRevenueChartFromDB(JPanel revenueChartPanel) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
-    }
-    
+   
 //    private final EmployeeDAO employeeDao = new EmployeeDAO();
 //    private AdminDashboard dashview;
      MySqlConnection mysql = new MySqlConnection();

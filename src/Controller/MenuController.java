@@ -278,7 +278,7 @@ public class MenuController {
         public void actionPerformed(ActionEvent e) {
             System.out.println("Dashboard button clicked"); 
             EmployeeDashboard dashboardView = new EmployeeDashboard();
-            dashboardView.setVisible(true);
+//            dashboardView.setVisible(true);
             
 //            control.open();
             new EDashboardController(dashboardView);

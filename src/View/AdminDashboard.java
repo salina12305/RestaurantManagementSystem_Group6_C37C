@@ -4,6 +4,7 @@ import java.awt.Color;
 import javax.swing.JFrame;
 
 import Controller.AdminDashboardController;
+import Dao.AdminDashboardDao;
 import java.awt.event.ActionListener;
 import javax.swing.JPanel;
 
@@ -14,14 +15,14 @@ public class AdminDashboard extends javax.swing.JFrame {
         AdminDashboardController controller = new AdminDashboardController(this);
         setVisible(true);
 
-AdminDashboardController.applyHoverEffect(DashboardBtn);
-AdminDashboardController.applyHoverEffect(Employeebtn);
-AdminDashboardController.applyHoverEffect(RefreshButton);
-AdminDashboardController.applyHoverEffect(MinimizeButton);
-AdminDashboardController.applyHoverEffect(ExitButton);
-AdminDashboardController.applyHoverEffect(LogoutButton2);
+        AdminDashboardController.applyHoverEffect(DashboardBtn);
+        AdminDashboardController.applyHoverEffect(Employeebtn);
+        AdminDashboardController.applyHoverEffect(RefreshButton);
+        AdminDashboardController.applyHoverEffect(MinimizeButton);
+        AdminDashboardController.applyHoverEffect(ExitButton);
+        AdminDashboardController.applyHoverEffect(LogoutButton2);
 
-AdminDashboardController.loadRevenueChartFromDB(revenueChartPanel);        
+AdminDashboardDao.loadRevenueChartFromDB(revenueChartPanel);        
 }
     /**
      * This method is called from within the constructor to initialize the form.

@@ -115,7 +115,7 @@ public class ESignInController {
             sec.setVisible(true);
             AuthController controller = new AuthController(sec);
             controller.open();
-
+            userView.dispose();
         }
     }
     class ELoginListener implements ActionListener {

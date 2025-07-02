@@ -49,15 +49,19 @@ public class SignIn extends javax.swing.JFrame {
         setBounds(new java.awt.Rectangle(255, 228, 201, 201));
 
         jPanel1.setBackground(new java.awt.Color(255, 228, 201));
+        jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel5.setFont(new java.awt.Font("Times New Roman", 0, 8)); // NOI18N
         jLabel5.setText("Don’t have an account ?");
+        jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(69, 302, -1, 12));
 
         jLabel1.setFont(new java.awt.Font("Times New Roman", 0, 13)); // NOI18N
         jLabel1.setText("The only thing faster than our login? Your success");
+        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 113, -1, -1));
 
         jLabel2.setFont(new java.awt.Font("Times New Roman", 0, 13)); // NOI18N
         jLabel2.setText("Missed us, didn’t you?");
+        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(57, 85, -1, -1));
 
         Bsignin.setBackground(new java.awt.Color(78, 31, 0));
         Bsignin.setForeground(new java.awt.Color(255, 228, 201));
@@ -72,9 +76,12 @@ public class SignIn extends javax.swing.JFrame {
                 BsigninActionPerformed(evt);
             }
         });
+        jPanel1.add(Bsignin, new org.netbeans.lib.awtextra.AbsoluteConstraints(57, 274, 187, -1));
 
         jLabel4.setFont(new java.awt.Font("Jaini Purva", 1, 36)); // NOI18N
         jLabel4.setText("7 ~ 11");
+        jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 20, 80, -1));
+        jPanel1.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(651, 0, -1, 362));
 
         BForgetPass.setBackground(new java.awt.Color(255, 228, 201));
         BForgetPass.setFont(new java.awt.Font("Times New Roman", 0, 8)); // NOI18N
@@ -84,6 +91,7 @@ public class SignIn extends javax.swing.JFrame {
                 BForgetPassActionPerformed(evt);
             }
         });
+        jPanel1.add(BForgetPass, new org.netbeans.lib.awtextra.AbsoluteConstraints(156, 239, -1, -1));
 
         Bsignup.setBackground(new java.awt.Color(255, 228, 201));
         Bsignup.setFont(new java.awt.Font("Times New Roman", 0, 10)); // NOI18N
@@ -93,8 +101,10 @@ public class SignIn extends javax.swing.JFrame {
                 BsignupActionPerformed(evt);
             }
         });
+        jPanel1.add(Bsignup, new org.netbeans.lib.awtextra.AbsoluteConstraints(156, 299, -1, -1));
 
         jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/Screenshot 2025-05-21 at 18.17.25.png"))); // NOI18N
+        jPanel1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(284, 0, -1, -1));
 
         jPass.setBackground(new java.awt.Color(255, 228, 201));
         jPass.setFont(new java.awt.Font("Times New Roman", 0, 10)); // NOI18N
@@ -112,6 +122,7 @@ public class SignIn extends javax.swing.JFrame {
                 jPassActionPerformed(evt);
             }
         });
+        jPanel1.add(jPass, new org.netbeans.lib.awtextra.AbsoluteConstraints(57, 203, 187, 30));
 
         jEmail1.setBackground(new java.awt.Color(255, 228, 201));
         jEmail1.setFont(new java.awt.Font("Times New Roman", 0, 10)); // NOI18N
@@ -129,88 +140,17 @@ public class SignIn extends javax.swing.JFrame {
                 jEmail1ActionPerformed(evt);
             }
         });
+        jPanel1.add(jEmail1, new org.netbeans.lib.awtextra.AbsoluteConstraints(57, 161, 187, 30));
 
         EmployeeSigninbtn.setBackground(new java.awt.Color(78, 31, 0));
         EmployeeSigninbtn.setForeground(new java.awt.Color(255, 228, 201));
         EmployeeSigninbtn.setText("Employee Login");
-
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel1)
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addGap(51, 51, 51)
-                                .addComponent(jLabel2))
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addGap(64, 64, 64)
-                                .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(Bsignin, javax.swing.GroupLayout.PREFERRED_SIZE, 187, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jPass, javax.swing.GroupLayout.PREFERRED_SIZE, 187, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(BForgetPass, javax.swing.GroupLayout.PREFERRED_SIZE, 88, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(40, 40, 40))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(69, 69, 69)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addGap(6, 6, 6)
-                                .addComponent(EmployeeSigninbtn))
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(jLabel5)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(Bsignup)))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-                .addComponent(jLabel6)
-                .addGap(37, 37, 37)
-                .addComponent(jLabel10)
-                .addGap(190, 190, 190))
-            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(jPanel1Layout.createSequentialGroup()
-                    .addGap(57, 57, 57)
-                    .addComponent(jEmail1, javax.swing.GroupLayout.PREFERRED_SIZE, 187, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addContainerGap(597, Short.MAX_VALUE)))
-        );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel10, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(jLabel4)
-                .addGap(18, 18, 18)
-                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 16, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jLabel1)
-                .addGap(74, 74, 74)
-                .addComponent(jPass, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(BForgetPass, javax.swing.GroupLayout.PREFERRED_SIZE, 17, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(Bsignin)
-                .addGap(2, 2, 2)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 12, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(Bsignup))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(EmployeeSigninbtn)
-                .addGap(10, 10, 10))
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addComponent(jLabel6)
-                .addGap(0, 0, Short.MAX_VALUE))
-            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(jPanel1Layout.createSequentialGroup()
-                    .addGap(157, 157, 157)
-                    .addComponent(jEmail1, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addContainerGap(175, Short.MAX_VALUE)))
-        );
+        EmployeeSigninbtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                EmployeeSigninbtnActionPerformed(evt);
+            }
+        });
+        jPanel1.add(EmployeeSigninbtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(75, 329, -1, -1));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -294,6 +234,10 @@ public class SignIn extends javax.swing.JFrame {
     private void jEmail1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jEmail1ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jEmail1ActionPerformed
+
+    private void EmployeeSigninbtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EmployeeSigninbtnActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_EmployeeSigninbtnActionPerformed
 
     /**
      * @param args the command line arguments

@@ -87,6 +87,7 @@ public class SignInController {
             sec.setVisible(true);
             AuthController controller = new AuthController(sec);
             controller.open();
+            userView.dispose();
         }
     }
 
@@ -103,9 +104,8 @@ public class SignInController {
         @Override
         public void actionPerformed(ActionEvent e) {
             EmployeeSignIn signinView = new EmployeeSignIn();
-            ESignInController signin = new ESignInController(signinView);
-
-            signin.open();
+            ESignInController esignin = new ESignInController(signinView);
+            esignin.open();
             close();
         }
     }

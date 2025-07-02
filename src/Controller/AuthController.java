@@ -3,6 +3,7 @@ package Controller;
 
 import Dao.AuthDao;
 import Model.SecAnswers;
+import View.EmployeeSignIn;
 
 import View.ResetPass;
 import View.SecurityQuestion;
@@ -84,10 +85,14 @@ public class AuthController {
                 JOptionPane.showMessageDialog(userView1,"Security questions stored successfully.");
 
                 
-                SignIn signin = new SignIn();
-                signin.setVisible(true);
-                SignInController controller = new SignInController(signin);
-                controller.open();
+//                SignIn signin = new SignIn();
+//                signin.setVisible(true);
+//                SignInController controller = new SignInController(signin);
+//                controller.open();
+                  EmployeeSignIn esignin = new EmployeeSignIn();
+                  esignin.setVisible(true);
+                  ESignInController controller = new ESignInController(esignin);
+                  controller.open();
                 
                 userView1.dispose();
                 }else if (userView1.getMode().equals("verify")){
@@ -130,14 +135,12 @@ public class AuthController {
             boolean success = updatePassword(email,newPassword);
             if(success){
                JOptionPane.showMessageDialog(userView2,"Password updated!"); 
-               new SignIn().setVisible(true);
-               userView2.dispose();
+                EmployeeSignIn esignin = new EmployeeSignIn();
+                esignin.setVisible(true);
+                new ESignInController(esignin).open();  
             }else{
                JOptionPane.showMessageDialog(userView2,"Failed to update!");  
             }
         }
-        
-    }
-
-    
+    }   
 }

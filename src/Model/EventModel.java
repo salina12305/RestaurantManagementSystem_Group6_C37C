@@ -5,7 +5,7 @@ import java.sql.Date;
 public class EventModel {
     private String customerName;
     private String event;
-    private Date date;  // Changed from int to java.sql.Date
+    private Date date; 
     private String staffAssigned;
     private int floor;
 
@@ -16,7 +16,8 @@ public class EventModel {
         this.staffAssigned = staffAssigned;
         this.floor = floor;
     }
-
+   
+    //Getters
     public String getCustomerName() {
         return customerName;
     }
@@ -37,6 +38,8 @@ public class EventModel {
         return floor;
     }
 
+    
+    //Setters
     public void setCustomerName(String customerName) {
         this.customerName = customerName;
     }

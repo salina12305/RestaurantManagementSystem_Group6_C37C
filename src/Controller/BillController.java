@@ -71,6 +71,7 @@ public class BillController {
                     bill.getTotal()
                 });
             }
+            Controller.PdfBillGenerator.generateBillPDF(customerName, billView.getBillTable());
         }
     }
     public void setupLogoutListener(Bill view) {

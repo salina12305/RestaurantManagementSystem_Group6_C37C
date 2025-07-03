@@ -122,7 +122,7 @@ public class Bill extends javax.swing.JFrame {
         Slogan.setText("7 people serving since 11 AM");
         Slogan.setToolTipText("");
         SidePanel.add(Slogan);
-        Slogan.setBounds(10, 100, 180, 20);
+        Slogan.setBounds(10, 100, 190, 20);
 
         reservationbtn.setBackground(new java.awt.Color(255, 243, 224));
         reservationbtn.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
@@ -218,12 +218,12 @@ public class Bill extends javax.swing.JFrame {
         generatebillbtn1.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
         generatebillbtn1.setText("Generate Bill");
         DashboardCenterPanel.add(generatebillbtn1);
-        generatebillbtn1.setBounds(270, 570, 170, 27);
+        generatebillbtn1.setBounds(230, 550, 170, 28);
 
         jLabel5.setFont(new java.awt.Font("Jaini Purva", 3, 36)); // NOI18N
         jLabel5.setText("7~11");
         DashboardCenterPanel.add(jLabel5);
-        jLabel5.setBounds(270, 40, 59, 47);
+        jLabel5.setBounds(270, 40, 81, 47);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);

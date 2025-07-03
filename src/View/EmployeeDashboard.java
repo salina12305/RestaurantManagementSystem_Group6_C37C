@@ -16,7 +16,6 @@ public class EmployeeDashboard extends javax.swing.JFrame {
 
         initComponents();
         EDashboardController.loadRevenueChartFromDB(revenueChartPanel);
-//        EDashboardController controller = new EDashboardController();
         controller.setupLogoutListener(this);
         controller.setupReservationListener(this);
 
@@ -326,53 +325,29 @@ public class EmployeeDashboard extends javax.swing.JFrame {
 
 
     public JPanel getRevenueChartPanel() {
-    return revenueChartPanel;
-}
+       return revenueChartPanel;
+    }
     public void addLogoutListener(ActionListener listener) {
-    LogoutButton.addActionListener(listener);
-}
-     public void addOrderListener(ActionListener listener) {
-         System.out.println("Order button clicked");
-    OrderButton.addActionListener(listener); 
-}
-
-public void addMenuListener(ActionListener listener){
-    Menubtn.addActionListener(listener); 
-}
-public void addDashboardListener(ActionListener listener){
-    System.out.println("Dashboard button clicked");
-    DashboardButton1.addActionListener(listener); 
-}
-public void addBillListener(ActionListener listener){
-    BillButton.addActionListener(listener);
-}
-public void addReservationListener(ActionListener listener){
-    reservationbtn.addActionListener(listener);
-}
-public void addEventListener(ActionListener listener){
-    eventbtn.addActionListener(listener);
-}
-
-//public void addDashboardListener(ActionListener listener) {
-//        DashboardButton.addActionListener(listener);
-//    }
-//public void addReservationListener(ActionListener listener) {
-//        Reservationbtn2.addActionListener(listener);
-//    }
-//public void addEventListener(ActionListener listener) {
-//        Eventsbtn1.addActionListener(listener);
-//    }
-//public void addMenuListener(ActionListener listener) {
-//        Menubtn.addActionListener(listener);
-//    }
-//public void addOrderListener(ActionListener listener) {
-//        OrderButton.addActionListener(listener);
-//    }
-//public void addBillListener(ActionListener listener) {
-//        BillButton.addActionListener(listener);
-//    }
-//public void addLogoutListener(ActionListener listener) {
-//        LogoutButton.addActionListener(listener);
+       LogoutButton.addActionListener(listener);
+    }
+    public void addOrderListener(ActionListener listener) {
+       OrderButton.addActionListener(listener); 
     }
 
-//}
+    public void addMenuListener(ActionListener listener){
+       Menubtn.addActionListener(listener); 
+    }
+    public void addDashboardListener(ActionListener listener){
+       DashboardButton1.addActionListener(listener); 
+    }
+    public void addBillListener(ActionListener listener){
+       BillButton.addActionListener(listener);
+    }
+    public void addReservationListener(ActionListener listener){
+      reservationbtn.addActionListener(listener);
+    }
+    public void addEventListener(ActionListener listener){
+      eventbtn.addActionListener(listener);
+    }
+}
+

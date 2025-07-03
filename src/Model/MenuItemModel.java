@@ -14,17 +14,33 @@ public class MenuItemModel {
         this.employeeName = employeeName;
     }
     
-    // Getters
+   
+    //Getters
+    public String getItemName() {
+        return itemName; 
+    }
+    public int getnoOfItem() { 
+        return noOfItem; 
+    }
+    public double getPrice() { 
+        return price; 
+    }
+    public String getEmployeeName() {
+        return employeeName; 
+    }
     
-    public String getItemName() { return itemName; }
-    public int getnoOfItem() { return noOfItem; }
-    public double getPrice() { return price; }
-    public String getEmployeeName() { return employeeName; }
+    //Setters
     
-    // Setters
-    
-    public void setItemName(String itemName) { this.itemName = itemName; }
-    public void setnoOfItem(int noOfItem) { this.noOfItem = noOfItem; }
-    public void setPrice(double price) { this.price = price; }
-    public void setEmployeeName(String employeeName) { this.employeeName = employeeName; }
+    public void setItemName(String itemName) {
+        this.itemName = itemName; 
+    }
+    public void setnoOfItem(int noOfItem) {
+        this.noOfItem = noOfItem; 
+    }
+    public void setPrice(double price) {
+        this.price = price; 
+    }
+    public void setEmployeeName(String employeeName) { 
+        this.employeeName = employeeName; 
+    }
 } 

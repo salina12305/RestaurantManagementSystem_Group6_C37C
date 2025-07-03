@@ -565,10 +565,9 @@ public void setRoomStatus(int floor, String status) {
     if (field != null) {
         field.setText(status);
         field.setEditable(false);
-//        field.setFocusable(false);
-//        field.setBorder(null);
-        field.setOpaque(true); // ensure background shows
-//        field.setBackground("Booked".equalsIgnoreCase(status) ? bookedColor : availableColor);
+
+        field.setOpaque(true); 
+
         field.setBackground(status.equalsIgnoreCase("Booked") ? bookedColor : availableColor);
         field.setForeground(Color.BLACK); // text visibility
     }
@@ -579,16 +578,6 @@ public void setRoomStatus(int floor, String status) {
       return (DefaultTableModel) jTable1.getModel();    
     }
 
-
-//    private static class jScrollPane1 {
-//
-//        private static void setViewportView(JTable jTable1) {
-//            throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
-//        }
-//
-//        public jScrollPane1() {
-//        }
-//    }
 
     public Object getBillTable() {
         throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody

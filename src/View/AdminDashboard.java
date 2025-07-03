@@ -1,8 +1,8 @@
 
 package View;
+
 import java.awt.Color;
 import javax.swing.JFrame;
-
 import Controller.AdminDashboardController;
 import Dao.AdminDashboardDao;
 import java.awt.event.ActionListener;
@@ -429,35 +429,29 @@ AdminDashboardDao.loadRevenueChartFromDB(revenueChartPanel);
     private void ExitButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ExitButtonActionPerformed
         // TODO add your handling code here
         System.exit(0);
-
-
     }//GEN-LAST:event_ExitButtonActionPerformed
 
     private void MinimizeButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MinimizeButtonActionPerformed
         // TODO add your handling code here:
         this.setState(JFrame.ICONIFIED);
-
     }//GEN-LAST:event_MinimizeButtonActionPerformed
 
     private void ExitButtonMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ExitButtonMouseEntered
         // TODO add your handling code here:
         ExitButton.setBackground(Color.RED);
         ExitButton.setOpaque(true);
-
     }//GEN-LAST:event_ExitButtonMouseEntered
 
     private void ExitButtonMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ExitButtonMouseExited
         // TODO add your handling code here:
         ExitButton.setBackground(new Color(255, 255, 255)); // or your top bar color
         ExitButton.setOpaque(false);
-
     }//GEN-LAST:event_ExitButtonMouseExited
 
     private void MinimizeButtonMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_MinimizeButtonMouseExited
         // TODO add your handling code here:
         MinimizeButton.setBackground(new Color(255, 255, 255)); // or your top bar color
         MinimizeButton.setOpaque(false);
-
     }//GEN-LAST:event_MinimizeButtonMouseExited
 
     private void formWindowOpened(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowOpened
@@ -552,19 +546,15 @@ public void addAdminDashboardListener(ActionListener listener) {
 public JPanel getRevenueChartPanel() {
     return revenueChartPanel;
 }
-//public void setRevenueText(String revenue) {
-//    jLabel2.setText(revenue);
-//}
+
 public void setTotalOrders(String totalOrders) {
     jLabel4.setText(totalOrders);
 }
 public void setTotalEmployees(String total) {
     jLabel6.setText(total);
 }
-
-
-    public void setRevenueText(String revenue) {
+public void setRevenueText(String revenue) {
     jLabel2.setText(revenue);
-    }
+}
 }
 

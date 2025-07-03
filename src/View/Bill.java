@@ -335,12 +335,8 @@ public javax.swing.JTable getBillTable() {
     return jTable1; 
 }
 
-
-
-
 public void showMessage(String message) {
-    JOptionPane.showMessageDialog(this, message);
-    
+    JOptionPane.showMessageDialog(this, message);   
 }
 public void addLogoutListener(ActionListener listener) {
     LogoutButton.addActionListener(listener); 
@@ -355,6 +351,7 @@ public void addMenuListener(ActionListener listener){
     Menubtn2.addActionListener(listener); 
 }
 public void addDashboardListener(ActionListener listener){
+    System.out.println("Dashboard button clicked");
     DashboardButton.addActionListener(listener); 
 }
 public void addBillListener(ActionListener listener){

@@ -1,7 +1,4 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
- */
+
 package View;
 import Controller.EmployeeController;
 import java.awt.event.ActionListener;
@@ -10,10 +7,6 @@ import java.text.SimpleDateFormat;
 import javax.swing.JLabel;
 import javax.swing.JTextField;
 
-/**
- *
- * @author Nitro
- */
 public class EmployeeDetailView extends javax.swing.JFrame {
 private EmployeeController employeeController;
     /**

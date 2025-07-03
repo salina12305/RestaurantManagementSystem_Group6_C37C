@@ -13,8 +13,6 @@ public class EmployeeSignIn extends javax.swing.JFrame {
     public EmployeeSignIn() {
         initComponents();
         
-
-
     }
 
     /**
@@ -273,10 +271,6 @@ public class EmployeeSignIn extends javax.swing.JFrame {
     }//GEN-LAST:event_jSignupActionPerformed
 
     private void AdminLoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AdminLoginActionPerformed
-        // TODO add your handling code here:
-//        this.dispose();
-//        SignIn sn = new SignIn();
-//        sn.setVisible(true);
 
     }//GEN-LAST:event_AdminLoginActionPerformed
 
@@ -340,32 +334,29 @@ public class EmployeeSignIn extends javax.swing.JFrame {
     // End of variables declaration//GEN-END:variables
 
 public void addRegisterListener(ActionListener listener) {
-    System.out.println("register");
+//    System.out.println("register");
         jSignup.addActionListener(listener);
     }
 
 public void addLoginUserListener(ActionListener listener) {
-    System.out.println("login");
+//    System.out.println("login");
         jSignIn.addActionListener(listener);
     }
     
    public void addAdminLoginListener(ActionListener listener){
-       System.out.println("Adminlogin");
+//       System.out.println("Adminlogin");
        AdminLogin.addActionListener(listener);
    }
    public void addForgotListener(ActionListener listener){
-       System.out.println("ForgotPassword");
+//       System.out.println("ForgotPassword");
        btnforgot.addActionListener(listener);
-   }
-   
+   } 
   
     public javax.swing.JTextField getEmailField() {
         return jTextEmail;
     }
-
-   
+ 
     public javax.swing.JTextField getPasswordField() {
         return jTextPass;
-    }
-    
+    } 
 }

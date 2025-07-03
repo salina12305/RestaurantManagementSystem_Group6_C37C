@@ -22,7 +22,6 @@ public class SigninRequest {
         this.email = email;
     }
     
-  
     public String getPassword() {
         return password;
     }
@@ -32,11 +31,11 @@ public class SigninRequest {
     }
     private String role;
 
-public String getRole() {
-    return role;
-}
+    public String getRole() {
+        return role;
+    }
 
-public void setRole(String role) {
-    this.role = role;
-}     
+    public void setRole(String role) {
+      this.role = role;
+    }     
 }

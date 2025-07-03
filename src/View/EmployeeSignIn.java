@@ -122,7 +122,7 @@ public class EmployeeSignIn extends javax.swing.JFrame {
             }
         });
 
-        jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/Screenshot 2025-05-21 at 18.17.25.png"))); // NOI18N
+        jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/Screenshot 2025-05-21 at 18.17.25 20.37.41.png"))); // NOI18N
 
         AdminLogin.setBackground(new java.awt.Color(255, 228, 201));
         AdminLogin.setFont(new java.awt.Font("Jaini Purva", 1, 10)); // NOI18N

@@ -13,6 +13,10 @@ import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
+import java.util.LinkedHashMap;
+import java.util.Map;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
@@ -77,6 +81,79 @@ public class EDashboardDao {
 //        revenueChartPanel.revalidate();
 //        revenueChartPanel.repaint();
 //    }
+    
+    public static void loadMonthlyOrderChart(JPanel panel) {
+    Map<String, Integer> monthOrderMap = new LinkedHashMap<>();
+
+    // Step 1: Initialize last 6 months
+    LocalDate now = LocalDate.now();
+    DateTimeFormatter monthFormatter = DateTimeFormatter.ofPattern("MMM");
+
+    for (int i = 5; i >= 0; i--) {
+        LocalDate date = now.minusMonths(i);
+        String month = date.format(monthFormatter);
+        monthOrderMap.put(month, 0); // default 0 orders
+    }
+
+    // Step 2: Query orders grouped by MONTH
+    try (Connection conn = new MySqlConnection().openConnection()) {
+        String sql = "SELECT DATE_FORMAT(order_date, '%b') as month, COUNT(*) as total " +
+                     "FROM orders " +
+                     "WHERE order_date >= CURDATE() - INTERVAL 6 MONTH " +
+                     "GROUP BY month " +
+                     "ORDER BY STR_TO_DATE(month, '%b')";
+
+        PreparedStatement stmt = conn.prepareStatement(sql);
+        ResultSet rs = stmt.executeQuery();
+
+        while (rs.next()) {
+            String month = rs.getString("month"); // 'Jan', 'Feb', etc.
+            int total = rs.getInt("total");
+
+            if (monthOrderMap.containsKey(month)) {
+                monthOrderMap.put(month, total);
+            }
+        }
+    } catch (Exception e) {
+        e.printStackTrace();
+        JOptionPane.showMessageDialog(null, "Error loading monthly orders: " + e.getMessage());
+        return;
+    }
+
+    // Step 3: Build dataset
+    DefaultCategoryDataset dataset = new DefaultCategoryDataset();
+    for (Map.Entry<String, Integer> entry : monthOrderMap.entrySet()) {
+        dataset.addValue(entry.getValue(), "Orders", entry.getKey());
+    }
+
+    // Step 4: Create chart
+    JFreeChart chart = ChartFactory.createLineChart(
+        "Monthly Order Comparison", "Month", "Orders",
+        dataset, PlotOrientation.VERTICAL, false, true, false
+    );
+
+    CategoryPlot plot = chart.getCategoryPlot();
+    plot.setBackgroundPaint(Color.WHITE);
+    plot.setRangeGridlinePaint(Color.GRAY);
+    plot.setOutlineVisible(false);
+
+    LineAndShapeRenderer renderer = new LineAndShapeRenderer();
+    renderer.setSeriesPaint(0, new Color(0, 123, 255));
+    renderer.setSeriesStroke(0, new BasicStroke(2.5f));
+    renderer.setSeriesShapesVisible(0, true);
+    renderer.setSeriesShape(0, new Ellipse2D.Double(-3, -3, 6, 6));
+    plot.setRenderer(renderer);
+
+    // Step 5: Add to panel
+    ChartPanel chartPanel = new ChartPanel(chart);
+    chartPanel.setPreferredSize(new Dimension(600, 350));
+    panel.removeAll();
+    panel.setLayout(new BorderLayout());
+    panel.add(chartPanel, BorderLayout.CENTER);
+    panel.revalidate();
+    panel.repaint();
+}
+
     public static void loadRevenueChartFromDB(JPanel panel) {
     DefaultCategoryDataset dataset = new DefaultCategoryDataset();
 

@@ -29,7 +29,7 @@ public class OrderController {
         orderView.addDashboardListener(new DashboardListener());
         orderView.addCreateListerner(new CreateOrderListener());
         orderView.addUpdateListerner(new UpdateOrderListener());
-        orderView.addDeleteListerner(new DeleteOrderListener());
+        orderView.addDeleteListener(new DeleteOrderListener());
         orderView.addBillListener(new BillListener());
         orderView.addMenuListener(new MenuListener());
         orderView.addEventListener(new EventListener());

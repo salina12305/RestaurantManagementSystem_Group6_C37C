@@ -18,7 +18,7 @@ public class UserDao {
 
     MySqlConnection mysql = new MySqlConnection();
 
- 
+     //Registration for new users
       public void UserDao(User user) {
         Connection conn = mysql.openConnection();
         String sql = "INSERT INTO users (company_name, email, password, confirm_password,role) VALUES (?, ?, ?, ?,?)";
@@ -36,8 +36,6 @@ public class UserDao {
         } finally {
             mysql.closeConnection(conn);
         }
-//        return false;
-        
     }
     
     // Check if admin login
@@ -65,9 +63,10 @@ public class UserDao {
         } finally {
             mysql.closeConnection(conn);
         }
-        return null;
-//    
+        return null;   
     }
+    
+    //To check user
     public boolean CheckUser(User user){
         Connection conn = mysql.openConnection();
         String sql = "SELECT * FROM user WHERE email = ? AND password = ?";
@@ -82,6 +81,7 @@ public class UserDao {
         return false;
     }
     
+    //for employee signin
     public User esignIn(ESigninRequest signin){
         Connection conn = mysql.openConnection();
         String sql = "SELECT * FROM users where email = ? and password = ?";

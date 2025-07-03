@@ -37,31 +37,32 @@ public class SignIn extends javax.swing.JFrame {
         jLabel10 = new javax.swing.JLabel();
         BForgetPass = new javax.swing.JButton();
         Bsignup = new javax.swing.JButton();
-        jLabel6 = new javax.swing.JLabel();
         jPass = new javax.swing.JTextField();
         jEmail1 = new javax.swing.JTextField();
         EmployeeSigninbtn = new javax.swing.JButton();
+        jLabel6 = new javax.swing.JLabel();
 
         label1.setText("label1");
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(255, 228, 201));
         setBounds(new java.awt.Rectangle(255, 228, 201, 201));
+        getContentPane().add(jLabel3, java.awt.BorderLayout.CENTER);
 
         jPanel1.setBackground(new java.awt.Color(255, 228, 201));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel5.setFont(new java.awt.Font("Times New Roman", 0, 8)); // NOI18N
         jLabel5.setText("Don’t have an account ?");
-        jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(69, 302, -1, 12));
+        jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 290, -1, 12));
 
         jLabel1.setFont(new java.awt.Font("Times New Roman", 0, 13)); // NOI18N
         jLabel1.setText("The only thing faster than our login? Your success");
-        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 113, -1, -1));
+        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 100, -1, -1));
 
         jLabel2.setFont(new java.awt.Font("Times New Roman", 0, 13)); // NOI18N
         jLabel2.setText("Missed us, didn’t you?");
-        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(57, 85, -1, -1));
+        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 70, -1, -1));
 
         Bsignin.setBackground(new java.awt.Color(78, 31, 0));
         Bsignin.setForeground(new java.awt.Color(255, 228, 201));
@@ -76,11 +77,11 @@ public class SignIn extends javax.swing.JFrame {
                 BsigninActionPerformed(evt);
             }
         });
-        jPanel1.add(Bsignin, new org.netbeans.lib.awtextra.AbsoluteConstraints(57, 274, 187, -1));
+        jPanel1.add(Bsignin, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 260, 187, -1));
 
         jLabel4.setFont(new java.awt.Font("Jaini Purva", 1, 36)); // NOI18N
         jLabel4.setText("7 ~ 11");
-        jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 20, 80, -1));
+        jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 10, 80, -1));
         jPanel1.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(651, 0, -1, 362));
 
         BForgetPass.setBackground(new java.awt.Color(255, 228, 201));
@@ -91,7 +92,7 @@ public class SignIn extends javax.swing.JFrame {
                 BForgetPassActionPerformed(evt);
             }
         });
-        jPanel1.add(BForgetPass, new org.netbeans.lib.awtextra.AbsoluteConstraints(156, 239, -1, -1));
+        jPanel1.add(BForgetPass, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 230, -1, -1));
 
         Bsignup.setBackground(new java.awt.Color(255, 228, 201));
         Bsignup.setFont(new java.awt.Font("Times New Roman", 0, 10)); // NOI18N
@@ -101,10 +102,7 @@ public class SignIn extends javax.swing.JFrame {
                 BsignupActionPerformed(evt);
             }
         });
-        jPanel1.add(Bsignup, new org.netbeans.lib.awtextra.AbsoluteConstraints(156, 299, -1, -1));
-
-        jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/Screenshot 2025-05-21 at 18.17.25.png"))); // NOI18N
-        jPanel1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(284, 0, -1, -1));
+        jPanel1.add(Bsignup, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 290, -1, -1));
 
         jPass.setBackground(new java.awt.Color(255, 228, 201));
         jPass.setFont(new java.awt.Font("Times New Roman", 0, 10)); // NOI18N
@@ -122,7 +120,7 @@ public class SignIn extends javax.swing.JFrame {
                 jPassActionPerformed(evt);
             }
         });
-        jPanel1.add(jPass, new org.netbeans.lib.awtextra.AbsoluteConstraints(57, 203, 187, 30));
+        jPanel1.add(jPass, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 190, 187, 30));
 
         jEmail1.setBackground(new java.awt.Color(255, 228, 201));
         jEmail1.setFont(new java.awt.Font("Times New Roman", 0, 10)); // NOI18N
@@ -140,7 +138,7 @@ public class SignIn extends javax.swing.JFrame {
                 jEmail1ActionPerformed(evt);
             }
         });
-        jPanel1.add(jEmail1, new org.netbeans.lib.awtextra.AbsoluteConstraints(57, 161, 187, 30));
+        jPanel1.add(jEmail1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 150, 187, 30));
 
         EmployeeSigninbtn.setBackground(new java.awt.Color(78, 31, 0));
         EmployeeSigninbtn.setForeground(new java.awt.Color(255, 228, 201));
@@ -150,28 +148,13 @@ public class SignIn extends javax.swing.JFrame {
                 EmployeeSigninbtnActionPerformed(evt);
             }
         });
-        jPanel1.add(EmployeeSigninbtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(75, 329, -1, -1));
+        jPanel1.add(EmployeeSigninbtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 320, -1, -1));
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(172, 172, 172)
-                .addComponent(jLabel3)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(layout.createSequentialGroup()
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 615, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jLabel3)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-        );
+        jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/sidecopy.png"))); // NOI18N
+        jLabel6.setText("jLabel6");
+        jPanel1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 0, 320, 360));
+
+        getContentPane().add(jPanel1, java.awt.BorderLayout.PAGE_START);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents

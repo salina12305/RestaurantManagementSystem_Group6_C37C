@@ -43,8 +43,6 @@ public class OrderFrame extends javax.swing.JFrame{
         employeeNameField = new javax.swing.JTextField();
         jLabel2 = new javax.swing.JLabel();
         jSeparator6 = new javax.swing.JSeparator();
-        jLabel1 = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         SidePanel1 = new javax.swing.JPanel();
         Logo2 = new javax.swing.JLabel();
@@ -229,12 +227,6 @@ public class OrderFrame extends javax.swing.JFrame{
         jLabel2.setFont(new java.awt.Font("Times New Roman", 1, 24)); // NOI18N
         jLabel2.setText("MENU  TO  MOUTH, THE  7  ELEVEN  WAY");
 
-        jLabel1.setFont(new java.awt.Font("Jaini Purva", 3, 36)); // NOI18N
-        jLabel1.setText("7~11");
-
-        jLabel3.setFont(new java.awt.Font("Jaini Purva", 3, 36)); // NOI18N
-        jLabel3.setText("7~11");
-
         jLabel4.setFont(new java.awt.Font("Jaini Purva", 3, 36)); // NOI18N
         jLabel4.setText("7~11");
 
@@ -257,16 +249,6 @@ public class OrderFrame extends javax.swing.JFrame{
                         .addGap(305, 305, 305)
                         .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(44, Short.MAX_VALUE))
-            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(jPanel1Layout.createSequentialGroup()
-                    .addGap(315, 315, 315)
-                    .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 122, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addContainerGap(316, Short.MAX_VALUE)))
-            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                    .addContainerGap(325, Short.MAX_VALUE)
-                    .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 122, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGap(306, 306, 306)))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -280,16 +262,6 @@ public class OrderFrame extends javax.swing.JFrame{
                 .addGap(18, 18, 18)
                 .addComponent(jPanel6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGap(43, 43, 43))
-            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(jPanel1Layout.createSequentialGroup()
-                    .addGap(290, 290, 290)
-                    .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addContainerGap(290, Short.MAX_VALUE)))
-            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                    .addContainerGap(300, Short.MAX_VALUE)
-                    .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGap(280, 280, 280)))
         );
 
         SidePanel1.setBackground(new java.awt.Color(255, 243, 224));
@@ -570,9 +542,7 @@ public class OrderFrame extends javax.swing.JFrame{
     private javax.swing.JButton eventbtn;
     private javax.swing.JButton eventbtn1;
     private javax.swing.JTextField itemNameField;
-    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JPanel jPanel1;
@@ -607,9 +577,8 @@ public void addUpdateListerner(ActionListener listener){
 
 }
 
-public void addDeleteListerner(ActionListener listener){
+public void addDeleteListener(ActionListener listener){
     deleteOrderBtn.addActionListener(listener);
-
 }
 
 public void addOrderListener(ActionListener listener) {
@@ -622,11 +591,11 @@ public void addOrderListener(ActionListener listener) {
     Menubtn4.addActionListener(listener); 
 }
 public void addDashboardListener(ActionListener listener){
-//    System.out.println("Dashboard clicked");
+
     DashboardBtn.addActionListener(listener); 
 }
 public void addBillListener(ActionListener listener){
-//    System.out.println("Bill button clicked");
+
     BillButton2.addActionListener(listener);
 }
 public void addReservationListener(ActionListener listener){

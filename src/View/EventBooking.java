@@ -1,22 +1,14 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
- */
+
 package View;
 
 import Controller.EventController;
 import java.awt.event.ActionListener;
 import javax.swing.JButton;
 
-/**
- *
- * @author sonamwangdigurung
- */
+
 public class EventBooking extends javax.swing.JFrame {
 
-    /**
-     * Creates new form EventBooking
-     */
+ 
     public EventBooking() {
         initComponents();
         EventController controller = new EventController(this);
@@ -748,7 +740,7 @@ public void addDashboardListener(ActionListener listener){
     DashboardBtn.addActionListener(listener); 
 }
 public void addBillListener(ActionListener listener){
-//    System.out.println("Bill button clicked");
+
     BillButton2.addActionListener(listener);
 }
 public void addReservationListener(ActionListener listener){

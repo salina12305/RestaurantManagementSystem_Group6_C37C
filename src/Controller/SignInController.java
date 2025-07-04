@@ -114,16 +114,6 @@ public class SignInController {
             close();
         }
     }
-//    class AdminLoginListener implements ActionListener {
-//        @Override
-//        public void actionPerformed(ActionEvent e) {
-//            SignIn admin = new SignIn();
-//            admin.setVisible(true);
-//            SignInController controller = new SignInController(admin);
-//            controller.open();
-//            close();
-//        }
-//    }
 }
 
 

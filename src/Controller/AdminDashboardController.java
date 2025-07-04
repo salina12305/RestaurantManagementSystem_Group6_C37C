@@ -85,78 +85,17 @@ public class AdminDashboardController {
     private final AdminDashboard dashboardView;
 
     public AdminDashboardController(AdminDashboard view) {
-//        this.dashboardView=view;
-//        dashboardView.setExtendedState(JFrame.MAXIMIZED_BOTH);
-//        AdminDashboardDao.loadRevenueChartFromDB(view.getRevenueChartPanel());
-//      
-//        view.addLogoutListener(new LogoutListener(view));
-//        view.addEmployeeDetailListener(new EmployeeDetailListener());
         this.dashboardView = view;
     dashboardView.setExtendedState(JFrame.MAXIMIZED_BOTH);
     loadRevenueChartFromDB(view.getRevenueChartPanel(), view);
-//    view.addLogoutListener(new LogoutListener(view));
-//    view.addEmployeeDetailListener(new EmployeeDetailListener());
+
     dashboardView.setTotalOrders(String.valueOf(getTotalOrders()));
     dashboardView.setTotalEmployees(String.valueOf(getTotalEmployees()));
     view.addLogoutListener(new LogoutListener(view));
     view.addEmployeeDetailListener(new EmployeeDetailListener());
        
     }
-//
-//    public static void loadRevenueChartFromDB(JPanel revenueChartPanel) {
-//    DefaultCategoryDataset dataset = new DefaultCategoryDataset();
-//
-//    try (Connection conn = DriverManager.getConnection("jdbc:mysql://127.0.0.1:3306/restaurant", "root", "12345678")) {
-//
-//        String sql = "SELECT MONTH(order_date) AS month, SUM(total_amount) AS total " +
-//                     "FROM orders GROUP BY MONTH(order_date) ORDER BY MONTH(order_date)";
-//        PreparedStatement stmt = conn.prepareStatement(sql);
-//        ResultSet rs = stmt.executeQuery();
-//
-//        String[] monthNames = {
-//            "Jan", "Feb", "Mar", "Apr", "May", "Jun",
-//            "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"
-//        };
-//
-//        while (rs.next()) {
-//            int month = rs.getInt("month");
-//            double total = rs.getDouble("total");
-//            dataset.addValue(total, "Revenue", monthNames[month - 1]);
-//        }
-//
-//    } catch (SQLException e) {
-//        System.out.println("Error loading chart data:");
-//        e.printStackTrace();
-//    }
-//
-//    // Chart Styling
-//    JFreeChart lineChart = ChartFactory.createLineChart(
-//        "Monthly Revenue", "Month", "Revenue (Rs)",
-//        dataset, PlotOrientation.VERTICAL,
-//        false, true, false
-//    );
-//
-//    CategoryPlot plot = lineChart.getCategoryPlot();
-//    plot.setBackgroundPaint(Color.WHITE);
-//    plot.setRangeGridlinePaint(Color.LIGHT_GRAY);
-//
-//    LineAndShapeRenderer renderer = new LineAndShapeRenderer();
-//    renderer.setSeriesPaint(0, new Color(52, 152, 219));
-//    renderer.setSeriesStroke(0, new BasicStroke(2.5f));
-//    renderer.setSeriesShape(0, new Ellipse2D.Double(-3, -3, 6, 6));
-//    renderer.setSeriesShapesVisible(0, true);
-//
-//    plot.setRenderer(renderer);
-//    lineChart.getTitle().setFont(new Font("SansSerif", Font.BOLD, 16));
-//
-//    // Add to panel
-//    ChartPanel chartPanel = new ChartPanel(lineChart);
-//    chartPanel.setPreferredSize(new Dimension(revenueChartPanel.getWidth(), revenueChartPanel.getHeight()));
-//    revenueChartPanel.removeAll();
-//    revenueChartPanel.setLayout(new BorderLayout());
-//    revenueChartPanel.add(chartPanel, BorderLayout.CENTER);
-//    revenueChartPanel.revalidate();
-//    revenueChartPanel.repaint();
+
 
     public static void loadRevenueChartFromDB(JPanel revenueChartPanel, AdminDashboard dashboard) {
     DefaultCategoryDataset dataset = new DefaultCategoryDataset();

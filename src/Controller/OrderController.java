@@ -198,9 +198,7 @@ orderView.dispose();
                 Reservation reservationView = new Reservation();
                 new ReservationController(reservationView);
                 reservationView.setVisible(true);
-                
-//                if (orderView != null) orderView.dispose();
-orderView.dispose();
+                orderView.dispose();
             } catch (SQLException ex) {
                 Logger.getLogger(OrderController.class.getName()).log(Level.SEVERE, null, ex);
             }
@@ -217,9 +215,7 @@ orderView.dispose();
             EventBooking eventView = new EventBooking();
             new EventController(eventView);
             eventView.setVisible(true);
-
-//            if (orderView != null) orderView.dispose();
-orderView.dispose();
+            orderView.dispose();
         }
     }
     public void setupMenuListener(OrderFrame view) {
@@ -232,9 +228,7 @@ orderView.dispose();
             ManageMenu menuView = new ManageMenu();
             new MenuController(menuView);
             menuView.setVisible(true);
-
-//            if (orderView != null) orderView.dispose();
-orderView.dispose();
+            orderView.dispose();
         }
     } 
 }

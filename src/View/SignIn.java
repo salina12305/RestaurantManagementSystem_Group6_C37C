@@ -39,7 +39,7 @@ public class SignIn extends javax.swing.JFrame {
         Bsignup = new javax.swing.JButton();
         jPass = new javax.swing.JTextField();
         jEmail1 = new javax.swing.JTextField();
-        EmployeeSigninbtn = new javax.swing.JButton();
+        ESigninbtn = new javax.swing.JButton();
         jLabel6 = new javax.swing.JLabel();
 
         label1.setText("label1");
@@ -140,15 +140,15 @@ public class SignIn extends javax.swing.JFrame {
         });
         jPanel1.add(jEmail1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 150, 187, 30));
 
-        EmployeeSigninbtn.setBackground(new java.awt.Color(78, 31, 0));
-        EmployeeSigninbtn.setForeground(new java.awt.Color(255, 228, 201));
-        EmployeeSigninbtn.setText("Employee Login");
-        EmployeeSigninbtn.addActionListener(new java.awt.event.ActionListener() {
+        ESigninbtn.setBackground(new java.awt.Color(78, 31, 0));
+        ESigninbtn.setForeground(new java.awt.Color(255, 228, 201));
+        ESigninbtn.setText("Employee Login");
+        ESigninbtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                EmployeeSigninbtnActionPerformed(evt);
+                ESigninbtnActionPerformed(evt);
             }
         });
-        jPanel1.add(EmployeeSigninbtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 320, -1, -1));
+        jPanel1.add(ESigninbtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 320, -1, -1));
 
         jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/sidecopy.png"))); // NOI18N
         jLabel6.setText("jLabel6");
@@ -218,9 +218,9 @@ public class SignIn extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jEmail1ActionPerformed
 
-    private void EmployeeSigninbtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EmployeeSigninbtnActionPerformed
+    private void ESigninbtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ESigninbtnActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_EmployeeSigninbtnActionPerformed
+    }//GEN-LAST:event_ESigninbtnActionPerformed
 
     /**
      * @param args the command line arguments
@@ -261,7 +261,7 @@ public class SignIn extends javax.swing.JFrame {
     private javax.swing.JButton BForgetPass;
     private javax.swing.JButton Bsignin;
     private javax.swing.JButton Bsignup;
-    private javax.swing.JButton EmployeeSigninbtn;
+    private javax.swing.JButton ESigninbtn;
     private javax.swing.JColorChooser jColorChooser1;
     private javax.swing.JColorChooser jColorChooser2;
     private javax.swing.JColorChooser jColorChooser3;
@@ -289,9 +289,12 @@ public class SignIn extends javax.swing.JFrame {
   public void addForgotListener(ActionListener listener){
       BForgetPass.addActionListener(listener);
   }
-  public void addELoginListener(ActionListener listener){
-      EmployeeSigninbtn.addActionListener(listener);
-  } 
+
+  public void addELoginListener(ActionListener listener) {
+      System.out.println("Employee Login Clicked");
+    ESigninbtn.addActionListener(listener); 
+}
+
    
     public javax.swing.JTextField getEmailField() {
         return jEmail1;

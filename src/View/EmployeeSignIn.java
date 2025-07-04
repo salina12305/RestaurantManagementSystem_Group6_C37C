@@ -343,6 +343,10 @@ public void addLoginUserListener(ActionListener listener) {
 //       System.out.println("Adminlogin");
        AdminLogin.addActionListener(listener);
    }
+   
+   public  void addELoginListener(ActionListener listener){
+       
+   }
    public void addForgotListener(ActionListener listener){
 //       System.out.println("ForgotPassword");
        btnforgot.addActionListener(listener);

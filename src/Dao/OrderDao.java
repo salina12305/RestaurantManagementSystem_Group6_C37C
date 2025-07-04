@@ -9,7 +9,8 @@ import java.util.logging.Logger;
 
 public class OrderDao {
     MySqlConnection mysql = new MySqlConnection();
-
+    
+    //to create order
     public void createOrder(OrderModel order) {
         Connection conn = mysql.openConnection();
         System.out.println("createOrder() called");
@@ -32,7 +33,8 @@ public class OrderDao {
         }
     }
 
-public boolean updateOrder(OrderModel order) {
+    //to check update order
+    public boolean updateOrder(OrderModel order) {
     Connection conn = mysql.openConnection();
     String sql = "UPDATE customer_order SET itemName=?, noOfItem=?, price=?, customerName=?, employeeName=? WHERE orderId=?";
     try (PreparedStatement pstmt = conn.prepareStatement(sql)) {
@@ -52,9 +54,10 @@ public boolean updateOrder(OrderModel order) {
         mysql.closeConnection(conn);
     }
     return false;
-}
+   }
 
-public boolean deleteOrder(int orderId) {
+    //to delete order
+   public boolean deleteOrder(int orderId) {
     Connection conn = mysql.openConnection();
     String sql = "DELETE FROM customer_order WHERE orderId=?";
     try (PreparedStatement pstmt = conn.prepareStatement(sql)) {

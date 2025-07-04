@@ -1,7 +1,6 @@
-
 package Database;
-import java.sql.*;
 
+import java.sql.*;
 
 public interface Database {
     Connection openConnection();

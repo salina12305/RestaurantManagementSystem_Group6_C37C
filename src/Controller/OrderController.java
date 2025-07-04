@@ -29,7 +29,7 @@ public class OrderController {
         orderView.addDashboardListener(new DashboardListener());
         orderView.addCreateListerner(new CreateOrderListener());
         orderView.addUpdateListerner(new UpdateOrderListener());
-        orderView.addDeleteListerner(new DeleteOrderListener());
+        orderView.addDeleteListener(new DeleteOrderListener());
         orderView.addBillListener(new BillListener());
         orderView.addMenuListener(new MenuListener());
         orderView.addEventListener(new EventListener());
@@ -79,7 +79,7 @@ public class OrderController {
     }
 }
 
-
+    //for update order
     class UpdateOrderListener implements ActionListener {
         public void actionPerformed(ActionEvent e) {
             try {
@@ -104,7 +104,7 @@ public class OrderController {
             }
         }
     }
-
+    //for delete order
     class DeleteOrderListener implements ActionListener {
         public void actionPerformed(ActionEvent e) {
             try {
@@ -135,7 +135,9 @@ public class OrderController {
             new BillController(billView);
             billView.setVisible(true);
 
-            if (orderView != null) orderView.dispose();
+//            if (orderView != null) orderView.dispose();
+           //            if (menuView != null) menuView.dispose();
+orderView.dispose();
         }
     }
 
@@ -180,7 +182,8 @@ public class OrderController {
             new EDashboardController(dashboardView);
             dashboardView.setVisible(true);
             
-            if (orderView != null) orderView.dispose();
+//            if (orderView != null) orderView.dispose();
+orderView.dispose();
         }
     }
     
@@ -195,8 +198,7 @@ public class OrderController {
                 Reservation reservationView = new Reservation();
                 new ReservationController(reservationView);
                 reservationView.setVisible(true);
-                
-                if (orderView != null) orderView.dispose();
+                orderView.dispose();
             } catch (SQLException ex) {
                 Logger.getLogger(OrderController.class.getName()).log(Level.SEVERE, null, ex);
             }
@@ -213,8 +215,7 @@ public class OrderController {
             EventBooking eventView = new EventBooking();
             new EventController(eventView);
             eventView.setVisible(true);
-
-            if (orderView != null) orderView.dispose();
+            orderView.dispose();
         }
     }
     public void setupMenuListener(OrderFrame view) {
@@ -227,23 +228,8 @@ public class OrderController {
             ManageMenu menuView = new ManageMenu();
             new MenuController(menuView);
             menuView.setVisible(true);
-
-            if (orderView != null) orderView.dispose();
+            orderView.dispose();
         }
     } 
-
-//     class DashboardListener implements ActionListener {
-//        @Override
-//        public void actionPerformed(ActionEvent e) {
-//            EmployeeDashboard dashboardView = new EmployeeDashboard();
-//            EDashboardController edashboard = new EDashboardController(dashboardView);
-//
-//            edashboard.open();
-//          close();
-//        }
-//
-//        private void close() {
-//        }
-//    }
 }
 

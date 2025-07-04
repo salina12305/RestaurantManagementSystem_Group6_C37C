@@ -6,6 +6,7 @@ public class ESigninRequest {
     
     private String email;
     private String password;
+     private String role;
     public ESigninRequest(String email,String password){
         
         this.email = email;
@@ -28,15 +29,12 @@ public class ESigninRequest {
     public void setPassword(String password) {
         this.password = password;
     }
-    private String role;
+   
+    public String getRole() {
+       return role;
+    }
 
-public String getRole() {
-    return role;
-}
-
-public void setRole(String role) {
-    this.role = role;
-}
-
-    
+    public void setRole(String role) {
+      this.role = role;
+    }   
 }

@@ -218,25 +218,6 @@ public class EventController {
        
     }
 
-//    class CreateEventListener implements ActionListener {
-//        public void actionPerformed(ActionEvent e) {
-//            try {
-//                String customerName = eventView.getCustomerNameField().getText();
-//                String event = eventView.getEventField().getText();
-//                java.sql.Date date = java.sql.Date.valueOf(eventView.getDateField().getText());
-//                String staff = eventView.getAssignedStaffField().getText();
-//                int floor = Integer.parseInt(eventView.getFloorField().getText());
-//
-//                
-//                EventModel model = new EventModel(customerName, event, date, staff, floor);
-//                eventDao.createEvent(model);
-//                JOptionPane.showMessageDialog(eventView, "Event created successfully.");
-//            } catch (Exception ex) {
-//                JOptionPane.showMessageDialog(eventView, "Error: " + ex.getMessage());
-//            }
-//        }
-//    }
-    
     class CreateEventListener implements ActionListener {
     public void actionPerformed(ActionEvent e) {
         try {
@@ -335,7 +316,8 @@ public class EventController {
             new BillController(billView);
             billView.setVisible(true);
 
-            if (eventView != null) eventView.dispose();
+//            if (eventView != null) eventView.dispose();
+eventView.dispose();
         }
     }
 
@@ -380,7 +362,8 @@ public class EventController {
             new EDashboardController(dashboardView);
             dashboardView.setVisible(true);
             
-            if (eventView != null) eventView.dispose();
+//            if (eventView != null) eventView.dispose();
+            eventView.dispose();
         }
     }
     public void setupReservationListener(EventBooking view) {
@@ -395,8 +378,9 @@ public class EventController {
                 Reservation reservationView = new Reservation();
                 new ReservationController(reservationView);
                 reservationView.setVisible(true);
-                
-                if (eventView != null) eventView.dispose();
+//                
+//                if (eventView != null) eventView.dispose();
+                eventView.dispose();
             } catch (SQLException ex) {
                 Logger.getLogger(EventController.class.getName()).log(Level.SEVERE, null, ex);
             }
@@ -416,8 +400,9 @@ public class EventController {
 //            control.open();
             new MenuController(menuView);
             menuView.setVisible(true);
-            
-            if (eventView != null) eventView.dispose();
+//            
+//            if (eventView != null) eventView.dispose();
+              eventView.dispose();
         }
     }
         public void setupOrderListener(EventBooking view) {
@@ -435,7 +420,8 @@ public class EventController {
             new OrderController(orderView);
             orderView.setVisible(true);
             
-            if (eventView != null) eventView.dispose();
+//            if (eventView != null) eventView.dispose();
+             eventView.dispose();
         }
     }
 //    public void start() {

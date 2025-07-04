@@ -36,8 +36,18 @@ public class EmployeeDashboard extends javax.swing.JFrame {
         jSeparator4 = new javax.swing.JSeparator();
         jLabel4 = new javax.swing.JLabel();
         revenueChartPanel = new javax.swing.JPanel();
-        jPanel1 = new javax.swing.JPanel();
         jLabel5 = new javax.swing.JLabel();
+        ReviewPanel = new javax.swing.JPanel();
+        Review3 = new javax.swing.JPanel();
+        Review = new javax.swing.JLabel();
+        CustomerReview3 = new javax.swing.JLabel();
+        Review1 = new javax.swing.JPanel();
+        Customer1 = new javax.swing.JLabel();
+        CustomerReview1 = new javax.swing.JLabel();
+        Review2 = new javax.swing.JPanel();
+        Customer2 = new javax.swing.JLabel();
+        CustomerReview2 = new javax.swing.JLabel();
+        Customer3 = new javax.swing.JLabel();
         SidePanel = new javax.swing.JPanel();
         Logo1 = new javax.swing.JLabel();
         eventbtn = new javax.swing.JButton();
@@ -62,11 +72,11 @@ public class EmployeeDashboard extends javax.swing.JFrame {
         jLabel2.setBounds(100, 90, 460, 50);
 
         jLabel3.setFont(new java.awt.Font("Plantagenet Cherokee", 1, 18)); // NOI18N
-        jLabel3.setText("Statistics of last 30 days");
+        jLabel3.setText("Statistics of last 30 days of the month");
         DashboardCenterPanel.add(jLabel3);
-        jLabel3.setBounds(30, 240, 190, 30);
+        jLabel3.setBounds(30, 240, 310, 30);
         DashboardCenterPanel.add(jSeparator4);
-        jSeparator4.setBounds(30, 180, 670, 50);
+        jSeparator4.setBounds(30, 180, 670, 10);
         DashboardCenterPanel.add(jLabel4);
         jLabel4.setBounds(660, 10, 30, 30);
 
@@ -84,24 +94,122 @@ public class EmployeeDashboard extends javax.swing.JFrame {
         DashboardCenterPanel.add(revenueChartPanel);
         revenueChartPanel.setBounds(30, 300, 460, 250);
 
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 200, Short.MAX_VALUE)
-        );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 360, Short.MAX_VALUE)
-        );
-
-        DashboardCenterPanel.add(jPanel1);
-        jPanel1.setBounds(500, 210, 200, 360);
-
         jLabel5.setFont(new java.awt.Font("Jaini Purva", 3, 36)); // NOI18N
         jLabel5.setText("7~11");
         DashboardCenterPanel.add(jLabel5);
         jLabel5.setBounds(310, 50, 59, 47);
+
+        ReviewPanel.setBackground(new java.awt.Color(255, 243, 224));
+        ReviewPanel.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        ReviewPanel.setLayout(null);
+
+        Review3.setBackground(new java.awt.Color(229, 216, 176));
+
+        Review.setText("Krischal Lamichhane");
+
+        CustomerReview3.setFont(new java.awt.Font("Segoe UI", 2, 14)); // NOI18N
+        CustomerReview3.setText("Polite Server");
+
+        javax.swing.GroupLayout Review3Layout = new javax.swing.GroupLayout(Review3);
+        Review3.setLayout(Review3Layout);
+        Review3Layout.setHorizontalGroup(
+            Review3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(Review3Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(Review3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(Review3Layout.createSequentialGroup()
+                        .addComponent(Review)
+                        .addGap(0, 47, Short.MAX_VALUE))
+                    .addComponent(CustomerReview3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap())
+        );
+        Review3Layout.setVerticalGroup(
+            Review3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(Review3Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(Review)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(CustomerReview3)
+                .addContainerGap(24, Short.MAX_VALUE))
+        );
+
+        ReviewPanel.add(Review3);
+        Review3.setBounds(10, 190, 180, 70);
+
+        Review1.setBackground(new java.awt.Color(229, 216, 176));
+
+        Customer1.setFont(new java.awt.Font("Segoe UI", 2, 12)); // NOI18N
+        Customer1.setText("Salina Shrestha");
+
+        CustomerReview1.setFont(new java.awt.Font("Segoe UI", 2, 14)); // NOI18N
+        CustomerReview1.setText("The food here is great.");
+
+        javax.swing.GroupLayout Review1Layout = new javax.swing.GroupLayout(Review1);
+        Review1.setLayout(Review1Layout);
+        Review1Layout.setHorizontalGroup(
+            Review1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(Review1Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(Review1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(Review1Layout.createSequentialGroup()
+                        .addComponent(Customer1)
+                        .addGap(0, 0, Short.MAX_VALUE))
+                    .addComponent(CustomerReview1, javax.swing.GroupLayout.DEFAULT_SIZE, 168, Short.MAX_VALUE))
+                .addContainerGap())
+        );
+        Review1Layout.setVerticalGroup(
+            Review1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(Review1Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(Customer1)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(CustomerReview1)
+                .addContainerGap(26, Short.MAX_VALUE))
+        );
+
+        ReviewPanel.add(Review1);
+        Review1.setBounds(10, 30, 180, 70);
+
+        Review2.setBackground(new java.awt.Color(229, 216, 176));
+
+        Customer2.setText("Alex Maharjan");
+
+        CustomerReview2.setFont(new java.awt.Font("Segoe UI", 2, 14)); // NOI18N
+        CustomerReview2.setText("Great Ambience.");
+
+        javax.swing.GroupLayout Review2Layout = new javax.swing.GroupLayout(Review2);
+        Review2.setLayout(Review2Layout);
+        Review2Layout.setHorizontalGroup(
+            Review2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(Review2Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(Review2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(Review2Layout.createSequentialGroup()
+                        .addComponent(Customer2)
+                        .addGap(0, 0, Short.MAX_VALUE))
+                    .addComponent(CustomerReview2, javax.swing.GroupLayout.DEFAULT_SIZE, 168, Short.MAX_VALUE))
+                .addContainerGap())
+        );
+        Review2Layout.setVerticalGroup(
+            Review2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(Review2Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(Customer2)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(CustomerReview2)
+                .addContainerGap(24, Short.MAX_VALUE))
+        );
+
+        ReviewPanel.add(Review2);
+        Review2.setBounds(10, 110, 180, 70);
+
+        Customer3.setFont(new java.awt.Font("Segoe UI", 2, 14)); // NOI18N
+        Customer3.setText("Recent Reviews");
+        ReviewPanel.add(Customer3);
+        Customer3.setBounds(50, 10, 109, 16);
+
+        DashboardCenterPanel.add(ReviewPanel);
+        ReviewPanel.setBounds(500, 280, 210, 300);
 
         SidePanel.setBackground(new java.awt.Color(255, 243, 224));
         SidePanel.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
@@ -303,12 +411,23 @@ public class EmployeeDashboard extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton BillButton;
+    private javax.swing.JLabel Customer1;
+    private javax.swing.JLabel Customer2;
+    private javax.swing.JLabel Customer3;
+    private javax.swing.JLabel CustomerReview1;
+    private javax.swing.JLabel CustomerReview2;
+    private javax.swing.JLabel CustomerReview3;
     private javax.swing.JButton DashboardButton1;
     private javax.swing.JPanel DashboardCenterPanel;
     private javax.swing.JLabel Logo1;
     private javax.swing.JButton LogoutButton;
     private javax.swing.JButton Menubtn;
     private javax.swing.JButton OrderButton;
+    private javax.swing.JLabel Review;
+    private javax.swing.JPanel Review1;
+    private javax.swing.JPanel Review2;
+    private javax.swing.JPanel Review3;
+    private javax.swing.JPanel ReviewPanel;
     private javax.swing.JPanel SidePanel;
     private javax.swing.JLabel Slogan;
     private javax.swing.JButton eventbtn;
@@ -316,7 +435,6 @@ public class EmployeeDashboard extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
-    private javax.swing.JPanel jPanel1;
     private javax.swing.JSeparator jSeparator3;
     private javax.swing.JSeparator jSeparator4;
     private javax.swing.JButton reservationbtn;

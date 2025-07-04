@@ -38,18 +38,7 @@ public class ReservationController {
         reservationView.addLogoutListener(new LogoutListener(reservationView));
         
     }
-//    public void loadReservationStatus() {
-//        Set<Integer> bookedFloors = eventDao.getBookedFloors();
-//
-//        DefaultTableModel model = (DefaultTableModel) reservationView.getBillTable().getModel();
-//        model.setRowCount(0);
-//
-//        // Example: checking floors 1 through 3;
-//        for (int floor = 1; floor <= 9; floor++) {
-//            String assignedstaff = bookedFloors.contains(floor) ? "Booked" : "Available";
-////            model.addRow(new Object[]{"Floor " + floor, assignedstaff, ""});
-//        }
-//    }
+
      public void loadBookingStatus() throws java.sql.SQLException {
 Set<Integer> bookedFloors = eventDao.getBookedFloors();
 // Loop through 1 to 9 floors
@@ -77,7 +66,7 @@ model.addRow(row);
         }
     }
 
-
+   //for logout button 
     class LogoutListener implements ActionListener {
         private JFrame currentFrame;
 

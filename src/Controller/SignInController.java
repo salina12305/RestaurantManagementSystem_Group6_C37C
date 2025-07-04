@@ -23,6 +23,8 @@ public class SignInController {
         userView.addLoginUserListener(new AddLoginListener());
         userView.addForgotListener(new ForgotListener());
         userView.addRegisterListener(new RegisterListener());
+        userView.addELoginListener(new ELoginListener());
+
     }
 
     public void open() {
@@ -103,9 +105,12 @@ public class SignInController {
     class ELoginListener implements ActionListener {
         @Override
         public void actionPerformed(ActionEvent e) {
+            
             EmployeeSignIn signinView = new EmployeeSignIn();
-            ESignInController esignin = new ESignInController(signinView);
-            esignin.open();
+            signinView.setVisible(true);
+            ESignInController controller = new ESignInController(signinView);
+            System.out.println("Employee  Clicked");
+            controller.open();
             close();
         }
     }

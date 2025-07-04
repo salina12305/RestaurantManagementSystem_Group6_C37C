@@ -19,7 +19,7 @@ public class RevenueDao {
 
     MySqlConnection mysql = new MySqlConnection();
 
-
+     //to insert order
       public void saveOrder(User user) {
         Connection conn = mysql.openConnection();
         String sql = "INSERT INTO orders (order_date, total_amount) VALUES (?, ?)";
@@ -35,7 +35,7 @@ public class RevenueDao {
         double revenue = rs.getDouble("revenue");
 
         if (month >= 1 && month <= 12) {
-            String monthName = Month.of(month).name().substring(0, 3); // JAN, FEB, etc.
+            String monthName = Month.of(month).name().substring(0, 3); // JAN, FEB, MAR etc.
             dataset.addValue(revenue, "Revenue", monthName);
         }
     }
@@ -62,6 +62,8 @@ public class RevenueDao {
         return false;
     }
     
+    
+    // to review order
    public void reviewOrder(User user) {
         Connection conn = mysql.openConnection();
         String sql = "INSERT INTO reviews (order_date, total_amount) VALUES (?, ?)";
@@ -70,14 +72,14 @@ public class RevenueDao {
     PreparedStatement stmt = conn.prepareStatement(query);
     ResultSet rs = stmt.executeQuery();
 
-    DefaultCategoryDataset dataset = new DefaultCategoryDataset(); // define it if not passed
+    DefaultCategoryDataset dataset = new DefaultCategoryDataset(); 
 
     while (rs.next()) {
         int month = rs.getInt("month");
         double revenue = rs.getDouble("revenue");
 
         if (month >= 1 && month <= 12) {
-            String monthName = Month.of(month).name().substring(0, 3); // JAN, FEB, etc.
+            String monthName = Month.of(month).name().substring(0, 3); 
             dataset.addValue(revenue, "Revenue", monthName);
         }
     }

@@ -1,13 +1,7 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
+
 package Dao;
 
-/**
- *
- * @author Nitro
-*/
+
 import Database.MySqlConnection;
 import Model.Employee;
 
@@ -15,7 +9,8 @@ import java.sql.*;
 
 public class EmployeeDAO {
     MySqlConnection mysql = new MySqlConnection();
-
+    
+   //to add employee
     public boolean addEmployee(Employee emp) {
         String sql = "INSERT INTO employees (name, gender, status, dob, role, shift, department, join_date, address, email, phone, imagePath) " +
                      "VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
@@ -43,7 +38,8 @@ public class EmployeeDAO {
             return false;
         }
     }
-
+    
+    // to get employee by id
     public Employee getEmployeeById(int id) {
         String sql = "SELECT * FROM employees WHERE emp_id = ?";
 
@@ -64,6 +60,8 @@ public class EmployeeDAO {
         return null;
     }
 
+    
+    // to select employee by name
     public Employee getEmployeeByName(String name) {
         String sql = "SELECT * FROM employees WHERE name = ?";
 
@@ -84,6 +82,7 @@ public class EmployeeDAO {
         return null;
     }
 
+    // to update emlpoyee
     public boolean updateEmployee(Employee emp) {
         String sql = "UPDATE employees SET name=?, gender=?, status=?, dob=?, role=?, shift=?, department=?, join_date=?, address=?, email=?, phone=?, imagePath=? WHERE emp_id=?";
 
@@ -112,6 +111,7 @@ public class EmployeeDAO {
         }
     }
 
+    //to delete employee
     public boolean deleteEmployee(int id) {
         String sql = "DELETE FROM employees WHERE emp_id = ?";
 

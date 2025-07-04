@@ -217,13 +217,18 @@ public class Bill extends javax.swing.JFrame {
         generatebillbtn1.setBackground(new java.awt.Color(201, 182, 153));
         generatebillbtn1.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
         generatebillbtn1.setText("Generate Bill");
+        generatebillbtn1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                generatebillbtn1ActionPerformed(evt);
+            }
+        });
         DashboardCenterPanel.add(generatebillbtn1);
-        generatebillbtn1.setBounds(230, 550, 170, 28);
+        generatebillbtn1.setBounds(230, 550, 170, 27);
 
         jLabel5.setFont(new java.awt.Font("Jaini Purva", 3, 36)); // NOI18N
         jLabel5.setText("7~11");
         DashboardCenterPanel.add(jLabel5);
-        jLabel5.setBounds(270, 40, 81, 47);
+        jLabel5.setBounds(270, 40, 59, 47);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -264,6 +269,10 @@ public class Bill extends javax.swing.JFrame {
     private void customername1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_customername1ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_customername1ActionPerformed
+
+    private void generatebillbtn1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_generatebillbtn1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_generatebillbtn1ActionPerformed
 
     /**
      * @param args the command line arguments

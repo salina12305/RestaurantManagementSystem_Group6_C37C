@@ -239,7 +239,8 @@ public class MenuController {
             new BillController(billView);
             billView.setVisible(true);
 
-            if (menuView != null) menuView.dispose();
+//            if (menuView != null) menuView.dispose();
+menuView.dispose();
         }
     }
 
@@ -283,8 +284,8 @@ public class MenuController {
 //            control.open();
             new EDashboardController(dashboardView);
             dashboardView.setVisible(true);
-            
-            if (menuView != null) menuView.dispose();
+              menuView.dispose();
+//            if (menuView != null) menuView.dispose();
         }
     }
       public void setupOrderListener(ManageMenu view) {
@@ -299,7 +300,9 @@ public class MenuController {
             new OrderController(orderView);
             orderView.setVisible(true);
 
-            if (menuView != null) menuView.dispose();
+//            if (menuView != null) menuView.dispose();
+//            if (menuView != null) menuView.dispose();
+            menuView.dispose();
         }
     }
     public void setupReservationListener(ManageMenu view) {
@@ -314,7 +317,9 @@ public class MenuController {
                 new ReservationController(reservationView);
                 reservationView.setVisible(true);
                 
-                if (menuView != null) menuView.dispose();
+//                if (menuView != null) menuView.dispose();
+             //            if (menuView != null) menuView.dispose();
+            menuView.dispose();
             } catch (SQLException ex) {
                 Logger.getLogger(MenuController.class.getName()).log(Level.SEVERE, null, ex);
             }
@@ -331,7 +336,9 @@ public class MenuController {
             new EventController(eventView);
             eventView.setVisible(true);
 
-            if (menuView != null) menuView.dispose();
+//            if (menuView != null) menuView.dispose();
+        //            if (menuView != null) menuView.dispose();
+       menuView.dispose();
         }
     }
 

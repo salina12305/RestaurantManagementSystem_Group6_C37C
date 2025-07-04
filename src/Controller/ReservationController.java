@@ -98,7 +98,6 @@ model.addRow(row);
             Bill billView = new Bill();
             new BillController(billView);
             billView.setVisible(true);
-
             if (reservationView != null) reservationView.dispose();
         }
     }
@@ -111,12 +110,9 @@ model.addRow(row);
         public void actionPerformed(ActionEvent e) {
             System.out.println("Dashboard button clicked"); 
             EmployeeDashboard dashboardView = new EmployeeDashboard();
-            dashboardView.setVisible(true);
-            
-//            control.open();
             new EDashboardController(dashboardView);
             dashboardView.setVisible(true);
-            
+
             if (reservationView != null) reservationView.dispose();
         }
     }
@@ -129,12 +125,8 @@ model.addRow(row);
         public void actionPerformed(ActionEvent e) {
             System.out.println("ManageMenu button clicked"); 
             ManageMenu menuView = new ManageMenu();
-            menuView.setVisible(true);
-            
-//            control.open();
             new MenuController(menuView);
             menuView.setVisible(true);
-            
             if (reservationView != null) reservationView.dispose();
         }
     }
@@ -147,9 +139,6 @@ model.addRow(row);
         public void actionPerformed(ActionEvent e) {
             System.out.println("Event button clicked"); 
             EventBooking eventView = new EventBooking();
-            eventView.setVisible(true);
-            
-//            control.open();
             new EventController(eventView);
             eventView.setVisible(true);
             
@@ -165,13 +154,10 @@ model.addRow(row);
         public void actionPerformed(ActionEvent e) {
             System.out.println("Order button clicked"); 
             OrderFrame orderView = new OrderFrame();
-            orderView.setVisible(true);
-            
-//            control.open();
             new OrderController(orderView);
             orderView.setVisible(true);
             
-            if (reservationView != null) reservationView.dispose();
+           if (reservationView != null) reservationView.dispose();
         }
     }
 }

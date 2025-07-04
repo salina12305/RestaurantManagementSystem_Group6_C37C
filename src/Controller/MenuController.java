@@ -137,7 +137,7 @@ public class MenuController {
 //        menuView.addUpdateListerner(new UpdateOrderListener());
         menuView.addDeleteListerner(new DeleteMenuListener());
         menuView.addBillListener(new BillListener());
-        menuView.addEventListener(new BillListener());
+        menuView.addEventListener(new EventListener());
         menuView.addOrderListener(new OrderListener());
         menuView.addReservationListener(new ReservationListener());
         menuView.addLogoutListener(new LogoutListener(menuView));
@@ -157,17 +157,17 @@ public class MenuController {
             String priceStr = menuView.getPriceField().getText().trim();
             String employeeName = menuView.getEmployeeNameField().getText().trim();
 
-            // ✅ Validate input
+            //  Validate input
             if (itemName.isEmpty() || noOfItemStr.isEmpty() || priceStr.isEmpty() || employeeName.isEmpty()) {
                 JOptionPane.showMessageDialog(menuView, "Please fill in all fields.", "Input Error", JOptionPane.WARNING_MESSAGE);
                 return;
             }
 
-            // ✅ Parse values after validation
+            //  Parse values after validation
             int noOfItem = Integer.parseInt(noOfItemStr);
             double price = Double.parseDouble(priceStr);
 
-            // ✅ Create and save item
+            //  Create and save item
             MenuItemModel menu = new MenuItemModel(itemName, noOfItem, price, employeeName);
             menuDao.createMenuItem(menu);
 
@@ -236,11 +236,9 @@ public class MenuController {
         public void actionPerformed(ActionEvent e) {
             System.out.println("Bill button clicked"); 
             Bill billView = new Bill();
-            new BillController(billView);
+//            new BillController(billView);
             billView.setVisible(true);
-
-//            if (menuView != null) menuView.dispose();
-menuView.dispose();
+            if (menuView != null) menuView.dispose();
         }
     }
 
@@ -279,16 +277,14 @@ menuView.dispose();
         public void actionPerformed(ActionEvent e) {
             System.out.println("Dashboard button clicked"); 
             EmployeeDashboard dashboardView = new EmployeeDashboard();
-//            dashboardView.setVisible(true);
-            
-//            control.open();
-            new EDashboardController(dashboardView);
+//            new EDashboardController(dashboardView);
             dashboardView.setVisible(true);
-              menuView.dispose();
-//            if (menuView != null) menuView.dispose();
+
+            if (menuView != null) menuView.dispose();
         }
     }
-      public void setupOrderListener(ManageMenu view) {
+    
+    public void setupOrderListener(ManageMenu view) {
         view.addOrderListener(new OrderListener());
     }
      
@@ -297,14 +293,13 @@ menuView.dispose();
         public void actionPerformed(ActionEvent e) {
             System.out.println("Order button clicked"); 
             OrderFrame orderView = new OrderFrame();
-            new OrderController(orderView);
+//            new OrderController(orderView);
             orderView.setVisible(true);
 
-//            if (menuView != null) menuView.dispose();
-//            if (menuView != null) menuView.dispose();
-            menuView.dispose();
+            if (menuView != null) menuView.dispose();
         }
     }
+//   
     public void setupReservationListener(ManageMenu view) {
         view.addReservationListener(new ReservationListener());
     }    
@@ -314,12 +309,9 @@ menuView.dispose();
             try {
                 System.out.println("Reservation button clicked");
                 Reservation reservationView = new Reservation();
-                new ReservationController(reservationView);
+//                new ReservationController(reservationView);
                 reservationView.setVisible(true);
-                
-//                if (menuView != null) menuView.dispose();
-             //            if (menuView != null) menuView.dispose();
-            menuView.dispose();
+                if (menuView != null) menuView.dispose();
             } catch (SQLException ex) {
                 Logger.getLogger(MenuController.class.getName()).log(Level.SEVERE, null, ex);
             }
@@ -333,12 +325,10 @@ menuView.dispose();
         public void actionPerformed(ActionEvent e) {
             System.out.println("EventBooking button clicked"); 
             EventBooking eventView = new EventBooking();
-            new EventController(eventView);
+//            new EventController(eventView);
             eventView.setVisible(true);
 
-//            if (menuView != null) menuView.dispose();
-        //            if (menuView != null) menuView.dispose();
-       menuView.dispose();
+            if (menuView != null) menuView.dispose();
         }
     }
 

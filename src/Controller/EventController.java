@@ -313,11 +313,9 @@ public class EventController {
         public void actionPerformed(ActionEvent e) {
             System.out.println("Bill button clicked"); 
             Bill billView = new Bill();
-            new BillController(billView);
+//            new BillController(billView);
             billView.setVisible(true);
-
-//            if (eventView != null) eventView.dispose();
-eventView.dispose();
+            if (eventView != null) eventView.dispose();
         }
     }
 
@@ -356,14 +354,9 @@ eventView.dispose();
         public void actionPerformed(ActionEvent e) {
             System.out.println("Dashboard button clicked"); 
             EmployeeDashboard dashboardView = new EmployeeDashboard();
-//            dashboardView.setVisible(true);
-            
-//            control.open();
-            new EDashboardController(dashboardView);
+//            new EDashboardController(dashboardView);
             dashboardView.setVisible(true);
-            
-//            if (eventView != null) eventView.dispose();
-            eventView.dispose();
+            if (eventView != null) eventView.dispose();
         }
     }
     public void setupReservationListener(EventBooking view) {
@@ -376,11 +369,9 @@ eventView.dispose();
             try {
                 System.out.println("Reservation button clicked");
                 Reservation reservationView = new Reservation();
-                new ReservationController(reservationView);
-                reservationView.setVisible(true);
-//                
-//                if (eventView != null) eventView.dispose();
-                eventView.dispose();
+//                new ReservationController(reservationView);
+                reservationView.setVisible(true);            
+                if (eventView != null) eventView.dispose();
             } catch (SQLException ex) {
                 Logger.getLogger(EventController.class.getName()).log(Level.SEVERE, null, ex);
             }
@@ -395,33 +386,25 @@ eventView.dispose();
         public void actionPerformed(ActionEvent e) {
             System.out.println("Menu button clicked"); 
             ManageMenu menuView = new ManageMenu();
+//            new MenuController(menuView);
             menuView.setVisible(true);
-            
-//            control.open();
-            new MenuController(menuView);
-            menuView.setVisible(true);
-//            
-//            if (eventView != null) eventView.dispose();
-              eventView.dispose();
+            if (eventView != null) eventView.dispose();
         }
     }
-        public void setupOrderListener(EventBooking view) {
+
+    public void setupOrderListener(EventBooking view) {
         view.addOrderListener(new OrderListener());
     }
      
     class OrderListener implements ActionListener {
         @Override
         public void actionPerformed(ActionEvent e) {
-            System.out.println("OrderFrame button clicked"); 
+            System.out.println("Order button clicked"); 
             OrderFrame orderView = new OrderFrame();
-//            orderView.setVisible(true);
-            
-//            control.open();
-            new OrderController(orderView);
+//            new OrderController(orderView);
             orderView.setVisible(true);
-            
-//            if (eventView != null) eventView.dispose();
-             eventView.dispose();
+
+            if (eventView != null) eventView.dispose();
         }
     }
 //    public void start() {

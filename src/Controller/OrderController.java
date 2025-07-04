@@ -134,10 +134,7 @@ public class OrderController {
             Bill billView = new Bill();
             new BillController(billView);
             billView.setVisible(true);
-
-//            if (orderView != null) orderView.dispose();
-           //            if (menuView != null) menuView.dispose();
-orderView.dispose();
+            if (orderView != null) orderView.dispose();
         }
     }
 
@@ -176,14 +173,10 @@ orderView.dispose();
         public void actionPerformed(ActionEvent e) {
             System.out.println("Dashboard button clicked"); 
             EmployeeDashboard dashboardView = new EmployeeDashboard();
-//            dashboardView.setVisible(true);
-            
-//            control.open();
             new EDashboardController(dashboardView);
             dashboardView.setVisible(true);
-            
-//            if (orderView != null) orderView.dispose();
-orderView.dispose();
+
+            if (orderView != null) orderView.dispose();
         }
     }
     
@@ -198,7 +191,7 @@ orderView.dispose();
                 Reservation reservationView = new Reservation();
                 new ReservationController(reservationView);
                 reservationView.setVisible(true);
-                orderView.dispose();
+                if (orderView != null) orderView.dispose();
             } catch (SQLException ex) {
                 Logger.getLogger(OrderController.class.getName()).log(Level.SEVERE, null, ex);
             }
@@ -215,7 +208,7 @@ orderView.dispose();
             EventBooking eventView = new EventBooking();
             new EventController(eventView);
             eventView.setVisible(true);
-            orderView.dispose();
+            if (orderView != null) orderView.dispose();
         }
     }
     public void setupMenuListener(OrderFrame view) {
@@ -228,7 +221,7 @@ orderView.dispose();
             ManageMenu menuView = new ManageMenu();
             new MenuController(menuView);
             menuView.setVisible(true);
-            orderView.dispose();
+            if (orderView != null) orderView.dispose();
         }
     } 
 }

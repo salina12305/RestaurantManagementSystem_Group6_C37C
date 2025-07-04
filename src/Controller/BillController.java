@@ -108,10 +108,9 @@ public class BillController {
         public void actionPerformed(ActionEvent e) {
             System.out.println("Order button clicked"); 
             OrderFrame orderView = new OrderFrame();
-            new OrderController(orderView);
+//            new OrderController(orderView);
             orderView.setVisible(true);
-//            if (billView != null) billView.dispose();
-            billView.dispose();
+           if (billView != null) billView.dispose();
         }
     }
     public void setupDashboardListener(Bill view) {
@@ -123,11 +122,10 @@ public class BillController {
         public void actionPerformed(ActionEvent e) {
             System.out.println("Dashboard button clicked"); 
             EmployeeDashboard dashboardView = new EmployeeDashboard();
-            new EDashboardController(dashboardView);
+//            new EDashboardController(dashboardView);
             dashboardView.setVisible(true);
-            
+            if (billView != null) billView.dispose();
 
-            billView.dispose();
         }
     }
     public void setupReservationListener(Bill view) {
@@ -139,7 +137,7 @@ public class BillController {
             try {
                 System.out.println("Reservation button clicked");
                 Reservation reservationView = new Reservation();
-                new ReservationController(reservationView);
+//                new ReservationController(reservationView);
                 reservationView.setVisible(true);
                 
                 if (billView != null) billView.dispose();
@@ -157,11 +155,9 @@ public class BillController {
         public void actionPerformed(ActionEvent e) {
             System.out.println("EventBooking button clicked"); 
             EventBooking eventView = new EventBooking();
-            new EventController(eventView);
+//            new EventController(eventView);
             eventView.setVisible(true);
-
-
-             billView.dispose();
+            if (billView != null) billView.dispose();
         }
     }
     public void setupMenuListener(Bill view) {
@@ -172,11 +168,10 @@ public class BillController {
         public void actionPerformed(ActionEvent e) {
             System.out.println("ManageMenu button clicked"); 
             ManageMenu menuView = new ManageMenu();
-            new MenuController(menuView);
+//            new MenuController(menuView);
             menuView.setVisible(true);
 
-
-          billView.dispose();
+           if (billView != null) billView.dispose();
         }
     }
 }

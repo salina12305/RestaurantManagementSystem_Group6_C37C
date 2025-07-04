@@ -135,7 +135,9 @@ public class OrderController {
             new BillController(billView);
             billView.setVisible(true);
 
-            if (orderView != null) orderView.dispose();
+//            if (orderView != null) orderView.dispose();
+           //            if (menuView != null) menuView.dispose();
+orderView.dispose();
         }
     }
 
@@ -180,7 +182,8 @@ public class OrderController {
             new EDashboardController(dashboardView);
             dashboardView.setVisible(true);
             
-            if (orderView != null) orderView.dispose();
+//            if (orderView != null) orderView.dispose();
+orderView.dispose();
         }
     }
     
@@ -196,7 +199,8 @@ public class OrderController {
                 new ReservationController(reservationView);
                 reservationView.setVisible(true);
                 
-                if (orderView != null) orderView.dispose();
+//                if (orderView != null) orderView.dispose();
+orderView.dispose();
             } catch (SQLException ex) {
                 Logger.getLogger(OrderController.class.getName()).log(Level.SEVERE, null, ex);
             }
@@ -214,7 +218,8 @@ public class OrderController {
             new EventController(eventView);
             eventView.setVisible(true);
 
-            if (orderView != null) orderView.dispose();
+//            if (orderView != null) orderView.dispose();
+orderView.dispose();
         }
     }
     public void setupMenuListener(OrderFrame view) {
@@ -228,7 +233,8 @@ public class OrderController {
             new MenuController(menuView);
             menuView.setVisible(true);
 
-            if (orderView != null) orderView.dispose();
+//            if (orderView != null) orderView.dispose();
+orderView.dispose();
         }
     } 
 

@@ -438,7 +438,7 @@ public class EventBooking extends javax.swing.JFrame {
         jpriceofitem1.setText("Assigned Staff");
 
         jcustomername1.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
-        jcustomername1.setText("Floor");
+        jcustomername1.setText("Room No");
 
         customername.setBackground(new java.awt.Color(201, 182, 153));
         customername.addActionListener(new java.awt.event.ActionListener() {

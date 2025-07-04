@@ -1,13 +1,6 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
+
 package Controller;
 
-/**
- *
- * @author Nitro
- */
 
 import com.itextpdf.text.*;
 import com.itextpdf.text.pdf.*;
@@ -21,7 +14,7 @@ public class PdfBillGenerator {
         Document document = new Document();
 
         try {
-            String fileName = "Bill_" + customerName.replaceAll("\\s+", "") + ".pdf";
+            String fileName =  System.getProperty("user.home") + "/Desktop/Bill_" + customerName.replaceAll("\\s+", "") + ".pdf";
             PdfWriter.getInstance(document, new FileOutputStream(fileName));
             document.open();
 
@@ -59,13 +52,14 @@ public class PdfBillGenerator {
             document.add(pdfTable);
 
             // Thank you note
-            Paragraph thanks = new Paragraph("\nThank you for your business!", FontFactory.getFont(FontFactory.HELVETICA_OBLIQUE, 14));
+            Paragraph thanks = new Paragraph("\nWe hope you enjoyed your meal!\nThank you for dining with us at 7~11 Restaurant.\n" +
+    "We look forward to serving you again soon.", FontFactory.getFont(FontFactory.HELVETICA_OBLIQUE, 14));
             thanks.setAlignment(Element.ALIGN_CENTER);
             document.add(thanks);
 
             document.close();
 
-            javax.swing.JOptionPane.showMessageDialog(null, "PDF Bill generated successfully:\n" + fileName);
+            javax.swing.JOptionPane.showMessageDialog(null, " Bill generated successfully:\n" + fileName);
 
         } catch (Exception e) {
             e.printStackTrace();

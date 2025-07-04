@@ -110,8 +110,8 @@ public class BillController {
             OrderFrame orderView = new OrderFrame();
             new OrderController(orderView);
             orderView.setVisible(true);
-
-            if (billView != null) billView.dispose();
+//            if (billView != null) billView.dispose();
+            billView.dispose();
         }
     }
     public void setupDashboardListener(Bill view) {
@@ -126,7 +126,8 @@ public class BillController {
             new EDashboardController(dashboardView);
             dashboardView.setVisible(true);
             
-            if (billView != null) billView.dispose();
+//            if (billView != null) billView.dispose();
+            billView.dispose();
         }
     }
     public void setupReservationListener(Bill view) {
@@ -159,7 +160,8 @@ public class BillController {
             new EventController(eventView);
             eventView.setVisible(true);
 
-            if (billView != null) billView.dispose();
+//            if (billView != null) billView.dispose();
+             billView.dispose();
         }
     }
     public void setupMenuListener(Bill view) {
@@ -173,7 +175,8 @@ public class BillController {
             new MenuController(menuView);
             menuView.setVisible(true);
 
-            if (billView != null) billView.dispose();
+//            if (billView != null) billView.dispose();
+          billView.dispose();
         }
     }
 }

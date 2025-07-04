@@ -23,7 +23,6 @@ public class ESignInController {
         userView.addRegisterListener(new RegisterListener());
         userView.addLoginUserListener(new LoginUserListener());
         userView.addAdminLoginListener(new AdminLoginListener());
-        userView.addELoginListener(new ELoginListener());
         userView.addForgotListener(new ForgotListener());
     }
 
@@ -80,16 +79,6 @@ public class ESignInController {
                         EmployeeDashboard dashboard = new EmployeeDashboard();
                         dashboard.setVisible(true);
 
-//                        ESignInController control = new ESignInController(dash);
-//                        control.open();
-//                        EmployeeDashboard dashboards = new EmployeeDashboard();
-//                        dashboards.setVisible(true);
-//                        ESignInController controller = new ESignInController(dashboards);
-//                        controller.open();
-//                    } else if ("admin".equalsIgnoreCase(role)) {
-//                        AdminDashboard dashboard = new AdminDashboard();
-//                        dashboard.setVisible(true);
-
                     } else {
                         JOptionPane.showMessageDialog(userView, "Unknown role");
                         return;
@@ -117,29 +106,6 @@ public class ESignInController {
             AuthController controller = new AuthController(sec);
             controller.open();
             userView.dispose();
-        }
-    }
-//    class ELoginListener implements ActionListener {
-//        @Override
-//        public void actionPerformed(ActionEvent e) {
-//            EmployeeSignIn signinView = new EmployeeSignIn();
-//            ESignInController signin = new ESignInController(signinView);
-//
-//            signin.open();
-//            close();
-//        }
-//    }
-    
-    class ELoginListener implements ActionListener {
-        @Override
-        public void actionPerformed(ActionEvent e) {
-            
-            EmployeeSignIn signinView = new EmployeeSignIn();
-            signinView.setVisible(true);
-            ESignInController controller = new ESignInController(signinView);
-            System.out.println("Employee  Clicked");
-            controller.open();
-            close();
         }
     }
 }

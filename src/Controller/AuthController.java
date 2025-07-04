@@ -85,10 +85,7 @@ public class AuthController {
                 JOptionPane.showMessageDialog(userView1,"Security questions stored successfully.");
 
                 
-//                SignIn signin = new SignIn();
-//                signin.setVisible(true);
-//                SignInController controller = new SignInController(signin);
-//                controller.open();
+
                   EmployeeSignIn esignin = new EmployeeSignIn();
                   esignin.setVisible(true);
                   ESignInController controller = new ESignInController(esignin);

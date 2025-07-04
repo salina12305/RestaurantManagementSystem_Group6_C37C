@@ -126,7 +126,7 @@ public class BillController {
             new EDashboardController(dashboardView);
             dashboardView.setVisible(true);
             
-//            if (billView != null) billView.dispose();
+
             billView.dispose();
         }
     }
@@ -160,7 +160,7 @@ public class BillController {
             new EventController(eventView);
             eventView.setVisible(true);
 
-//            if (billView != null) billView.dispose();
+
              billView.dispose();
         }
     }
@@ -175,7 +175,7 @@ public class BillController {
             new MenuController(menuView);
             menuView.setVisible(true);
 
-//            if (billView != null) billView.dispose();
+
           billView.dispose();
         }
     }

@@ -79,7 +79,7 @@ public class OrderController {
     }
 }
 
-
+    //for update order
     class UpdateOrderListener implements ActionListener {
         public void actionPerformed(ActionEvent e) {
             try {
@@ -104,7 +104,7 @@ public class OrderController {
             }
         }
     }
-
+    //for delete order
     class DeleteOrderListener implements ActionListener {
         public void actionPerformed(ActionEvent e) {
             try {
@@ -237,19 +237,5 @@ orderView.dispose();
 orderView.dispose();
         }
     } 
-
-//     class DashboardListener implements ActionListener {
-//        @Override
-//        public void actionPerformed(ActionEvent e) {
-//            EmployeeDashboard dashboardView = new EmployeeDashboard();
-//            EDashboardController edashboard = new EDashboardController(dashboardView);
-//
-//            edashboard.open();
-//          close();
-//        }
-//
-//        private void close() {
-//        }
-//    }
 }
 

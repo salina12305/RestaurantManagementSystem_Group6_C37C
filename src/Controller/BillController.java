@@ -27,18 +27,20 @@ public class BillController {
     public BillController(Bill view) {
         this.billView = view;
         this.billView.addGenerateBillListener(new LoadBillListener());
-        view.addLogoutListener(new LogoutListener(view));
+        
         billView.addOrderListener(new OrderListener());
         billView.addDashboardListener(new DashboardListener());
         billView.addReservationListener(new ReservationListener());
         billView.addEventListener(new EventListener());
         billView.addMenuListener(new MenuListener());
+        view.addLogoutListener(new LogoutListener(view));
     }
-     void open() {
-       
+     public void open() {
+        this.billView.setVisible(true);
     }
-      void close() {
-       
+
+    public void close() {
+        this.billView.dispose();
     }
 
     class LoadBillListener implements ActionListener {
@@ -99,79 +101,73 @@ public class BillController {
             }
         }
     }
-    public void setupOrderListener(Bill view) {
-        view.addOrderListener(new OrderListener());
-    }
-     
+    
     class OrderListener implements ActionListener {
         @Override
         public void actionPerformed(ActionEvent e) {
-            System.out.println("Order button clicked"); 
+            
             OrderFrame orderView = new OrderFrame();
-//            new OrderController(orderView);
             orderView.setVisible(true);
-           if (billView != null) billView.dispose();
+            OrderController controller = new OrderController(orderView);
+            System.out.println(" OrderController  Clicked");
+            controller.open();
+            close();
         }
     }
-    public void setupDashboardListener(Bill view) {
-        view.addDashboardListener(new DashboardListener());
-    }
-     
+    
     class DashboardListener implements ActionListener {
         @Override
         public void actionPerformed(ActionEvent e) {
-            System.out.println("Dashboard button clicked"); 
+            
             EmployeeDashboard dashboardView = new EmployeeDashboard();
-//            new EDashboardController(dashboardView);
             dashboardView.setVisible(true);
-            if (billView != null) billView.dispose();
-
+            EDashboardController controller = new EDashboardController(dashboardView);
+            System.out.println(" EDashboardControllers  Clicked");
+            controller.open();
+            close();
         }
     }
-    public void setupReservationListener(Bill view) {
-        view.addReservationListener(new ReservationListener());
-    }    
+
     class ReservationListener implements ActionListener {
         @Override
         public void actionPerformed(ActionEvent e) {
+            
             try {
-                System.out.println("Reservation button clicked");
                 Reservation reservationView = new Reservation();
-//                new ReservationController(reservationView);
                 reservationView.setVisible(true);
-                
-                if (billView != null) billView.dispose();
+                ReservationController controller = new ReservationController(reservationView);
+                System.out.println("reservationView  Clicked");
+                controller.open();
+                close();
             } catch (SQLException ex) {
                 Logger.getLogger(BillController.class.getName()).log(Level.SEVERE, null, ex);
             }
         }
     }
- 
-    public void setupEventListener(Bill view) {
-        view.addEventListener(new EventListener());
-    }    
+    
     class EventListener implements ActionListener {
         @Override
         public void actionPerformed(ActionEvent e) {
-            System.out.println("EventBooking button clicked"); 
+            
             EventBooking eventView = new EventBooking();
-//            new EventController(eventView);
             eventView.setVisible(true);
-            if (billView != null) billView.dispose();
+            EventController controller = new EventController(eventView);
+            System.out.println("EventController  Clicked");
+            controller.open();
+            close();
         }
     }
-    public void setupMenuListener(Bill view) {
-        view.addMenuListener(new MenuListener());
-    }    
+ 
     class MenuListener implements ActionListener {
         @Override
         public void actionPerformed(ActionEvent e) {
-            System.out.println("ManageMenu button clicked"); 
+            
             ManageMenu menuView = new ManageMenu();
-//            new MenuController(menuView);
             menuView.setVisible(true);
-
-           if (billView != null) billView.dispose();
+            MenuController controller = new MenuController(menuView);
+            System.out.println("menu  Clicked");
+            controller.open();
+            close();
         }
     }
 }
